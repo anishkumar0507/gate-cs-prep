@@ -216,6 +216,46 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
 .gcard{cursor:pointer;text-align:left}
 .gcard:hover{border-color:var(--pen)}
 .sync{font:600 .72rem var(--f-mono);color:var(--muted)}
+/* phone layout */
+@media (max-width:760px){
+  .top{position:static}
+  .top .wrap{gap:8px 10px;padding-block:8px 0}
+  .brand{order:1;font-size:1rem}
+  .brand .tag{display:none}
+}
+@media (max-width:480px){
+  #setBtn .lbl{display:none}
+  .lang select{max-width:92px}
+  .brand{font-size:.95rem}
+  .lang{order:2;font-size:0}
+  .lang select{font-size:.8rem;padding:5px 6px}
+  #authBtn{order:3}#setBtn{order:4}
+  .iconbtn{padding:5px 9px;font-size:.85rem}
+  nav.tabs{order:5;flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:4px 16px 8px;scroll-padding-inline:16px}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{flex:0 0 auto;padding:6px 11px}
+  .hero{padding-block:22px 4px}
+  .panel{padding:16px}
+  #pCard,.sheet[style*="padding:22px"]{padding:16px!important}
+  .chip{white-space:normal}
+  .toolbar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .toolbar label select,.toolbar label input{width:100%}
+  .toolbar #pShuffle{grid-column:1/-1}
+  .qhead{flex-direction:column;align-items:flex-start;gap:2px}
+  .mockbar{position:sticky;top:0;z-index:15;margin-top:12px;padding:10px 12px}
+  .timer{font-size:1.2rem}
+  .row .btn{flex:1 1 auto}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat b{font-size:1.35rem}
+  .bar{grid-template-columns:minmax(0,1fr) 74px 60px 40px;gap:8px;font-size:.84rem}
+  .fact{grid-template-columns:1fr}
+  .fact dd{margin-bottom:8px}
+  .prio{grid-template-columns:24px minmax(0,1fr)}
+  .prio .row{grid-column:1/-1}
+  dialog{padding:16px}
+  .opt{padding:10px}
+  .days{gap:3px}
+}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:10px 16px;border-radius:8px;font-size:.9rem;z-index:50;max-width:calc(100% - 32px)}
 @media (prefers-reduced-motion:no-preference){.opt,.btn,nav.tabs button{transition:background .12s,border-color .12s}}
 </style>
@@ -240,7 +280,7 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
       <select id="lang"><option value="hinglish">Hinglish</option><option value="english">English</option></select>
     </label>
     <button class="iconbtn" id="authBtn" type="button">Log in</button>
-    <button class="iconbtn" id="setBtn" type="button">Settings</button>
+    <button class="iconbtn" id="setBtn" type="button" aria-label="Settings"><span aria-hidden="true">⚙</span><span class="lbl"> Settings</span></button>
   </div>
 </header>
 
@@ -829,6 +869,7 @@ $('#setClear').onclick=()=>{try{localStorage.removeItem(KEY_LS)}catch(e){}sdkCli
 /* ---------- tabs ---------- */
 function showTab(t){
   $$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  {const nav=document.querySelector('nav.tabs'),b=nav&&nav.querySelector('[data-tab="'+t+'"]');if(b&&nav.scrollWidth>nav.clientWidth)nav.scrollTo({left:b.offsetLeft-nav.clientWidth/2+b.offsetWidth/2,behavior:'smooth'})}
   $$('.tab').forEach(s=>s.hidden=s.id!=='tab-'+t);
   if(t==='home')renderHome();if(t==='today')renderToday();if(t==='practice'){if(P.session)renderPractice();else buildPractice(true)}if(t==='mock'&&!T)renderMockSetup();if(t==='pyq')renderPapers();if(t==='g27')renderG27();if(t==='progress'&&window.renderProgress)renderProgress();if(t==='games'&&window.renderGames)renderGames();if(window.Cloud)Cloud.context({kind:t==='learn'?'lesson':t==='games'?'game':t==='mock'?'mock':t==='practice'?'practice':null});
   try{localStorage.setItem(LS+'.tab',t)}catch(e){}
