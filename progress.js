@@ -162,7 +162,7 @@ $('#authUp').onclick = async () => {
   if (!email || password.length < 6) { m.textContent = 'Enter your email and a password of at least 6 characters.'; return }
   m.textContent = 'Creating your account…';
   const { data, error } = await sb.auth.signUp({ email, password, options: { emailRedirectTo: location.origin + location.pathname } });
-  m.textContent = error ? error.message : data.session ? 'Account created. Your progress now saves to your account.' : 'Account created. Open the confirmation link in your email, then log in here.';
+  m.textContent = error ? (/rate limit/i.test(error.message) ? 'Too many sign-ups right now. Wait an hour and try again, or ask the site owner to turn off email confirmation.' : /already registered/i.test(error.message) ? 'This email already has an account. Use Log in instead.' : error.message) : data.session ? 'Account created. Your progress now saves to your account.' : 'Account created. Open the confirmation link in your email, then log in here.';
 };
 $('#authOut').onclick = async () => { flushStudy(); await flush(); await sb.auth.signOut(); $('#authDlg').close(); toast('Logged out. Progress on this device stays until you log in again.') };
 $('#authSync').onclick = async () => { flushStudy(); await flush(); await pull() };
