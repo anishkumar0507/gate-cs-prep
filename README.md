@@ -19,6 +19,14 @@ A browser-based practice tool for GATE Computer Science & IT (CS), built around 
 
 Your progress is saved in your own browser. Nothing is uploaded.
 
+## Deploy on Vercel (AI for every visitor, key stays on the server)
+
+1. Import this repo into Vercel. Leave the framework as "Other"; no build command is needed.
+2. Under Project → Settings → Environment Variables, add `ANTHROPIC_API_KEY`. The optional variables are listed in `.env.example`: `ANTHROPIC_MODEL`, `ALLOWED_ORIGINS`, `RATE_LIMIT_PER_HOUR` and `ACCESS_CODE`.
+3. Redeploy. The page detects `/api/claude` and turns on AI features without asking visitors for a key.
+
+`api/claude.js` never sends the key to the browser. It checks each request's size, applies a per-visitor hourly limit and an optional origin allowlist, and can require an access code. The hourly limit is best-effort, because each warm server instance keeps its own count. For a public link, set `ALLOWED_ORIGINS` to your Vercel URL, and set `ACCESS_CODE` if you want only people you share it with to use the AI.
+
 ## Run locally
 
 Open `gate-cs-prep.html` in Chrome or Edge. Keep the `pyq/` folder next to it.

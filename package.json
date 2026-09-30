@@ -1,0 +1,9 @@
+{
+  "name": "gate-cs-prep",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.129.0"
+  }
+}

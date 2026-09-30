@@ -237,6 +237,9 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
     <label class="field" for="apiKey">Anthropic API key
       <input type="password" id="apiKey" autocomplete="off" placeholder="sk-ant-..." style="background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px">
     </label>
+    <label class="field" for="accCode" id="accWrap" hidden>Access code
+      <input type="text" id="accCode" autocomplete="off" placeholder="Code from the site owner" style="background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px">
+    </label>
     <label class="field" for="apiModel">Model
       <select id="apiModel">
         <option value="claude-opus-5-5">Claude Opus 5.5 (best explanations)</option>
@@ -654,10 +657,27 @@ let sample=null;
 const KEY_LS=LS+'.apikey',MODEL_LS=LS+'.model';
 function apiKey(){try{return localStorage.getItem(KEY_LS)||''}catch(e){return ''}}
 function apiModel(){try{return localStorage.getItem(MODEL_LS)||'claude-opus-5-5'}catch(e){return 'claude-opus-5-5'}}
-function aiOn(){return !!(sample||apiKey())}
+const CODE_LS=LS+'.code';
+function accessCode(){try{return localStorage.getItem(CODE_LS)||''}catch(e){return ''}}
+/* server proxy (api/claude.js on Vercel): the site's own key, never sent to the browser */
+let proxy=false,proxyNeedsCode=false;
+function aiOn(){return !!(sample||apiKey()||(proxy&&(!proxyNeedsCode||accessCode())))}
 function setAI(){const on=aiOn();$$('[data-ai]').forEach(e=>e.hidden=!on);$$('[data-noai]').forEach(e=>e.hidden=on)}
 setAI();
 (async()=>{try{sample=window.claude?await window.claude.use('sample'):null}catch(e){sample=null}setAI()})();
+(async()=>{if(location.protocol==='file:')return;try{const r=await fetch('api/claude',{cache:'no-store'});if(r.ok){const j=await r.json();proxy=!!j.ok;proxyNeedsCode=!!j.accessCode}}catch(e){}setAI()})();
+async function viaProxy(messages,o){
+  let r;try{r=await fetch('api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages,effort:o.effort||'medium',code:accessCode()}),signal:o.signal})}
+  catch(e){const err=new Error('network');err.code=e.name==='AbortError'?'cancelled':'network';throw err}
+  if(!r.ok){let c='upstream';try{c=(await r.json()).error}catch(e){}const err=new Error(c);err.code=c==='access_code'?'bad_code':c==='rate_limited'?'rate_limited':c==='bad_request'?'prompt_too_large':'upstream';throw err}
+  const rd=r.body.getReader(),dec=new TextDecoder();let buf='';
+  try{for(;;){const{done,value}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});const i=buf.indexOf('\u0000');if(o.onText)o.onText({text:i<0?buf:buf.slice(0,i)})}}
+  catch(e){const err=new Error('cancelled');err.code=e.name==='AbortError'?'cancelled':'network';err.text=buf;throw err}
+  const i=buf.indexOf('\u0000'),text=i<0?buf:buf.slice(0,i);let stop='end_turn';try{stop=JSON.parse(buf.slice(i+1)).stop_reason}catch(e){}
+  if(stop==='refusal'){const err=new Error('refused');err.code='refused';err.text=text;throw err}
+  if(stop==='error'){const err=new Error('upstream');err.code='upstream';err.text=text;throw err}
+  return{text,truncated:stop==='max_tokens'};
+}
 
 let sdkClient=null,sdkFor='';
 async function client(){
@@ -677,6 +697,7 @@ function apiErr(e){
 }
 /* Same call shape as window.claude sample: ai(prompt | messages, {signal,onText,effort}) -> {text,truncated} */
 async function ai(input,o={}){
+  if(!apiKey()&&proxy)return viaProxy(typeof input==='string'?[{role:'user',content:input}]:input,o);
   if(sample&&!apiKey())return sample(input,o);
   const c=await client();
   const messages=typeof input==='string'?[{role:'user',content:input}]:input;
@@ -690,7 +711,7 @@ async function ai(input,o={}){
   return{text,truncated:msg.stop_reason==='max_tokens'};
 }
 ai.json=async(prompt,o={})=>{
-  if(sample&&!apiKey())return sample.json(prompt,o);
+  if(sample&&!apiKey()&&!proxy)return sample.json(prompt,o);
   const{text}=await ai(prompt+'\n\nReply with the JSON only — no prose, no code fences.',{...o,effort:o.effort||'high'});
   const m=text.match(/[\[{][\s\S]*[\]}]/);
   try{return JSON.parse(m?m[0]:text)}catch(e){const err=new Error('invalid json');err.code='invalid_json';throw err}
@@ -698,17 +719,17 @@ ai.json=async(prompt,o={})=>{
 function aiErr(e){
   const c=e&&e.code;
   if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){sample=null;setAI()}
-  return({not_granted:'Claude was not allowed for this page. Reload and choose Allow to use lessons and imports.',bad_key:'The API key was rejected. Check it in Settings.',no_credit:'Your Anthropic account has no credit left. Add credit in the Anthropic Console, then retry.',network:'Could not reach Claude. Check your internet connection, then retry.',rate_limited:'Too many requests right now. Wait a minute, then try again.',session_expired:'Your Claude session expired. Sign in again, then retry.',refused:'Claude declined this request. Rephrase it and try again.',invalid_json:'Claude\'s reply could not be read as questions. Try again.',prompt_too_large:'That text is too long for one request. Split it and try again.',cancelled:'Stopped.'})[c]||'The request did not complete. Try again.';
+  return({not_granted:'Claude was not allowed for this page. Reload and choose Allow to use lessons and imports.',bad_key:'The API key was rejected. Check it in Settings.',bad_code:'The access code is wrong. Check it in Settings.',upstream:'Claude did not answer this time. Try again in a moment.',no_credit:'Your Anthropic account has no credit left. Add credit in the Anthropic Console, then retry.',network:'Could not reach Claude. Check your internet connection, then retry.',rate_limited:'Too many requests right now. Wait a minute, then try again.',session_expired:'Your Claude session expired. Sign in again, then retry.',refused:'Claude declined this request. Rephrase it and try again.',invalid_json:'Claude\'s reply could not be read as questions. Try again.',prompt_too_large:'That text is too long for one request. Split it and try again.',cancelled:'Stopped.'})[c]||'The request did not complete. Try again.';
 }
 
 /* settings */
 function openSettings(){
-  $('#apiKey').value=apiKey();$('#apiModel').value=apiModel();
-  $('#setAIstate').textContent=apiKey()?'AI features use your API key.':sample?'AI features use Claude inside claude.ai. Add a key to use them when you open this file directly.':'AI features are off. Add an Anthropic API key to turn on lessons, doubt chat, mistake explanations and fresh questions.';
+  $('#apiKey').value=apiKey();$('#apiModel').value=apiModel();$('#accCode').value=accessCode();$('#accWrap').hidden=!(proxy&&proxyNeedsCode);
+  $('#setAIstate').textContent=apiKey()?'AI features use your API key.':proxy?(proxyNeedsCode&&!accessCode()?'AI features are ready on this site. Enter the access code to turn them on. No API key needed.':'AI features are on for this site. No API key needed; you can still add your own key below.'):sample?'AI features use Claude inside claude.ai. Add a key to use them when you open this file directly.':'AI features are off. Add an Anthropic API key to turn on lessons, doubt chat, mistake explanations and fresh questions.';
   $('#setDlg').showModal();
 }
 $('#setBtn').onclick=openSettings;
-$('#setSave').onclick=()=>{try{const k=$('#apiKey').value.trim();if(k)localStorage.setItem(KEY_LS,k);else localStorage.removeItem(KEY_LS);localStorage.setItem(MODEL_LS,$('#apiModel').value)}catch(e){toast('This browser blocked saving the key.')}sdkClient=null;setAI();toast(apiKey()?'Saved. AI features are on.':'Saved.')};
+$('#setSave').onclick=()=>{try{const k=$('#apiKey').value.trim();if(k)localStorage.setItem(KEY_LS,k);else localStorage.removeItem(KEY_LS);localStorage.setItem(MODEL_LS,$('#apiModel').value);const c=$('#accCode').value.trim();if(c)localStorage.setItem(CODE_LS,c);else localStorage.removeItem(CODE_LS)}catch(e){toast('This browser blocked saving the key.')}sdkClient=null;setAI();toast(aiOn()?'Saved. AI features are on.':'Saved.')};
 $('#setClear').onclick=()=>{try{localStorage.removeItem(KEY_LS)}catch(e){}sdkClient=null;$('#apiKey').value='';setAI();$('#setDlg').close();toast('Key removed from this browser.')};
 
 /* ---------- tabs ---------- */
