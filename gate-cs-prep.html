@@ -9,28 +9,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
 <style>
-/* Layout: an exam answer sheet — graph-ruled ground, white sheets, pen-blue ink, highlighter for your picks. */
+/* Calm study palette: warm paper, soft charcoal ink, sage-teal accent — low glare for long sessions. */
 :root{
-  --paper:#F3F4EF; --sheet:#FFFFFF; --ink:#16213E; --muted:#5A6377; --line:#D9DCE3;
-  --grid:rgba(44,75,214,.07); --pen:#2C4BD6; --pen-ink:#FFFFFF; --pen-soft:#E8ECFB;
-  --marker:#FFE36B; --ok:#1C7C45; --ok-bg:#E2F3E8; --bad:#B8342A; --bad-bg:#FAE6E3;
-  --review:#6E45BF; --review-bg:#EEE7FA;
+  --paper:#F4F1EA; --sheet:#FBF9F4; --ink:#2B2F2E; --muted:#636D69; --line:#E2DDD2;
+  --grid:rgba(47,122,109,.035); --pen:#2F7A6D; --pen-ink:#FFFFFF; --pen-soft:#E3EFEB;
+  --marker:#F3E3A6; --ok:#256B42; --ok-bg:#E4F1E8; --bad:#9E4430; --bad-bg:#F6E4DE;
+  --review:#6B5FA8; --review-bg:#ECE9F6;
   --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
   --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#0E1220; --sheet:#161B2B; --ink:#E5E8F1; --muted:#9BA4B9; --line:#2A3147;
-  --grid:rgba(124,149,255,.06); --pen:#8098FF; --pen-ink:#0E1220; --pen-soft:#1F2744;
-  --marker:#5E5214; --ok:#5BD08A; --ok-bg:#15301F; --bad:#FF8577; --bad-bg:#3A1C19;
-  --review:#B596F2; --review-bg:#2A2040; color-scheme:dark}}
+  --paper:#1B2120; --sheet:#232A29; --ink:#DCE3DF; --muted:#9AA7A2; --line:#34403D;
+  --grid:rgba(111,194,176,.03); --pen:#6FC2B0; --pen-ink:#12201C; --pen-soft:#27403A;
+  --marker:#5A4E22; --ok:#6CCB8F; --ok-bg:#1C3326; --bad:#E8907C; --bad-bg:#3A231E;
+  --review:#B3A8E6; --review-bg:#2C2840; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#0E1220; --sheet:#161B2B; --ink:#E5E8F1; --muted:#9BA4B9; --line:#2A3147;
-  --grid:rgba(124,149,255,.06); --pen:#8098FF; --pen-ink:#0E1220; --pen-soft:#1F2744;
-  --marker:#5E5214; --ok:#5BD08A; --ok-bg:#15301F; --bad:#FF8577; --bad-bg:#3A1C19;
-  --review:#B596F2; --review-bg:#2A2040; color-scheme:dark}
+  --paper:#1B2120; --sheet:#232A29; --ink:#DCE3DF; --muted:#9AA7A2; --line:#34403D;
+  --grid:rgba(111,194,176,.03); --pen:#6FC2B0; --pen-ink:#12201C; --pen-soft:#27403A;
+  --marker:#5A4E22; --ok:#6CCB8F; --ok-bg:#1C3326; --bad:#E8907C; --bad-bg:#3A231E;
+  --review:#B3A8E6; --review-bg:#2C2840; color-scheme:dark}
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-body);
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
   background-size:24px 24px}
@@ -93,7 +94,7 @@ th{font:600 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;c
 .type{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:start;font-size:.93rem}
 .type .t{font:700 .8rem var(--f-mono);border:1px solid var(--ink);border-radius:4px;text-align:center;padding:3px 0}
 .bars{display:flex;flex-direction:column;gap:9px}
-.bar{display:grid;grid-template-columns:minmax(0,1.4fr) 64px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:.9rem}
+.bar{display:grid;grid-template-columns:minmax(0,1.4fr) 88px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:.9rem}
 .bar .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar .wt{font:600 .75rem var(--f-mono);color:var(--muted)}
 .bar .track{height:8px;border-radius:4px;background:var(--pen-soft);overflow:hidden}
