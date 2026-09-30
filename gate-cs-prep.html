@@ -205,6 +205,17 @@ dialog{border:1px solid var(--line);border-radius:10px;background:var(--sheet);c
 dialog::backdrop{background:rgba(10,14,30,.45)}
 .iconbtn{background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer;font-weight:600;color:var(--muted)}
 .iconbtn:hover{color:var(--ink);border-color:var(--pen)}
+/* progress & games */
+.prio{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px 14px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
+.prio .n{font:800 1.1rem var(--f-display);color:var(--pen)}
+.prio .why{font-size:.85rem;color:var(--muted)}
+.days{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:6px;align-items:end;height:140px;padding-top:8px}
+.days .col{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:2px}
+.days .seg{border-radius:3px 3px 0 0;min-height:0}
+.days .lbl{font:600 .65rem var(--f-mono);color:var(--muted);text-align:center;margin-top:4px}
+.gcard{cursor:pointer;text-align:left}
+.gcard:hover{border-color:var(--pen)}
+.sync{font:600 .72rem var(--f-mono);color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:10px 16px;border-radius:8px;font-size:.9rem;z-index:50;max-width:calc(100% - 32px)}
 @media (prefers-reduced-motion:no-preference){.opt,.btn,nav.tabs button{transition:background .12s,border-color .12s}}
 </style>
@@ -221,15 +232,31 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
       <button role="tab" data-tab="practice" aria-selected="false">Practice</button>
       <button role="tab" data-tab="mock" aria-selected="false">Mock Test</button>
       <button role="tab" data-tab="pyq" aria-selected="false">PYQ Papers</button>
+      <button role="tab" data-tab="games" aria-selected="false">Games</button>
+      <button role="tab" data-tab="progress" aria-selected="false">Progress</button>
       <button role="tab" data-tab="g27" aria-selected="false">GATE 2027</button>
     </nav>
     <label class="lang" for="lang">Explain in
       <select id="lang"><option value="hinglish">Hinglish</option><option value="english">English</option></select>
     </label>
+    <button class="iconbtn" id="authBtn" type="button">Log in</button>
     <button class="iconbtn" id="setBtn" type="button">Settings</button>
   </div>
 </header>
 
+<dialog id="authDlg" aria-labelledby="authTitle">
+  <form method="dialog" class="stack" style="margin-top:0" id="authForm">
+    <h2 id="authTitle">Log in to save your progress</h2>
+    <p class="small muted" style="margin:0" id="authState">Your answers, mocks, revision schedule and study time are saved to your account, so they follow you to any phone or laptop.</p>
+    <div id="authFields" class="stack" style="margin-top:0">
+      <label class="field" for="authEmail">Email<input type="email" id="authEmail" autocomplete="email" required style="background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px"></label>
+      <label class="field" for="authPass">Password (at least 6 characters)<input type="password" id="authPass" autocomplete="current-password" minlength="6" style="background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px"></label>
+      <div class="row"><button class="btn primary" id="authIn" type="button">Log in</button><button class="btn" id="authUp" type="button">Create account</button><button class="btn" value="cancel">Close</button></div>
+    </div>
+    <div id="authUser" class="row" hidden><span id="authWho" class="small"></span><button class="btn" id="authSync" type="button">Sync now</button><button class="btn danger" id="authOut" type="button">Log out</button><button class="btn" value="cancel">Close</button></div>
+    <p class="small" style="margin:0" id="authMsg" role="status"></p>
+  </form>
+</dialog>
 <dialog id="setDlg" aria-labelledby="setTitle">
   <form method="dialog" class="stack" style="margin-top:0">
     <h2 id="setTitle">Settings</h2>
@@ -485,6 +512,60 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
   </div>
 </section>
 
+<!-- GAMES -->
+<section id="tab-games" class="tab" hidden>
+  <div class="hero" style="padding-block:28px 4px">
+    <p class="eyebrow">Concept games</p>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">Khelo, samjho, yaad rakho</h1>
+    <p class="lede">Every game makes fresh GATE-style problems, checks your answer instantly and shows each step. Level 1 teaches, level 3 is exam level.</p>
+  </div>
+  <div id="gameList" class="cards" style="margin-top:16px"></div>
+  <div id="gameStage" class="stack" hidden>
+    <div class="row"><button class="btn" id="gameBack" type="button">← All games</button><span class="small muted" id="gameMeta"></span></div>
+    <div class="panel" id="gameRoot"></div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<section id="tab-progress" class="tab" hidden>
+  <div class="hero" style="padding-block:28px 4px">
+    <p class="eyebrow" id="prWho">Your progress</p>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">Meri progress</h1>
+    <p class="lede" id="prLede"></p>
+  </div>
+  <div class="stats" id="prStats" style="margin-top:12px"></div>
+  <div class="panel" style="margin-top:20px">
+    <h2>Kya seekhna zaroori hai</h2>
+    <p class="small muted" style="margin:0">Topics ranked by how many marks GATE gave them in the last 5 papers and how you are doing on them. Start from the top.</p>
+    <div id="prLearn" class="stack" style="margin-top:4px"></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h2>Study time, last 14 days</h2>
+      <div id="prTime"></div>
+      <p class="small muted" style="margin:0">Counted only while this page is open and you are active on it.</p>
+    </div>
+    <div class="panel">
+      <h2>Subject by subject</h2>
+      <div class="tscroll"><table id="prSubj"></table></div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h2>Recent mistakes</h2>
+      <div id="prWrong"></div>
+    </div>
+    <div class="panel">
+      <h2>What you studied</h2>
+      <div id="prRead"></div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel"><h2>Mock tests</h2><div id="prMocks"></div></div>
+    <div class="panel"><h2>Games</h2><div id="prGames"></div></div>
+  </div>
+</section>
+
 <!-- GATE 2027 -->
 <section id="tab-g27" class="tab" hidden>
   <div class="stack">
@@ -539,6 +620,15 @@ window.GATE27_INFO={
 };
 </script>
 <script src="pyq/pyq-data.js"></script>
+<script src="config.js"></script>
+<script src="games/page-replacement.js"></script>
+<script src="games/cpu-scheduling.js"></script>
+<script src="games/cache-address.js"></script>
+<script src="games/pipeline.js"></script>
+<script src="games/subnetting.js"></script>
+<script src="games/number-systems.js"></script>
+<script src="games/dfa-runner.js"></script>
+<script src="games/fd-keys.js"></script>
 <script>
 /* ---------- data ---------- */
 const SUBJECTS=[
@@ -624,13 +714,17 @@ function isCorrect(q,r){
   return one(q.ans)||(q.alt||[]).some(one);
 }
 function grade(q,r){if(isEmpty(r))return{st:'na',m:0};if(isCorrect(q,r))return{st:'ok',m:q.marks};return{st:'bad',m:q.type==='MCQ'?-q.marks/3:0}}
-function record(q,ok){const s=S.stats[q.id]||{a:0,w:0,c:false};s.a++;if(!ok)s.w++;s.c=ok;s.t=Date.now();S.stats[q.id]=s;srsUpdate(q.id,ok);const d=today();S.days[d]=(S.days[d]||0)+1;save()}
+function record(q,ok,ctx){const s=S.stats[q.id]||{a:0,w:0,c:false};s.a++;if(!ok)s.w++;s.c=ok;s.t=Date.now();S.stats[q.id]=s;srsUpdate(q.id,ok);const d=today();S.days[d]=(S.days[d]||0)+1;
+  (S.log=S.log||[]).push([Date.now(),q.id,ok?1:0]);if(S.log.length>6000)S.log.splice(0,S.log.length-6000);save();
+  if(window.Cloud)Cloud.attempt(q,ok,ctx||{})}
 /* spaced revision: a wrong answer comes back after 1, 3, 7, 15, 30 days; a right answer on its due day moves it one step on */
 const GAPS=[1,3,7,15,30];
 function today(){const d=new Date();return Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5)}
 function srsUpdate(id,ok){const t=today(),r=S.srs[id];
-  if(!ok){S.srs[id]={box:0,due:t+GAPS[0]};return}
-  if(r&&r.due<=t){const b=r.box+1;if(b>=GAPS.length)delete S.srs[id];else S.srs[id]={box:b,due:t+GAPS[b]}}}
+  if(!ok)S.srs[id]={box:0,due:t+GAPS[0]};
+  else if(r&&r.due<=t){const b=r.box+1;if(b>=GAPS.length)delete S.srs[id];else S.srs[id]={box:b,due:t+GAPS[b]}}
+  else return;
+  if(window.Cloud)Cloud.srs(id,S.srs[id]||null)}
 function dueList(){const t=today();return Object.entries(S.srs).filter(([,r])=>r.due<=t).map(([id])=>qById(id)).filter(Boolean)}
 function r2(n){return Math.round(n*100)/100}
 
@@ -736,7 +830,7 @@ $('#setClear').onclick=()=>{try{localStorage.removeItem(KEY_LS)}catch(e){}sdkCli
 function showTab(t){
   $$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
   $$('.tab').forEach(s=>s.hidden=s.id!=='tab-'+t);
-  if(t==='home')renderHome();if(t==='today')renderToday();if(t==='practice'){if(P.session)renderPractice();else buildPractice(true)}if(t==='mock'&&!T)renderMockSetup();if(t==='pyq')renderPapers();if(t==='g27')renderG27();
+  if(t==='home')renderHome();if(t==='today')renderToday();if(t==='practice'){if(P.session)renderPractice();else buildPractice(true)}if(t==='mock'&&!T)renderMockSetup();if(t==='pyq')renderPapers();if(t==='g27')renderG27();if(t==='progress'&&window.renderProgress)renderProgress();if(t==='games'&&window.renderGames)renderGames();if(window.Cloud)Cloud.context({kind:t==='learn'?'lesson':t==='games'?'game':t==='mock'?'mock':t==='practice'?'practice':null});
   try{localStorage.setItem(LS+'.tab',t)}catch(e){}
 }
 $$('nav.tabs button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
@@ -822,7 +916,9 @@ function renderPractice(){
   const card=$('#pCard');card.innerHTML='';
   if(P.session)renderPracticeBanner();
   if(!P.list.length){const p=el('p','empty','No questions match these filters. ');if($('#pSrc').value==='pyq'){p.append('Import an official paper from the PYQ Papers tab first.')}else p.append('Change a filter, or generate questions on this topic below.');card.append(p);return}
-  const q=P.list[P.i];P.resp=null;P.checked=false;
+  const q=P.list[P.i];P.resp=null;P.checked=false;const shownAt=Date.now();
+  const mode=!P.session?'practice':/^Revision/.test(P.session)?'revision':/^Today/.test(P.session)?'daily':/^Same pattern/.test(P.session)?'pattern':/^PYQs/.test(P.session)?'topic':'session';
+  if(window.Cloud)Cloud.context({kind:'practice',subj:q.subj,topic:q.topic});
   const head=el('div','qhead');head.append(el('span',null,'Question '+(P.i+1)+' of '+P.list.length),el('span',null,q.marks+' mark'+(q.marks>1?'s':'')+(q.type==='MCQ'?' · −'+(q.marks===1?'1/3':'2/3')+' if wrong':' · no negative')));
   card.append(head);
   const qe=renderQ(q,{getResp:()=>P.resp,onResp:r=>{P.resp=r;msg.textContent=''},locked:()=>P.checked,toggleOff:true});
@@ -851,8 +947,8 @@ function renderPractice(){
   }
   chk.onclick=()=>{if(isEmpty(P.resp)){msg.textContent=q.type==='NAT'?'Type a number first.':'Choose an option first.';return}
     if(q.type==='NAT'&&isNaN(parseFloat(P.resp))){msg.textContent='Enter a plain number, like 3.5 or -2.';return}
-    const ok=isCorrect(q,P.resp);record(q,ok);reveal(ok,false)};
-  show.onclick=()=>{record(q,false);reveal(false,true)};
+    const ok=isCorrect(q,P.resp);record(q,ok,{mode,resp:P.resp,ms:Date.now()-shownAt});reveal(ok,false)};
+  show.onclick=()=>{record(q,false,{mode,gaveUp:true,ms:Date.now()-shownAt});reveal(false,true)};
 }
 async function explainMistake(q,r,out,btn){
   btn.disabled=true;out.innerHTML='<p class="thinking">Thinking...</p>';
@@ -898,7 +994,7 @@ Reply with ONLY a JSON array. ${Q_SCHEMA(langName())} Use "${subj}" as subj for 
   try{
     const arr=await ai.json(prompt,{modelTier:'default',cache:false});
     const stamp=Date.now().toString(36);let added=0;
-    (Array.isArray(arr)?arr:[]).forEach((o,i)=>{const q=normQ(o,{id:'ai-'+stamp+'-'+i,src:'ai'});if(q){S.bank.push(q);added++}});
+    (Array.isArray(arr)?arr:[]).forEach((o,i)=>{const q=normQ(o,{id:'ai-'+stamp+'-'+i,src:'ai'});if(q){S.bank.push(q);added++;if(window.Cloud)Cloud.userQ(q)}});
     save();
     msgEl.textContent=added?`Added ${added} question${added>1?'s':''}. They're open below.`:'No usable questions came back. Try again or narrow the topic.';
     if(added){$('#pSubj').value=subj;$('#pSrc').value='ai';$('#pStatus').value='new';$('#pTopic').value='';buildPractice();$('#pCard').scrollIntoView({behavior:'smooth'})}
@@ -992,7 +1088,7 @@ function updateMockInfo(){const src=$('#mSrc').value;const n=src==='mixed'?Math.
 $('#mSrc').onchange=updateMockInfo;
 $('#mStart').onclick=()=>{
   const src=$('#mSrc').value;const qs=mockPool(src);if(!qs.length)return;
-  T={qs,resp:{},mark:{},seen:{},idx:0,label:$('#mSrc').selectedOptions[0].textContent.replace(' (official paper)',''),endAt:Date.now()+mockMinutes(src,qs.length)*60000};
+  T={qs,resp:{},mark:{},seen:{},idx:0,start:Date.now(),label:$('#mSrc').selectedOptions[0].textContent.replace(' (official paper)',''),endAt:Date.now()+mockMinutes(src,qs.length)*60000};
   $('#mSetup').hidden=true;$('#mResult').hidden=true;$('#mTest').hidden=false;$('#tConfirm').hidden=true;
   $('#tLabel').textContent=T.label;
   clearInterval(tick);tick=setInterval(updTimer,1000);updTimer();renderTQ();
@@ -1028,9 +1124,9 @@ function finishMock(auto){
   if(!T)return;clearInterval(tick);
   const res=T.qs.map(q=>({q,r:T.resp[q.id],...grade(q,T.resp[q.id])}));
   const max=T.qs.reduce((s,q)=>s+q.marks,0),score=res.reduce((s,x)=>s+x.m,0);
-  const by={};res.forEach(x=>{const k=x.q.subj;by[k]=by[k]||{ok:0,bad:0,na:0,m:0,max:0};by[k][x.st]++;by[k].m+=x.m;by[k].max+=x.q.marks;if(x.st!=='na')record(x.q,x.st==='ok')});
+  const by={};res.forEach(x=>{const k=x.q.subj;by[k]=by[k]||{ok:0,bad:0,na:0,m:0,max:0};by[k][x.st]++;by[k].m+=x.m;by[k].max+=x.q.marks;if(x.st!=='na')record(x.q,x.st==='ok',{mode:'mock',resp:x.r})});
   const m={date:Date.now(),label:T.label,score:r2(score),max,ok:res.filter(x=>x.st==='ok').length,bad:res.filter(x=>x.st==='bad').length,na:res.filter(x=>x.st==='na').length};
-  S.mocks.push(m);save();
+  m.minutes=T.start?Math.round((Date.now()-T.start)/60000):null;S.mocks.push(m);save();if(window.Cloud)Cloud.mock(m,by);
   const R=$('#mResult');R.innerHTML='';$('#mTest').hidden=true;R.hidden=false;T=null;
   const top=el('div','panel');
   top.append(el('p','eyebrow',(auto?'Time up · ':'')+m.label));
@@ -1196,7 +1292,8 @@ function renderG27(){
 /* ---------- boot ---------- */
 $('#lang').value=S.lang;$('#lang').onchange=()=>{S.lang=$('#lang').value;save()};
 renderLearn();
-(()=>{let t=location.hash.replace('#','');if(!['home','today','learn','practice','mock','pyq','g27'].includes(t)){try{t=localStorage.getItem(LS+'.tab')||'home'}catch(e){t='home'}}if(!['home','today','learn','practice','mock','pyq','g27'].includes(t))t='home';showTab(t)})();
+(()=>{let t=location.hash.replace('#','');if(!['home','today','learn','practice','mock','pyq','games','progress','g27'].includes(t)){try{t=localStorage.getItem(LS+'.tab')||'home'}catch(e){t='home'}}if(!['home','today','learn','practice','mock','pyq','games','progress','g27'].includes(t))t='home';showTab(t)})();
 </script>
+<script src="progress.js"></script>
 </body>
 </html>
