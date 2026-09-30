@@ -1,0 +1,738 @@
+GATE 2016                                                                  General Aptitude - GA Set-6
+
+Q. 1 ­ Q. 5 carry one mark each.
+
+ Q.1 The man who is now Municipal Commissioner worked as ____________________.
+
+(A) the security guard at a university
+(B) a security guard at the university
+(C) a security guard at university
+(D) the security guard at the university
+
+Q.2 Nobody knows how the Indian cricket team is going to cope with the difficult and seamer-friendly
+         wickets in Australia.
+
+         Choose the option which is closest in meaning to the underlined phrase in the above sentence.
+
+(A) put up with  (B) put in with                  (C) put down to  (D) put up against
+
+Q.3 Find the odd one in the following group of words.
+                      mock, deride, praise, jeer
+
+(A) mock         (B) deride                       (C) praise       (D) jeer
+
+Q.4 Pick the odd one from the following options.
+
+(A) CADBE        (B) JHKIL                        (C) XVYWZ        (D) ONPMQ
+
+Q.5 In a quadratic function, the value of the product of the roots (, ) is 4. Find the value of
+
+                                                                 + 
+                                                              - + -
+
+(A) n4           (B) 4n                                (C) 22n-1   (D) 4n-1
+
+Q. 6 ­ Q. 10 carry two marks each.
+
+ Q.6 Among 150 faculty members in an institute, 55 are connected with each other through Facebook®
+          and 85 are connected through WhatsApp®. 30 faculty members do not have Facebook® or
+          WhatsApp® accounts. The number of faculty members connected only through Facebook® accounts
+          is ______________.
+
+(A) 35           (B) 45                           (C) 65           (D) 90
+
+                                                                                                 1/3
+GATE 2016                                                               General Aptitude - GA Set-6
+
+Q.7 Computers were invented for performing only high-end useful computations. However, it is no
+         understatement that they have taken over our world today. The internet, for example, is ubiquitous.
+         Many believe that the internet itself is an unintended consequence of the original invention. With
+         the advent of mobile computing on our phones, a whole new dimension is now enabled. One is left
+         wondering if all these developments are good or, more importantly, required.
+
+Which of the statement(s) below is/are logically valid and can be inferred from the above
+paragraph?
+
+(i) The author believes that computers are not good for us.
+(ii) Mobile computers and the internet are both intended inventions
+
+(A) (i) only           (B) (ii) only  (C) both (i) and (ii) (D) neither (i) nor (ii)
+
+Q.8 All hill-stations have a lake. Ooty has two lakes.
+
+         Which of the statement(s) below is/are logically valid and can be inferred from the above
+         sentences?
+
+              (i) Ooty is not a hill-station.
+              (ii) No hill-station can have more than one lake.
+
+(A) (i) only                          (B) (ii) only
+(C) both (i) and (ii)                 (D) neither (i) nor (ii)
+
+Q.9 In a 2 × 4 rectangle grid shown below, each cell is a rectangle. How many rectangles can be
+         observed in the grid?
+
+(A) 21                 (B) 27         (C) 30                    (D) 36
+
+                                                                                      2/3
+      GATE 2016                                                             General Aptitude - GA Set-6
+
+Q.10                       f(x)
+
+                                                      x
+
+      Choose the correct expression for f(x) given in the graph.
+
+      (A) () = 1 - | - 1|  (B) () = 1 + | - 1|
+      (C) () = 2 - | - 1|  (D) () = 2 + | - 1|
+
+                 END OF THE QUESTION PAPER
+
+                                                                  3/3
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+  Q. 1 - Q. 25 carry one mark each.
+
+Q.1 Consider the following expressions:
+
+       (i) false
+       (ii) Q
+       (iii) true
+       (iv) P  Q
+       (v) ¬Q  P
+
+       The number of expressions given above that are logically implied by P  (P  Q) is
+                       .
+
+Q.2 Let f (x) be a polynomial and g(x) = f (x) be its derivative. If the degree of ( f (x) + f (-x)) is
+
+10, then the degree of (g(x) - g(-x)) is  .
+
+Q.3 The minimum number of colours that is sufficient to vertex-colour any planar graph is
+                       .
+
+Q.4 Consider the systems, each consisting of m linear equations in n variables.
+
+          I. If m < n, then all such systems have a solution
+         II. If m > n, then none of these systems has a solution
+        III. If m = n, then there exists a system which has a solution
+
+       Which one of the following is CORRECT?
+              (A) I, II and III are true
+              (B) Only II and III are true
+              (C) Only III is true
+              (D) None of them is true
+
+CS(Set B)                                                                        1/18
+GATE 2016          COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.5 Suppose that a shop has an equal number of LED bulbs of two different types. The probability
+
+of an LED bulb lasting more than 100 hours given that it is of Type 1 is 0.7, and given that it
+
+is of Type 2 is 0.4. The probability that an LED bulb chosen uniformly at random lasts more
+
+than 100 hours is     .
+
+Q.6 Suppose that the eigenvalues of matrix A are 1, 2, 4. The determinant of (A-1)T is
+                       .
+
+Q.7 Consider an eight-bit ripple-carry adder for computing the sum of A and B, where A and B are
+
+integers represented in 2's complement form. If the decimal value of A is one, the decimal
+
+value of B that leads to the longest latency for the sum to stabilize is  .
+
+Q.8 Let, x1 x2 x3 x4 = 0 where x1, x2, x3, x4 are Boolean variables, and  is the XOR operator.
+       Which one of the following must always be TRUE?
+
+              (A) x1x2x3x4 = 0
+              (B) x1x3 + x2 = 0
+              (C) x¯1  x¯3 = x¯2  x¯4
+              (D) x1 + x2 + x3 + x4 = 0
+
+Q.9 Let X be the number of distinct 16-bit integers in 2's complement representation. Let Y be the
+
+number of distinct 16-bit integers in sign magnitude representation.
+
+Then X -Y is       .
+
+Q.10 A processor has 40 distinct instructions and 24 general purpose registers. A 32-bit instruction
+
+word has an opcode, two register operands and an immediate operand. The number of bits
+
+available for the immediate operand field is  .
+
+CS(Set B)                                                                    2/18
+GATE 2016           COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.11 Breadth First Search (BFS) is started on a binary tree beginning from the root vertex. There is
+
+a vertex t at a distance four from the root. If t is the n-th vertex in this BFS traversal, then the
+
+maximum possible value of n is  .
+
+Q.12 The value printed by the following program is  .
+
+void f(int* p, int m){
+    m = m + 5;
+    *p = *p + m;
+    return;
+
+}
+
+void main(){
+    int i=5, j=10;
+
+    f(&i, j);
+    printf("%d", i+j);
+}
+
+Q.13 Assume that the algorithms considered here sort the input sequences in ascending order. If the
+         input is already in ascending order, which of the following are TRUE?
+
+            I. Quicksort runs in (n2) time
+           II. Bubblesort runs in (n2) time
+          III. Mergesort runs in (n) time
+          IV. Insertion sort runs in (n) time
+
+               (A) I and II only
+               (B) I and III only
+               (C) II and IV only
+               (D) I and IV only
+
+CS(Set B)                                              3/18
+GATE 2016           COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.14 The Floyd-Warshall algorithm for all-pair shortest paths computation is based on
+               (A) Greedy paradigm.
+               (B) Divide-and-Conquer paradigm.
+               (C) Dynamic Programming paradigm.
+               (D) neither Greedy nor Divide-and-Conquer nor Dynamic Programming paradigm.
+
+Q.15 N items are stored in a sorted doubly linked list. For a delete operation, a pointer is provided
+         to the record to be deleted. For a decrease-key operation, a pointer is provided to the record on
+         which the operation is to be performed.
+
+         An algorithm performs the following operations on the list in this order: (N) delete, O(log N)
+         insert, O(log N) find, and (N) decrease-key. What is the time complexity of all these
+         operations put together?
+         (A) O(log2 N) (B) O(N) (C) O(N2) (D) (N2 log N)
+
+Q.16 The number of states in the minimum sized DFA that accepts the language defined by the
+
+regular expression
+
+                    (0 + 1)(0 + 1)(0 + 1)
+
+is         .
+
+Q.17 Language L1 is defined by the grammar: S1  aS1b|
+         Language L2 is defined by the grammar: S2  abS2|
+         Consider the following statements:
+         P: L1 is regular
+         Q: L2 is regular
+
+         Which one of the following is TRUE?
+               (A) Both P and Q are true
+               (B) P is true and Q is false
+               (C) P is false and Q is true
+               (D) Both P and Q are false
+
+CS(Set B)                                                  4/18
+GATE 2016                  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.18 Consider the following types of languages: L1 : Regular, L2 : Context-free, L3 : Recursive,
+         L4 : Recursively enumerable. Which of the following is/are TRUE?
+
+            I. L3  L4 is recursively enumerable
+           II. L2  L3 is recursive
+          III. L1  L2 is context-free
+          IV. L1  L2 is context-free
+
+               (A) I only
+               (B) I and III only
+               (C) I and IV only
+               (D) I, II and III only
+
+Q.19 Match the following:
+
+(P) Lexical analysis       (i) Leftmost derivation
+(Q) Top down parsing       (ii) Type checking
+(R) Semantic analysis      (iii) Regular expressions
+(S) Runtime environments   (iv) Activation records
+
+(A) P  i, Q  ii, R  iv, S  iii
+(B) P  iii, Q  i, R  ii, S  iv
+(C) P  ii, Q  iii, R  i, S  iv
+(D) P  iv, Q  i, R  ii, S  iii
+
+Q.20 In which one of the following page replacement algorithms it is possible for the page fault rate
+         to increase even when the number of allocated frames increases?
+               (A) LRU (Least Recently Used)
+               (B) OPT (Optimal Page Replacement)
+               (C) MRU (Most Recently Used)
+               (D) FIFO (First In First Out)
+
+CS(Set B)                                             5/18
+GATE 2016                    COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.21 B+ Trees are considered BALANCED because
+               (A) the lengths of the paths from the root to all leaf nodes are all equal.
+               (B) the lengths of the paths from the root to all leaf nodes differ from each other by at
+                     most 1.
+               (C) the number of children of any two non-leaf sibling nodes differ by at most 1.
+               (D) the number of records in any two leaf nodes differ by at most 1.
+
+Q.22  Suppose a database schedule S involves transactions T1, . . . , Tn. Construct the precedence
+      graph of S with vertices representing the transactions and edges representing the conflicts. If
+      S is serializable, which one of the following orderings of the vertices of the precedence graph
+      is guaranteed to yield a serial schedule?
+
+      (A) Topological order
+
+      (B) Depth-first order
+
+      (C) Breadth-first order
+
+      (D) Ascending order of transaction indices
+
+Q.23 Anarkali digitally signs a message and sends it to Salim. Verification of the signature by Salim
+         requires
+               (A) Anarkali's public key.
+               (B) Salim's public key.
+               (C) Salim's private key.
+               (D) Anarkali's private key.
+
+Q.24 In an Ethernet local area network, which one of the following statements is TRUE?
+               (A) A station stops to sense the channel once it starts transmitting a frame.
+               (B) The purpose of the jamming signal is to pad the frames that are smaller than the
+                     minimum frame size.
+               (C) A station continues to transmit the packet even after the collision is detected.
+               (D) The exponential backoff mechanism reduces the probability of collision on
+                     retransmissions.
+
+CS(Set B)                                         6/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.25 Identify the correct sequence in which the following packets are transmitted on the network
+         by a host when a browser requests a webpage from a remote server, assuming that the host has
+         just been restarted.
+               (A) HTTP GET request, DNS query, TCP SYN
+               (B) DNS query, HTTP GET request, TCP SYN
+               (C) DNS query, TCP SYN, HTTP GET request
+               (D) TCP SYN, DNS query, HTTP GET request
+
+Q. 26 - Q. 55 carry two marks each.
+
+Q.26 A binary relation R on N × N is defined as follows: (a, b)R(c, d) if a  c or b  d. Consider
+         the following propositions:
+         P: R is reflexive
+         Q: R is transitive
+
+         Which one of the following statements is TRUE?
+               (A) Both P and Q are true.
+               (B) P is true and Q is false.
+               (C) P is false and Q is true.
+               (D) Both P and Q are false.
+
+Q.27 Which one of the following well-formed formulae in predicate calculus is NOT valid?
+               (A) (x p(x)  x q(x))  (x ¬p(x)  x q(x))
+               (B) (x p(x)  x q(x))  x (p(x)  q(x))
+               (C) x (p(x)  q(x))  (x p(x)  x q(x))
+               (D) x (p(x)  q(x))  (x p(x)  x q(x))
+
+CS(Set B)                                                                                 7/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.28 Consider a set U of 23 different compounds in a Chemistry lab. There is a subset S of U of
+         9 compounds, each of which reacts with exactly 3 compounds of U. Consider the following
+         statements:
+
+            I. Each compound in U \ S reacts with an odd number of compounds.
+           II. At least one compound in U \ S reacts with an odd number of compounds.
+          III. Each compound in U \ S reacts with an even number of compounds.
+
+         Which one of the above statements is ALWAYS TRUE?
+               (A) Only I
+               (B) Only II
+               (C) Only III
+               (D) None
+
+Q.29 The value of the expression 1399(mod 17), in the range 0 to 16, is      .
+
+Q.30  Suppose the functions F and G can be computed in 5 and 3 nanoseconds by functional units
+
+      UF and UG, respectively. Given two instances of UF and two instances of UG, it is required to
+
+      implement the computation F(G(Xi)) for 1  i  10. Ignoring all other delays, the minimum
+
+      time required to complete this computation is            nanoseconds.
+
+Q.31  Consider a processor with 64 registers and an instruction set of size twelve. Each instruction
+
+      has five distinct fields, namely, opcode, two source register identifiers, one destination register
+
+      identifier, and a twelve-bit immediate value. Each instruction must be stored in memory in
+
+      a byte-aligned fashion. If a program has 100 instructions, the amount of memory (in bytes)
+
+      consumed by the program text is                .
+
+Q.32 The width of the physical address on a machine is 40 bits. The width of the tag field in a 512
+
+      KB 8-way set associative cache is                 bits.
+
+CS(Set B)                                                                       8/18
+GATE 2016                      COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.33  Consider a 3 GHz (gigahertz) processor with a three-stage pipeline and stage latencies 1,
+
+      2, and 3 such that 1 = 32/4 = 23. If the longest pipeline stage is split into two pipeline
+
+      stages of equal latency, the new frequency is  GHz, ignoring delays in the pipeline
+
+      registers.
+
+Q.34  A complete binary min-heap is made by including each integer in [1, 1023] exactly once.
+      The depth of a node in the heap is the length of the path from the root of the heap to that
+      node. Thus, the root is at depth 0. The maximum depth at which integer 9 can appear is
+
+                     .
+
+Q.35 The following function computes XY for positive integers X and Y.
+
+      int exp(int X, int Y) {
+            int res = 1, a = X, b = Y;
+
+                  while ( b != 0 ){
+
+                     if ( b%2 == 0) { a = a*a; b = b/2; }
+
+                     else            { res = res*a; b = b-1; }
+
+                  }
+
+                  return res;
+
+      }
+
+      Which one of the following conditions is TRUE before every iteration of the loop?
+            (A) XY = ab
+            (B) (res  a)Y = (res  X)b
+            (C) XY = res  ab
+            (D) XY = (res  a)b
+
+CS(Set B)                                                                                9/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.36 Consider the following New-order strategy for traversing a binary tree:
+
+            · Visit the root;
+            · Visit the right subtree using New-order;
+            · Visit the left subtree using New-order;
+
+         The New-order traversal of the expression tree corresponding to the reverse polish expression
+         3 4 * 5 - 2 ^ 6 7 * 1 + - is given by:
+
+               (A) + - 1 6 7 * 2 ^ 5 - 3 4 *
+               (B) - + 1 * 6 7 ^ 2 - 5 * 3 4
+               (C) - + 1 * 7 6 ^ 2 - 5 * 4 3
+               (D) 1 7 6 * + 2 5 4 3 * - ^ -
+
+Q.37 Consider the following program:
+
+               int f(int *p, int n)
+               {
+
+                   if (n <= 1) return 0;
+                   else return max(f(p+1,n-1),p[0]-p[1]);
+               }
+
+               int main()
+               {
+
+                   int a[] = {3,5,2,6,4};
+                   printf("%d", f(a,5));
+               }
+
+         Note: max(x,y) returns the maximum of x and y.
+
+The value printed by this program is  .
+
+Q.38 Let A1, A2, A3, and A4 be four matrices of dimensions 10 × 5, 5 × 20, 20 × 10, and 10 × 5,
+
+respectively. The minimum number of scalar multiplications required to find the product
+
+A1A2A3A4 using the basic matrix multiplication method is   .
+
+CS(Set B)                                                     10/18
+GATE 2016                COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.39  The given diagram shows the flowchart for a recursive function A(n). Assume that all
+
+      statements, except for the recursive calls, have O(1) time complexity. If the worst case time
+
+      complexity of this function is O(n ), then the least possible value (accurate up to two decimal
+
+      positions) of  is  .
+
+           Flowchart for Recursive Function A(n)
+
+                          Start
+                         A(n/2)
+
+      Return A(n/2)              A(n/2) A(n/2)                                       Return
+
+                                                                             A(n/2)
+
+                                 Return                           A(n/2)             Return
+
+Q.40 The number of ways in which the numbers 1, 2, 3, 4, 5, 6, 7 can be inserted in an empty binary
+
+      search tree, such that the resulting tree has height 6, is          .
+
+      Note: The height of a tree with a single node is 0.
+
+CS(Set B)                                                                            11/18
+GATE 2016          COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.41  In an adjacency list representation of an undirected simple graph G = (V, E), each edge (u, v)
+      has two adjacency list entries: [v] in the adjacency list of u, and [u] in the adjacency list of
+      v. These are called twins of each other. A twin pointer is a pointer from an adjacency list
+      entry to its twin. If |E| = m and |V | = n, and the memory size is not a constraint, what is the
+      time complexity of the most efficient algorithm to set the twin pointer in each entry in each
+      adjacency list?
+
+      (A) (n2)
+
+      (B) (n + m)
+
+      (C) (m2)
+
+      (D) (n4)
+
+Q.42 Consider the following two statements:
+         I. If all states of an NFA are accepting states then the language accepted by the NFA is .
+         II. There exists a regular language A such that for all languages B, A  B is regular.
+
+         Which one of the following is CORRECT?
+               (A) Only I is true
+               (B) Only II is true
+               (C) Both I and II are true
+               (D) Both I and II are false
+
+Q.43 Consider the following languages:
+
+                                                L1 = {anbmcn+m : m, n  1}
+                                                L2 = {anbnc2n : n  1}
+
+         Which one of the following is TRUE?
+               (A) Both L1 and L2 are context-free.
+               (B) L1 is context-free while L2 is not context-free.
+               (C) L2 is context-free while L1 is not context-free.
+               (D) Neither L1 nor L2 is context-free.
+
+CS(Set B)                                                                  12/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.44 Consider the following languages.
+
+                            L1 = { M | M takes at least 2016 steps on some input},
+                            L2 = { M | M takes at least 2016 steps on all inputs} and
+                            L3 = { M | M accepts },
+
+         where for each Turing machine M, M denotes a specific encoding of M. Which one of the
+         following is TRUE?
+
+               (A) L1 is recursive and L2, L3 are not recursive
+               (B) L2 is recursive and L1, L3 are not recursive
+               (C) L1, L2 are recursive and L3 is not recursive
+               (D) L1, L2, L3 are recursive
+
+Q.45 Which one of the following grammars is free from left recursion?
+               (A) S  AB
+                      A  Aa | b
+                      Bc
+
+               (B) S  Ab | Bb | c
+                      A  Bd | 
+                      Be
+
+               (C) S  Aa | B
+                      A  Bb | Sc | 
+                      Bd
+
+               (D) S  Aa | Bb | c
+                      A  Bd | 
+                      B  Ae | 
+
+CS(Set B)                                                              13/18
+GATE 2016   COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.46 A student wrote two context-free grammars G1 and G2 for generating a single C-like array
+         declaration. The dimension of the array is at least one. For example,
+
+            int a[10][3];
+
+The grammars use D as the start symbol, and use six terminal symbols int ; id [ ] num.
+
+Grammar G1  Grammar G2
+D  int L;   D  int L;
+L  id [E    L  id E
+E  num]     E  E[num]
+E  num] [E  E  [num]
+
+Which of the grammars correctly generate the declaration mentioned above?
+      (A) Both G1 and G2
+      (B) Only G1
+      (C) Only G2
+      (D) Neither G1 nor G2
+
+Q.47 Consider the following processes, with the arrival time and the length of the CPU burst given
+         in milliseconds. The scheduling algorithm used is preemptive shortest remaining-time first.
+
+            Process        Arrival Time             Burst Time
+                                  0                      10
+               P1                 3                       6
+               P2                 7                       1
+               P3                 8                       3
+               P4
+
+The average turn around time of these processes is  milliseconds.
+
+CS(Set B)                                                                               14/18
+GATE 2016            COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.48 Consider the following two-process synchronization solution.
+
+      Process 0                       Process 1
+      ---------                       ----------
+      Entry: loop while (turn == 1);  Entry: loop while (turn == 0);
+
+         (critical section)              (critical section)
+      Exit: turn = 1;                 Exit: turn = 0;
+
+      The shared variable turn is initialized to zero. Which one of the following is TRUE?
+            (A) This is a correct two-process synchronization solution.
+            (B) This solution violates mutual exclusion requirement.
+            (C) This solution violates progress requirement.
+            (D) This solution violates bounded wait requirement.
+
+Q.49  Consider a non-negative counting semaphore S. The operation P(S) decrements S, and V (S)
+
+      increments S. During an execution, 20 P(S) operations and 12 V (S) operations are issued in
+
+      some order. The largest initial value of S for which at least one P(S) operation will remain
+
+      blocked is  .
+
+CS(Set B)                                                                                   15/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.50  A file system uses an in-memory cache to cache disk blocks. The miss rate of the cache is
+      shown in the figure. The latency to read a block from the cache is 1 ms and to read a block
+      from the disk is 10 ms. Assume that the cost of checking whether a block exists in the cache
+      is negligible. Available cache sizes are in multiples of 10 MB.
+
+           Miss rate (%)  90
+                          80
+                          70
+                          60
+                          50
+                          40
+                          30
+                          20
+                          10
+                          0
+
+                             0 10 20 30 40 50 60 70 80 90
+
+                                          Cache size (MB)
+
+      The smallest cache size required to ensure an average read latency of less than 6 ms is
+                     MB.
+
+Q.51 Consider the following database schedule with two transactions, T1 and T2.
+                                S = r2(X); r1(X); r2(Y ); w1(X); r1(Y ); w2(X); a1; a2
+
+         where ri(Z) denotes a read operation by transaction Ti on a variable Z, wi(Z) denotes a write
+         operation by Ti on a variable Z and ai denotes an abort by transaction Ti.
+         Which one of the following statements about the above schedule is TRUE?
+
+               (A) S is non-recoverable
+               (B) S is recoverable, but has a cascading abort
+               (C) S does not have a cascading abort
+               (D) S is strict
+
+CS(Set B)                                                  16/18
+GATE 2016  COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.52 Consider the following database table named water_schemes :
+
+              water_schemes
+
+           scheme_no district_name             capacity
+                                                  20
+           1  Ajmer                               10
+                                                  10
+           1  Bikaner                             20
+                                                  10
+           2  Bikaner                             20
+                                                  10
+           3  Bikaner
+
+           1  Churu
+
+           2  Churu
+
+           1  Dungargarh
+
+The number of tuples returned by the following SQL query is       .
+
+with total(name, capacity) as
+     select district_name, sum(capacity)
+     from water_schemes
+     group by district_name
+
+with total_avg(capacity) as
+     select avg(capacity)
+     from total
+
+select name
+     from total, total_avg
+     where total.capacity  total_avg.capacity
+
+Q.53 A network has a data transmission bandwidth of 20 × 106 bits per second. It uses CSMA/CD
+
+in the MAC layer. The maximum signal propagation time from one node to another node is
+
+40 microseconds. The minimum size of a frame in the network is       bytes.
+
+CS(Set B)                                                                    17/18
+GATE 2016                         COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+
+Q.54 For the IEEE 802.11 MAC protocol for wireless communication, which of the following
+         statements is/are TRUE?
+
+            I. At least three non-overlapping channels are available for transmissions.
+           II. The RTS-CTS mechanism is used for collision detection.
+          III. Unicast frames are ACKed.
+
+          (A) All I, II, and III
+          (B) I and III only
+          (C) II and III only
+          (D) II only
+
+Q.55  Consider a 128×103 bits/second satellite communication link with one way propagation delay
+
+      of 150 milliseconds. Selective retransmission (repeat) protocol is used on this link to send
+
+      data with a frame size of 1 kilobyte. Neglect the transmission time of acknowledgement. The
+
+      minimum number of bits required for the sequence number field to achieve 100% utilization
+
+      is   .
+
+CS(Set B)                         18/18
+

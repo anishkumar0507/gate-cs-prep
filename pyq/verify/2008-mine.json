@@ -1,0 +1,427 @@
+[
+{
+"num": 1,
+"ans": "A",
+"why": "limit ->1"
+},
+{
+"num": 2,
+"ans": "D",
+"why": "(Q∩R)∪Qc∪Rc=U"
+},
+{
+"num": 3,
+"ans": "D",
+"why": "det=α-5, unique iff α≠5"
+},
+{
+"num": 4,
+"ans": "D",
+"why": "all zeros = special +0"
+},
+{
+"num": 5,
+"ans": "A",
+"why": "1s 0,2,4,6,8 d(1,3,10): b̄d̄+ād̄"
+},
+{
+"num": 6,
+"ans": "D",
+"why": "(r+1)^2, valid for r>2"
+},
+{
+"num": 7,
+"ans": "C",
+"why": "DFS/BFS Θ(m+n)"
+},
+{
+"num": 8,
+"ans": "C",
+"why": "f2 needs 8, not 4,5,7"
+},
+{
+"num": 9,
+"ans": "D",
+"why": "primes not CFL, decidable"
+},
+{
+"num": 10,
+"ans": "B",
+"why": "I and IV decidable"
+},
+{
+"num": 11,
+"ans": "D",
+"why": "handle definition"
+},
+{
+"num": 12,
+"ans": "A",
+"why": "portability"
+},
+{
+"num": 13,
+"ans": "D",
+"why": "recursive"
+},
+{
+"num": 14,
+"ans": "A",
+"why": "TCP byte stream any size"
+},
+{
+"num": 15,
+"ans": "C",
+"why": "not exists t with not P"
+},
+{
+"num": 16,
+"ans": "A",
+"why": "non-key ordering"
+},
+{
+"num": 17,
+"ans": "D",
+"why": "connect sends SYN"
+},
+{
+"num": 18,
+"ans": "A",
+"why": "a=max=4"
+},
+{
+"num": 19,
+"ans": "C",
+"why": "QMNPRO valid BFS"
+},
+{
+"num": 20,
+"ans": "D",
+"why": "multi-level indexed inode"
+},
+{
+"num": 21,
+"ans": "A",
+"why": "h^2 e^2/3 ≤ 1e-6/3 → n=1000e"
+},
+{
+"num": 22,
+"ans": "C",
+"why": "sqrt R"
+},
+{
+"num": 23,
+"ans": "C",
+"why": "4-colourable → IS ≥ n/4 → VC ≤ 3n/4"
+},
+{
+"num": 24,
+"ans": "A",
+"why": "P=k^2,Q=k^2+k"
+},
+{
+"num": 25,
+"ans": "B",
+"why": "f'=12x(x-2)^2, only x=0"
+},
+{
+"num": 26,
+"ans": "A",
+"why": "PQ̄"
+},
+{
+"num": 27,
+"ans": "C",
+"why": "0.4*0.4+0.6*0.4"
+},
+{
+"num": 28,
+"ans": "A",
+"why": "only first"
+},
+{
+"num": 29,
+"ans": "A",
+"why": "σ=3"
+},
+{
+"num": 30,
+"ans": "A",
+"why": "intended reading of A"
+},
+{
+"num": 31,
+"ans": "B",
+"why": "I,II,III = P∨¬Q"
+},
+{
+"num": 32,
+"ans": "B",
+"why": "inertia"
+},
+{
+"num": 33,
+"ans": "C",
+"why": "III only"
+},
+{
+"num": 34,
+"ans": "D",
+"why": "GO answer"
+},
+{
+"num": 35,
+"ans": "A",
+"why": "only size necessary"
+},
+{
+"num": 36,
+"ans": "B",
+"why": "I and III false"
+},
+{
+"num": 37,
+"ans": "A",
+"why": "locals & params"
+},
+{
+"num": 38,
+"ans": "B",
+"why": "during EA calc (virtually indexed)"
+},
+{
+"num": 39,
+"ans": "D",
+"why": "h<f<g"
+},
+{
+"num": 40,
+"ans": "B",
+"why": "binary search"
+},
+{
+"num": 41,
+"ans": "C",
+"why": "5 splits"
+},
+{
+"num": 42,
+"ans": "D",
+"why": "vertex-disjoint not guaranteed"
+},
+{
+"num": 43,
+"ans": "B",
+"why": "1/5 split"
+},
+{
+"num": 44,
+"ans": "B",
+"why": "pseudo-polynomial"
+},
+{
+"num": 45,
+"ans": "D",
+"why": "simulation: all correct"
+},
+{
+"num": 46,
+"ans": "B",
+"why": "Θ(n)"
+},
+{
+"num": 47,
+"ans": "B",
+"why": "build heap 2n"
+},
+{
+"num": 48,
+"ans": "D",
+"why": "false"
+},
+{
+"num": 49,
+"ans": "A",
+"why": "only option with P b→R final"
+},
+{
+"num": 50,
+"ans": "C",
+"why": "II false"
+},
+{
+"num": 51,
+"ans": "C",
+"why": "E-R F-P G-Q H-S"
+},
+{
+"num": 52,
+"ans": "C",
+"why": "simulated"
+},
+{
+"num": 53,
+"ans": "A",
+"why": "I, IV"
+},
+{
+"num": 54,
+"ans": "A",
+"why": "II and V"
+},
+{
+"num": 55,
+"ans": "B",
+"why": "LR(1) SR iff LALR SR"
+},
+{
+"num": 56,
+"ans": "D",
+"why": "exponential"
+},
+{
+"num": 57,
+"ans": "C",
+"why": "2^11-2"
+},
+{
+"num": 58,
+"ans": "B",
+"why": "16/(10-2)"
+},
+{
+"num": 59,
+"ans": "A",
+"why": "handshake completes after listen"
+},
+{
+"num": 60,
+"ans": "B",
+"why": "5+7+7"
+},
+{
+"num": 61,
+"ans": "D",
+"why": "read then recurse then putchar"
+},
+{
+"num": 62,
+"ans": "B",
+"why": "pairwise swap"
+},
+{
+"num": 63,
+"ans": "C",
+"why": "xb=1 yb=0"
+},
+{
+"num": 64,
+"ans": "A",
+"why": "ISR in both"
+},
+{
+"num": 65,
+"ans": "A",
+"why": "prevention not safe-state"
+},
+{
+"num": 66,
+"ans": "B",
+"why": "2^n-1"
+},
+{
+"num": 67,
+"ans": "D",
+"why": "2KB tables: 25,25,24"
+},
+{
+"num": 68,
+"ans": "D",
+"why": "I,III,IV"
+},
+{
+"num": 69,
+"ans": "C",
+"why": "Book 2NF, Collection BCNF/3NF"
+},
+{
+"num": 70,
+"ans": "C",
+"why": "256 and 4"
+},
+{
+"num": 71,
+"ans": "D",
+"why": "17*4096=68Kbit"
+},
+{
+"num": 72,
+"ans": "B",
+"why": "row 8KB, 32KB period"
+},
+{
+"num": 73,
+"ans": "C",
+"why": "2 doubles/block"
+},
+{
+"num": 74,
+"ans": "B",
+"why": "exponential & linear"
+},
+{
+"num": 75,
+"ans": "C",
+"why": "1640,1640"
+},
+{
+"num": 76,
+"ans": "A",
+"why": "delay slot"
+},
+{
+"num": 77,
+"ans": "D",
+"why": "I4 independent"
+},
+{
+"num": 78,
+"ans": "D",
+"why": "Fibonacci"
+},
+{
+"num": 79,
+"ans": "none",
+"why": "x5=13 not in options"
+},
+{
+"num": 80,
+"ans": "B",
+"why": "recurrence"
+},
+{
+"num": 81,
+"ans": "C",
+"why": "X[n,W]"
+},
+{
+"num": 82,
+"ans": "B",
+"why": "3 tables"
+},
+{
+"num": 83,
+"ans": "A",
+"why": "M with FK P1"
+},
+{
+"num": 84,
+"ans": "C",
+"why": "infinite loop"
+},
+{
+"num": 85,
+"ans": "A",
+"why": "intended fix"
+}
+]

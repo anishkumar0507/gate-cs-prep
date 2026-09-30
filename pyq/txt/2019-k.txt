@@ -1,0 +1,69 @@
+Q.No.  Type  Section   Key    Marks
+  1    MCQ     GA        C       1
+  2    MCQ     GA        A       1
+  3    MCQ     GA        B       1
+  4    MCQ     GA        C       1
+  5    MCQ     GA        D       1
+  6    MCQ     GA        B       2
+  7    MCQ     GA        C       2
+  8    MCQ     GA        B       2
+  9    MCQ     GA        C       2
+  10   MCQ     GA        D       2
+  1    MCQ      CS       D       1
+  2    MCQ      CS       A       1
+  3    MCQ      CS       D       1
+  4    MCQ      CS       C       1
+  5    MCQ      CS       C       1
+  6    MCQ      CS       B       1
+  7    MCQ      CS       B       1
+  8    MCQ      CS       C       1
+  9    MCQ      CS       D       1
+  10   MCQ      CS       B       1
+  11   MCQ      CS       C       1
+  12   MCQ      CS    C OR D     1
+  13   MCQ      CS       C       1
+Q.No.  Type  Section        Key       Marks
+  14   MCQ      CS            B          1
+  15   MCQ      CS            D          1
+  16   MCQ      CS            B          1
+  17   NAT      CS       31 to 31        1
+  18   NAT      CS       26 to 26        1
+  19   NAT      CS       31 to 31        1
+  20   NAT      CS     0.08 to 0.08      1
+  21   NAT      CS         2 to 2        1
+  22   NAT      CS    0.502 to 0.504     1
+  23   NAT      CS       80 to 80        1
+  24   NAT      CS         6 to 6        1
+  25   NAT      CS       29 to 29        1
+  26   MCQ      CS            D          2
+  27   MCQ      CS            B          2
+  28   MCQ      CS            C          2
+  29   MCQ      CS            C          2
+  30   MCQ      CS            A          2
+  31   MCQ      CS            C          2
+  32   MCQ      CS            C          2
+  33   MCQ      CS            B          2
+  34   MCQ      CS            B          2
+  35   MCQ      CS            C          2
+  36   MCQ      CS            A          2
+Q.No.  Type  Section             Key            Marks
+  37   MCQ      CS                 C               2
+  38   MCQ      CS                 C               2
+  39   MCQ      CS                 A               2
+  40   MCQ      CS                 A               2
+  41   NAT      CS              2 to 2             2
+  42   NAT      CS    3.7 to 3.8 OR 4.0 to 4.1     2
+  43   NAT      CS              5 to 5             2
+  44   NAT      CS             12 to 12            2
+  45   NAT      CS           160 to 160            2
+  46   NAT      CS          4.25 to 4.25           2
+  47   NAT      CS            0.8 to 0.8           2
+  48   NAT      CS           120 to 120            2
+  49   NAT      CS              3 to 3             2
+  50   NAT      CS              3 to 3             2
+  51   NAT      CS              5 to 5             2
+  52   NAT      CS              5 to 5             2
+  53   NAT      CS             10 to 10            2
+  54   NAT      CS             97 to 97            2
+  55   NAT      CS              1 to 1             2
+

@@ -1,0 +1,137 @@
+              GATE 2012 - Answer Key - Paper : CS
+
+Paper  Question no. Code : A  Code : B      Code : C      Code : D
+ CS                           C             B             D
+ CS    1   B                  C             D             C
+ CS                           C             C             C
+ CS    2   C                  D             D             C
+ CS                           D             C             C
+ CS    3   Marks to All       C             B             C
+ CS                           D             A             D
+ CS    4   B                  C             C             C
+ CS                           C             B             D
+ CS    5   C                  C             Marks to All  D
+ CS                           C             C             C
+ CS    6   A                  C             B             C
+ CS                           D             C             B
+ CS    7   B                  B             D             C
+ CS                           C             C             D
+ CS    8   C                  Marks to All  C             C
+ CS                           B             C             D
+ CS    9   D                  C             C             C
+ CS                           A             D             B
+ CS    10  C                  B             C             A
+ CS                           C             D             C
+ CS    11  D                  D             D             B
+ CS                           C             C             Marks to All
+ CS    12  B                  D             C             C
+ CS                           B             C             B
+ CS    13  C                  C             D             D
+ CS                           Marks to All  A             A
+ CS    14  C                  Marks to All  A             Marks to All
+ CS                           D             B             A
+ CS    15  C                  B             B             A
+ CS                           B             C             B
+ CS    16  D                  A             B             B
+ CS                           A             Marks to All  D
+ CS    17  D                  Marks to All  B             Marks to All
+ CS                           A             B             Marks to All
+ CS    18  C                  D             B             C
+ CS                           B             D             D
+ CS    19  D                  B             A             A
+ CS                           B             Marks to All  A
+ CS    20  C                  Marks to All  A             B
+
+       21  C
+
+       22  C
+
+       23  C
+
+       24  D
+
+       25  C
+
+       26  B
+
+       27  B
+
+       28  B
+
+       29  Marks to All
+
+       30  B
+
+       31  C
+
+       32  B
+
+       33  B
+
+       34  A
+
+       35  A
+
+       36  D
+
+       37  C
+
+       38  Marks to All
+
+       39  Marks to All
+
+       40  D
+              GATE 2012 - Answer Key - Paper : CS
+
+Paper  Question no. Code : A  Code : B      Code : C      Code : D
+ CS                           B             A             B
+ CS    41  B                  C             B             C
+ CS                           B             B             B
+ CS    42  B                  B             D             Marks to All
+ CS                           A             Marks to All  B
+ CS    43  A                  A             Marks to All  B
+ CS                           D             C             B
+ CS    44  A                  D             A             B
+ CS                           C             B             A
+ CS    45  Marks to All       B             C             D
+ CS                           A             D             C
+ CS    46  D                  C             A             C
+ CS                           A             C             A
+ CS    47  A                  A             C             A
+ CS                           C             A             C
+ CS    48  C                  B             A             D
+ CS                           A             D             Marks to All
+ CS    49  D                  D             Marks to All  A
+ CS                           Marks to All  A             B
+ CS    50  A                  A             B             A
+ CS                           B             B             C
+ CS    51  B                  B             C             A
+ CS                           C             A             D
+ CS    52  A                  A             D             B
+ CS                           D             B             B
+       53  C
+
+       54  C
+
+       55  A
+
+       56  A
+
+       57  B
+
+       58  A
+
+       59  D
+
+       60  Marks to All
+
+       61  D
+
+       62  B
+
+       63  B
+
+       64  C
+
+       65  A
+

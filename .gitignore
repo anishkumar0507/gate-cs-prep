@@ -1,0 +1,3 @@
+__pycache__/
+pyq/verify/w*/
+*.png

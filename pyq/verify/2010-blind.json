@@ -1,0 +1,977 @@
+[
+ {
+  "num": 1,
+  "subj": "dm",
+  "topic": "Trees / degree sum",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Let G = (V, E) be a graph. Define ξ(G) = ∑_d i_d × d, where i_d is the number of vertices of degree d in G. If S and T are two different trees with ξ(S) = ξ(T), then",
+  "code": "",
+  "opts": [
+   "|S| = 2|T|",
+   "|S| = |T| − 1",
+   "|S| = |T|",
+   "|S| = |T| + 1"
+  ]
+ },
+ {
+  "num": 2,
+  "subj": "em",
+  "topic": "Newton-Raphson method",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Newton-Raphson method is used to compute a root of the equation x² − 13 = 0 with 3.5 as the initial value. The approximation after one iteration is",
+  "code": "",
+  "opts": [
+   "3.575",
+   "3.677",
+   "3.667",
+   "3.607"
+  ]
+ },
+ {
+  "num": 3,
+  "subj": "dm",
+  "topic": "Relations (counting)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "What is the possible number of reflexive relations on a set of 5 elements?",
+  "code": "",
+  "opts": [
+   "2¹⁰",
+   "2¹⁵",
+   "2²⁰",
+   "2²⁵"
+  ]
+ },
+ {
+  "num": 4,
+  "subj": "dm",
+  "topic": "Groups",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the set S = {1, ω, ω²}, where ω and ω² are cube roots of unity. If * denotes the multiplication operation, the structure {S, *} forms",
+  "code": "",
+  "opts": [
+   "a group",
+   "a ring",
+   "an integral domain",
+   "a field"
+  ]
+ },
+ {
+  "num": 5,
+  "subj": "em",
+  "topic": "Limits",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "What is the value of lim_{n→∞} (1 − 1/n)^{2n} ?",
+  "code": "",
+  "opts": [
+   "0",
+   "e⁻²",
+   "e^(−1/2)",
+   "1"
+  ]
+ },
+ {
+  "num": 6,
+  "subj": "dl",
+  "topic": "Minterms / canonical forms",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The minterm expansion of f(P, Q, R) = PQ + QR' + PR' is  (R' denotes complement of R)",
+  "code": "",
+  "opts": [
+   "m₂ + m₄ + m₆ + m₇",
+   "m₀ + m₁ + m₃ + m₅",
+   "m₀ + m₁ + m₆ + m₇",
+   "m₂ + m₃ + m₄ + m₅"
+  ]
+ },
+ {
+  "num": 7,
+  "subj": "coa",
+  "topic": "Memory organization (DRAM refresh)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "A main memory unit with a capacity of 4 megabytes is built using 1M × 1-bit DRAM chips. Each DRAM chip has 1K rows of cells with 1K cells in each row. The time taken for a single refresh operation is 100 nanoseconds. The time required to perform one refresh operation on all the cells in the memory unit is",
+  "code": "",
+  "opts": [
+   "100 nanoseconds",
+   "100*2¹⁰ nanoseconds",
+   "100*2²⁰ nanoseconds",
+   "3200*2²⁰ nanoseconds"
+  ]
+ },
+ {
+  "num": 8,
+  "subj": "dl",
+  "topic": "2's complement arithmetic",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "P is a 16-bit signed integer. The 2's complement representation of P is (F87B)₁₆. The 2's complement representation of 8*P is",
+  "code": "",
+  "opts": [
+   "(C3D8)₁₆",
+   "(187B)₁₆",
+   "(F878)₁₆",
+   "(987B)₁₆"
+  ]
+ },
+ {
+  "num": 9,
+  "subj": "dl",
+  "topic": "Multiplexer",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The Boolean expression for the output f of the multiplexer shown below is\n[Figure: 4-to-1 MUX with data inputs I0 = R, I1 = R', I2 = R', I3 = R; select lines S1 = P, S0 = Q; output f]",
+  "code": "",
+  "opts": [
+   "(P ⊕ Q ⊕ R)'",
+   "P ⊕ Q ⊕ R",
+   "P + Q + R",
+   "(P + Q + R)'"
+  ]
+ },
+ {
+  "num": 10,
+  "subj": "pds",
+  "topic": "Binary trees",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "In a binary tree with n nodes, every node has an odd number of descendants. Every node is considered to be its own descendant. What is the number of nodes in the tree that have exactly one child?",
+  "code": "",
+  "opts": [
+   "0",
+   "1",
+   "(n−1)/2",
+   "n−1"
+  ]
+ },
+ {
+  "num": 11,
+  "subj": "pds",
+  "topic": "C pointers / parameter passing",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "What does the following program print?",
+  "code": "#include <stdio.h>\nvoid f(int *p, int *q){\n    p = q;\n    *p = 2;\n}\nint i=0, j=1;\nint main(){\n    f(&i, &j);\n    printf(\"%d %d\\n\", i, j);\n    return 0;\n}",
+  "opts": [
+   "2 2",
+   "2 1",
+   "0 1",
+   "0 2"
+  ]
+ },
+ {
+  "num": 12,
+  "subj": "algo",
+  "topic": "Asymptotic comparison",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Two alternative packages A and B are available for processing a database having 10^k records. Package A requires 0.0001n² time units and package B requires 10n log₁₀ n time units to process n records. What is the smallest value of k for which package B will be preferred over A?",
+  "code": "",
+  "opts": [
+   "12",
+   "10",
+   "6",
+   "5"
+  ]
+ },
+ {
+  "num": 13,
+  "subj": "cd",
+  "topic": "Symbol table",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which data structure in a compiler is used for managing information about variables and their attributes?",
+  "code": "",
+  "opts": [
+   "Abstract syntax tree",
+   "Symbol table",
+   "Semantic stack",
+   "Parse table"
+  ]
+ },
+ {
+  "num": 14,
+  "subj": "cd",
+  "topic": "Runtime environment (heap allocation)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which languages necessarily need heap allocation in the runtime environment?",
+  "code": "",
+  "opts": [
+   "Those that support recursion.",
+   "Those that use dynamic scoping.",
+   "Those that allow dynamic data structures.",
+   "Those that use global variables."
+  ]
+ },
+ {
+  "num": 15,
+  "subj": "cn",
+  "topic": "IP header (TTL)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "One of the header fields in an IP datagram is the Time-to-Live (TTL) field. Which of the following statements best explains the need for this field?",
+  "code": "",
+  "opts": [
+   "It can be used to prioritize packets.",
+   "It can be used to reduce delays.",
+   "It can be used to optimize throughput.",
+   "It can be used to prevent packet looping."
+  ]
+ },
+ {
+  "num": 16,
+  "subj": "cn",
+  "topic": "Application layer (client-server)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which one of the following is not a client-server application?",
+  "code": "",
+  "opts": [
+   "Internet chat",
+   "Web browsing",
+   "E-mail",
+   "Ping"
+  ]
+ },
+ {
+  "num": 17,
+  "subj": "toc",
+  "topic": "Recursive & RE languages (closure)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Let L1 be a recursive language. Let L2 and L3 be languages that are recursively enumerable but not recursive. Which of the following statements is not necessarily true?",
+  "code": "",
+  "opts": [
+   "L2 − L1 is recursively enumerable.",
+   "L1 − L3 is recursively enumerable.",
+   "L2 ∩ L3 is recursively enumerable.",
+   "L2 ∪ L3 is recursively enumerable."
+  ]
+ },
+ {
+  "num": 18,
+  "subj": "db",
+  "topic": "B+ tree",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider a B⁺-tree in which the maximum number of keys in a node is 5. What is the minimum number of keys in any non-root node?",
+  "code": "",
+  "opts": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ]
+ },
+ {
+  "num": 19,
+  "subj": "db",
+  "topic": "SQL (EXISTS / correlated subquery)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "A relational schema for a train reservation database is given below.\nPassenger(pid, pname, age)\nReservation(pid, class, tid)\nWhat pids are returned by the following SQL query for the above instance of the tables?",
+  "code": "Table: Passenger\npid | pname    | age\n0   | 'Sachin' | 65\n1   | 'Rahul'  | 66\n2   | 'Sourav' | 67\n3   | 'Anil'   | 69\n\nTable: Reservation\npid | class | tid\n0   | 'AC'  | 8200\n1   | 'AC'  | 8201\n2   | 'SC'  | 8201\n5   | 'AC'  | 8203\n1   | 'SC'  | 8204\n3   | 'AC'  | 8202\n\nSELECT pid\nFROM   Reservation\nWHERE  class = 'AC' AND\n       EXISTS (SELECT *\n               FROM Passenger\n               WHERE age > 65 AND\n               Passenger.pid = Reservation.pid)",
+  "opts": [
+   "1, 0",
+   "1, 2",
+   "1, 3",
+   "1, 5"
+  ]
+ },
+ {
+  "num": 20,
+  "subj": "db",
+  "topic": "Concurrency control protocols",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following concurrency control protocols ensure both conflict serializability and freedom from deadlock?\nI. 2-phase locking\nII. Time-stamp ordering",
+  "code": "",
+  "opts": [
+   "I only",
+   "II only",
+   "Both I and II",
+   "Neither I nor II"
+  ]
+ },
+ {
+  "num": 21,
+  "subj": "pds",
+  "topic": "Cyclomatic complexity",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The cyclomatic complexity of each of the modules A and B shown below is 10. What is the cyclomatic complexity of the sequential integration shown on the right hand side?\n[Figure: modules A and B separately, each with one entry and one exit; on the right, A's exit is connected to B's entry (A followed by B)]",
+  "code": "",
+  "opts": [
+   "19",
+   "21",
+   "20",
+   "10"
+  ]
+ },
+ {
+  "num": 22,
+  "subj": "pds",
+  "topic": "Software life cycle",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "What is the appropriate pairing of items in the two columns listing various activities encountered in a software life cycle?\nP. Requirements Capture    1. Module Development and Integration\nQ. Design                  2. Domain Analysis\nR. Implementation          3. Structural and Behavioral Modeling\nS. Maintenance             4. Performance Tuning",
+  "code": "",
+  "opts": [
+   "P-3 Q-2 R-4 S-1",
+   "P-2 Q-3 R-1 S-4",
+   "P-3 Q-2 R-1 S-4",
+   "P-2 Q-3 R-4 S-1"
+  ]
+ },
+ {
+  "num": 23,
+  "subj": "os",
+  "topic": "Process synchronization",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the methods used by processes P1 and P2 for accessing their critical sections whenever needed, as given below. The initial values of shared boolean variables S1 and S2 are randomly assigned.\nWhich one of the following statements describes the properties achieved?",
+  "code": "Method used by P1:\nwhile (S1 == S2);\nCritical Section\nS1 = S2;\n\nMethod used by P2:\nwhile (S1 != S2);\nCritical Section\nS2 = not(S1);",
+  "opts": [
+   "Mutual exclusion but not progress",
+   "Progress but not mutual exclusion",
+   "Neither mutual exclusion nor progress",
+   "Both mutual exclusion and progress"
+  ]
+ },
+ {
+  "num": 24,
+  "subj": "os",
+  "topic": "Page replacement (FIFO)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "A system uses FIFO policy for page replacement. It has 4 page frames with no pages loaded to begin with. The system first accesses 100 distinct pages in some order and then accesses the same 100 pages but now in the reverse order. How many page faults will occur?",
+  "code": "",
+  "opts": [
+   "196",
+   "192",
+   "197",
+   "195"
+  ]
+ },
+ {
+  "num": 25,
+  "subj": "os",
+  "topic": "CPU scheduling",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following statements are true?\nI. Shortest remaining time first scheduling may cause starvation\nII. Preemptive scheduling may cause starvation\nIII. Round robin is better than FCFS in terms of response time",
+  "code": "",
+  "opts": [
+   "I only",
+   "I and III only",
+   "II and III only",
+   "I, II and III"
+  ]
+ },
+ {
+  "num": 26,
+  "subj": "em",
+  "topic": "Probability (total probability)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider a company that assembles computers. The probability of a faulty assembly of any computer is p. The company therefore subjects each computer to a testing process. This testing process gives the correct result for any computer with a probability of q. What is the probability of a computer being declared faulty?",
+  "code": "",
+  "opts": [
+   "pq + (1−p)(1−q)",
+   "(1−q)p",
+   "(1−p)q",
+   "pq"
+  ]
+ },
+ {
+  "num": 27,
+  "subj": "dm",
+  "topic": "Number theory / divisors",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "What is the probability that a divisor of 10⁹⁹ is a multiple of 10⁹⁶ ?",
+  "code": "",
+  "opts": [
+   "1/625",
+   "4/625",
+   "12/625",
+   "16/625"
+  ]
+ },
+ {
+  "num": 28,
+  "subj": "dm",
+  "topic": "Graph theory (degree sequence)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The degree sequence of a simple graph is the sequence of the degrees of the nodes in the graph in decreasing order. Which of the following sequences can not be the degree sequence of any graph?\nI. 7, 6, 5, 4, 4, 3, 2, 1\nII. 6, 6, 6, 6, 3, 3, 2, 2\nIII. 7, 6, 6, 4, 4, 3, 2, 2\nIV. 8, 7, 7, 6, 4, 2, 1, 1",
+  "code": "",
+  "opts": [
+   "I and II",
+   "III and IV",
+   "IV only",
+   "II and IV"
+  ]
+ },
+ {
+  "num": 29,
+  "subj": "em",
+  "topic": "Eigenvalues",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following matrix\nA = [[2, 3], [x, y]]\nIf the eigenvalues of A are 4 and 8, then",
+  "code": "",
+  "opts": [
+   "x = 4, y = 10",
+   "x = 5, y = 8",
+   "x = −3, y = 9",
+   "x = −4, y = 10"
+  ]
+ },
+ {
+  "num": 30,
+  "subj": "dm",
+  "topic": "First-order logic (quantifiers)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Suppose the predicate F(x, y, t) is used to represent the statement that person x can fool person y at time t. Which one of the statements below expresses best the meaning of the formula ∀x∃y∃t(¬F(x, y, t))?",
+  "code": "",
+  "opts": [
+   "Everyone can fool some person at some time.",
+   "No one can fool everyone all the time.",
+   "Everyone cannot fool some person all the time.",
+   "No one can fool some person at some time."
+  ]
+ },
+ {
+  "num": 31,
+  "subj": "dl",
+  "topic": "Logic gates (NOR circuit)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "What is the boolean expression for the output f of the combinational logic circuit of NOR gates given below?\n[Circuit: G1 = NOR(P, Q), G2 = NOR(Q, R), G3 = NOR(P, R), G4 = NOR(Q, R); G5 = NOR(G1, G2), G6 = NOR(G3, G4); f = NOR(G5, G6)]",
+  "code": "",
+  "opts": [
+   "(Q + R)'",
+   "(P + Q)'",
+   "(P + R)'",
+   "(P + Q + R)'"
+  ]
+ },
+ {
+  "num": 32,
+  "subj": "dl",
+  "topic": "Sequential circuits (counters)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In the sequential circuit shown below, if the initial value of the output Q₁Q₀ is 00, what are the next four values of Q₁Q₀?\n[Circuit: two positive-edge-triggered T flip-flops. FF0: T = 1, clocked by Clock, output Q₀. FF1: T = 1, its clock input is driven by Q₀, output Q₁.]",
+  "code": "",
+  "opts": [
+   "11, 10, 01, 00",
+   "10, 11, 01, 00",
+   "10, 00, 01, 11",
+   "11, 10, 00, 01"
+  ]
+ },
+ {
+  "num": 33,
+  "subj": "coa",
+  "topic": "Pipelining",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A 5-stage pipelined processor has Instruction Fetch (IF), Instruction Decode (ID), Operand Fetch (OF), Perform Operation (PO) and Write Operand (WO) stages. The IF, ID, OF and WO stages take 1 clock cycle each for any instruction. The PO stage takes 1 clock cycle for ADD and SUB instructions, 3 clock cycles for MUL instruction, and 6 clock cycles for DIV instruction respectively. Operand forwarding is used in the pipeline. What is the number of clock cycles needed to execute the following sequence of instructions?\nI0: MUL R2, R0, R1   (R2 ← R0 * R1)\nI1: DIV R5, R3, R4   (R5 ← R3 / R4)\nI2: ADD R2, R5, R2   (R2 ← R5 + R2)\nI3: SUB R5, R2, R6   (R5 ← R2 − R6)",
+  "code": "",
+  "opts": [
+   "13",
+   "15",
+   "17",
+   "19"
+  ]
+ },
+ {
+  "num": 34,
+  "subj": "algo",
+  "topic": "Dynamic programming (recurrence)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The weight of a sequence a₀, a₁, …, aₙ₋₁ of real numbers is defined as a₀ + a₁/2 + … + aₙ₋₁/2ⁿ⁻¹. A subsequence of a sequence is obtained by deleting some elements from the sequence, keeping the order of the remaining elements the same. Let X denote the maximum possible weight of a subsequence of a₀, a₁, …, aₙ₋₁ and Y the maximum possible weight of a subsequence of a₁, a₂, …, aₙ₋₁. Then X is equal to",
+  "code": "",
+  "opts": [
+   "max(Y, a₀ + Y)",
+   "max(Y, a₀ + Y/2)",
+   "max(Y, a₀ + 2Y)",
+   "a₀ + Y/2"
+  ]
+ },
+ {
+  "num": 35,
+  "subj": "pds",
+  "topic": "Recursion (C)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "What is the value printed by the following C program?",
+  "code": "#include <stdio.h>\n\nint f(int *a, int n)\n{\n    if (n <= 0) return 0;\n    else if (*a % 2 == 0) return *a + f(a+1, n-1);\n    else return *a - f(a+1, n-1);\n}\n\nint main( )\n{\n    int a[] = {12, 7, 13, 4, 11, 6};\n    printf(\"%d\", f(a,6));\n    return 0;\n}",
+  "opts": [
+   "−9",
+   "5",
+   "15",
+   "19"
+  ]
+ },
+ {
+  "num": 36,
+  "subj": "pds",
+  "topic": "Linked lists",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following C function takes a singly-linked list as input argument. It modifies the list by moving the last element to the front of the list and returns the modified list. Some part of the code is left blank.\nChoose the correct alternative to replace the blank line.",
+  "code": "typedef struct node {\n    int value;\n    struct node *next;\n} Node;\n\nNode *move_to_front(Node *head) {\n    Node *p, *q;\n    if ((head == NULL) || (head->next == NULL)) return head;\n    q = NULL; p = head;\n    while (p->next != NULL) {\n        q = p;\n        p = p->next;\n    }\n    _______________________________\n    return head;\n}",
+  "opts": [
+   "q = NULL; p->next = head; head = p;",
+   "q->next = NULL; head = p; p->next = head;",
+   "head = p; p->next = q; q->next = NULL;",
+   "q->next = NULL; p->next = head; head = p;"
+  ]
+ },
+ {
+  "num": 37,
+  "subj": "cd",
+  "topic": "Register allocation / liveness",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The program below uses six temporary variables a, b, c, d, e, f.\nAssuming that all operations take their operands from registers, what is the minimum number of registers needed to execute this program without spilling?",
+  "code": "a = 1\nb = 10\nc = 20\nd = a + b\ne = c + d\nf = c + e\nb = c + e\ne = b + f\nd = 5 + e\nreturn d + f",
+  "opts": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ]
+ },
+ {
+  "num": 38,
+  "subj": "cd",
+  "topic": "LL(1) and LR(1) parsing",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The grammar S → aSa | bS | c is",
+  "code": "",
+  "opts": [
+   "LL(1) but not LR(1)",
+   "LR(1) but not LL(1)",
+   "Both LL(1) and LR(1)",
+   "Neither LL(1) nor LR(1)"
+  ]
+ },
+ {
+  "num": 39,
+  "subj": "toc",
+  "topic": "Regular expressions",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let L = {w ∈ (0 + 1)* | w has even number of 1s}, i.e. L is the set of all bit strings with even number of 1s. Which one of the regular expressions below represents L?",
+  "code": "",
+  "opts": [
+   "(0*10*1)*",
+   "0*(10*10*)*",
+   "0*(10*1)*0*",
+   "0*1(10*1)*10*"
+  ]
+ },
+ {
+  "num": 40,
+  "subj": "toc",
+  "topic": "Context-free languages",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the languages L1 = {0ⁱ1ʲ | i ≠ j}, L2 = {0ⁱ1ʲ | i = j}, L3 = {0ⁱ1ʲ | i = 2j + 1}, L4 = {0ⁱ1ʲ | i ≠ 2j}. Which one of the following statements is true?",
+  "code": "",
+  "opts": [
+   "Only L2 is context free.",
+   "Only L2 and L3 are context free.",
+   "Only L1 and L2 are context free.",
+   "All are context free."
+  ]
+ },
+ {
+  "num": 41,
+  "subj": "toc",
+  "topic": "NFA (minimum states)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let w be any string of length n in {0,1}*. Let L be the set of all substrings of w. What is the minimum number of states in a non-deterministic finite automaton that accepts L?",
+  "code": "",
+  "opts": [
+   "n−1",
+   "n",
+   "n+1",
+   "2ⁿ⁻¹"
+  ]
+ },
+ {
+  "num": 42,
+  "subj": "db",
+  "topic": "Conflict serializability",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following schedule for transactions T1, T2 and T3:\nT1: Read(X)\nT2: Read(Y)\nT3: Read(Y)\nT2: Write(Y)\nT1: Write(X)\nT3: Write(X)\nT2: Read(X)\nT2: Write(X)\nWhich one of the schedules below is the correct serialization of the above?",
+  "code": "",
+  "opts": [
+   "T1 → T3 → T2",
+   "T2 → T1 → T3",
+   "T2 → T3 → T1",
+   "T3 → T1 → T2"
+  ]
+ },
+ {
+  "num": 43,
+  "subj": "db",
+  "topic": "Functional dependencies / natural join",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following functional dependencies hold for relations R(A, B, C) and S(B, D, E):\nB → A,\nA → C\nThe relation R contains 200 tuples and the relation S contains 100 tuples. What is the maximum number of tuples possible in the natural join R ⋈ S ?",
+  "code": "",
+  "opts": [
+   "100",
+   "200",
+   "300",
+   "2000"
+  ]
+ },
+ {
+  "num": 44,
+  "subj": "pds",
+  "topic": "Software testing (statement coverage)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following program is to be tested for statement coverage:\nThe test cases T1, T2, T3 and T4 given below are expressed in terms of the properties satisfied by the values of variables a, b, c and d. The exact values are not given.\nT1: a, b, c and d are all equal\nT2: a, b, c and d are all distinct\nT3: a = b and c != d\nT4: a != b and c = d\nWhich of the test suites given below ensures coverage of statements S1, S2, S3 and S4?",
+  "code": "begin\n   if (a == b) {S1; exit;}\n   else if (c == d) {S2;}\n        else {S3; exit;}\n   S4;\nend",
+  "opts": [
+   "T1, T2, T3",
+   "T2, T4",
+   "T3, T4",
+   "T1, T2, T4"
+  ]
+ },
+ {
+  "num": 45,
+  "subj": "os",
+  "topic": "Semaphores",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following program consists of 3 concurrent processes and 3 binary semaphores. The semaphores are initialized as S0=1, S1=0, S2=0.\nHow many times will process P0 print '0'?",
+  "code": "Process P0:\nwhile (true) {\n    wait (S0);\n    print '0';\n    release (S1);\n    release (S2);\n}\n\nProcess P1:\nwait (S1);\nrelease (S0);\n\nProcess P2:\nwait (S2);\nrelease (S0);",
+  "opts": [
+   "At least twice",
+   "Exactly twice",
+   "Exactly thrice",
+   "Exactly once"
+  ]
+ },
+ {
+  "num": 46,
+  "subj": "os",
+  "topic": "Deadlock",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A system has n resources R₀, …, Rₙ₋₁, and k processes P₀, …, Pₖ₋₁. The implementation of the resource request logic of each process Pᵢ is as follows:\nIn which one of the following situations is a deadlock possible?",
+  "code": "if (i%2==0) {\n    if (i<n) request Ri;\n    if (i+2 < n) request Ri+2;\n}\nelse {\n    if (i<n) request Rn-i;\n    if (i+2<n) request Rn-i-2;\n}",
+  "opts": [
+   "n = 40, k = 26",
+   "n = 21, k = 12",
+   "n = 20, k = 10",
+   "n = 41, k = 19"
+  ]
+ },
+ {
+  "num": 47,
+  "subj": "cn",
+  "topic": "Subnetting / CIDR",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Suppose computers A and B have IP addresses 10.105.1.113 and 10.105.1.91 respectively and they both use the same netmask N. Which of the values of N given below should not be used if A and B should belong to the same network?",
+  "code": "",
+  "opts": [
+   "255.255.255.0",
+   "255.255.255.128",
+   "255.255.255.192",
+   "255.255.255.224"
+  ]
+ },
+ {
+  "num": 48,
+  "subj": "coa",
+  "topic": "Cache memory (multilevel transfer time)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.48 and Q.49: A computer system has an L1 cache, an L2 cache, and a main memory unit connected as shown below. The block size in L1 cache is 4 words. The block size in L2 cache is 16 words. The memory access times are 2 nanoseconds, 20 nanoseconds and 200 nanoseconds for L1 cache, L2 cache and main memory unit respectively.\n[Figure: L1 Cache ↔ (data bus, 4 words wide) ↔ L2 Cache ↔ (data bus, 4 words wide) ↔ Main Memory]\nWhen there is a miss in L1 cache and a hit in L2 cache, a block is transferred from L2 cache to L1 cache. What is the time taken for this transfer?",
+  "code": "",
+  "opts": [
+   "2 nanoseconds",
+   "20 nanoseconds",
+   "22 nanoseconds",
+   "88 nanoseconds"
+  ]
+ },
+ {
+  "num": 49,
+  "subj": "coa",
+  "topic": "Cache memory (multilevel transfer time)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.48 and Q.49: A computer system has an L1 cache, an L2 cache, and a main memory unit connected as shown below. The block size in L1 cache is 4 words. The block size in L2 cache is 16 words. The memory access times are 2 nanoseconds, 20 nanoseconds and 200 nanoseconds for L1 cache, L2 cache and main memory unit respectively.\n[Figure: L1 Cache ↔ (data bus, 4 words wide) ↔ L2 Cache ↔ (data bus, 4 words wide) ↔ Main Memory]\nWhen there is a miss in both L1 cache and L2 cache, first a block is transferred from main memory to L2 cache, and then a block is transferred from L2 cache to L1 cache. What is the total time taken for these transfers?",
+  "code": "",
+  "opts": [
+   "222 nanoseconds",
+   "888 nanoseconds",
+   "902 nanoseconds",
+   "968 nanoseconds"
+  ]
+ },
+ {
+  "num": 50,
+  "subj": "algo",
+  "topic": "Minimum spanning tree",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.50 and Q.51: Consider a complete undirected graph with vertex set {0, 1, 2, 3, 4}. Entry Wᵢⱼ in the matrix W below is the weight of the edge {i, j}.\nW =\n[0, 1, 8, 1, 4]\n[1, 0, 12, 4, 9]\n[8, 12, 0, 7, 3]\n[1, 4, 7, 0, 2]\n[4, 9, 3, 2, 0]\nWhat is the minimum possible weight of a spanning tree T in this graph such that vertex 0 is a leaf node in the tree T?",
+  "code": "",
+  "opts": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ]
+ },
+ {
+  "num": 51,
+  "subj": "algo",
+  "topic": "Shortest paths (bounded edges)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.50 and Q.51: Consider a complete undirected graph with vertex set {0, 1, 2, 3, 4}. Entry Wᵢⱼ in the matrix W below is the weight of the edge {i, j}.\nW =\n[0, 1, 8, 1, 4]\n[1, 0, 12, 4, 9]\n[8, 12, 0, 7, 3]\n[1, 4, 7, 0, 2]\n[4, 9, 3, 2, 0]\nWhat is the minimum possible weight of a path P from vertex 1 to vertex 2 in this graph such that P contains at most 3 edges?",
+  "code": "",
+  "opts": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ]
+ },
+ {
+  "num": 52,
+  "subj": "pds",
+  "topic": "Hashing (linear probing)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Linked data for Q.52 and Q.53: A hash table of length 10 uses open addressing with hash function h(k) = k mod 10, and linear probing. After inserting 6 values into an empty hash table, the table is as shown below.\n0: (empty)\n1: (empty)\n2: 42\n3: 23\n4: 34\n5: 52\n6: 46\n7: 33\n8: (empty)\n9: (empty)\nWhich one of the following choices gives a possible order in which the key values could have been inserted in the table?",
+  "code": "",
+  "opts": [
+   "46, 42, 34, 52, 23, 33",
+   "34, 42, 23, 52, 33, 46",
+   "46, 34, 42, 23, 52, 33",
+   "42, 46, 33, 23, 34, 52"
+  ]
+ },
+ {
+  "num": 53,
+  "subj": "pds",
+  "topic": "Hashing (linear probing)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Linked data for Q.52 and Q.53: A hash table of length 10 uses open addressing with hash function h(k) = k mod 10, and linear probing. After inserting 6 values into an empty hash table, the table is as shown below.\n0: (empty)\n1: (empty)\n2: 42\n3: 23\n4: 34\n5: 52\n6: 46\n7: 33\n8: (empty)\n9: (empty)\nHow many different insertion sequences of the key values using the same hash function and linear probing will result in the hash table shown above?",
+  "code": "",
+  "opts": [
+   "10",
+   "20",
+   "30",
+   "40"
+  ]
+ },
+ {
+  "num": 54,
+  "subj": "cn",
+  "topic": "Routing (distance vector)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Linked data for Q.54 and Q.55: Consider a network with 6 routers R1 to R6 connected with links having weights as shown in the following diagram.\nLinks (undirected, weight): R1–R2: 6, R1–R3: 3, R2–R3: 2, R2–R4: 7, R3–R5: 9, R4–R5: 1, R4–R6: 8, R5–R6: 4\nAll the routers use the distance vector based routing algorithm to update their routing tables. Each router starts with its routing table initialized to contain an entry for each neighbour with the weight of the respective connecting link. After all the routing tables stabilize, how many links in the network will never be used for carrying any data?",
+  "code": "",
+  "opts": [
+   "4",
+   "3",
+   "2",
+   "1"
+  ]
+ },
+ {
+  "num": 55,
+  "subj": "cn",
+  "topic": "Routing (distance vector)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Linked data for Q.54 and Q.55: Consider a network with 6 routers R1 to R6 connected with links having weights as shown in the following diagram.\nLinks (undirected, weight): R1–R2: 6, R1–R3: 3, R2–R3: 2, R2–R4: 7, R3–R5: 9, R4–R5: 1, R4–R6: 8, R5–R6: 4\nSuppose the weights of all unused links in the previous question are changed to 2 and the distance vector algorithm is used again until all routing tables stabilize. How many links will now remain unused?",
+  "code": "",
+  "opts": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ]
+ },
+ {
+  "num": 56,
+  "subj": "ga",
+  "topic": "Sentence completion",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Choose the most appropriate word from the options given below to complete the following sentence:\nHis rather casual remarks on politics ________ his lack of seriousness about the subject.",
+  "code": "",
+  "opts": [
+   "masked",
+   "belied",
+   "betrayed",
+   "suppressed"
+  ]
+ },
+ {
+  "num": 57,
+  "subj": "ga",
+  "topic": "Vocabulary (synonyms)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following options is the closest in meaning to the word below:\nCircuitous",
+  "code": "",
+  "opts": [
+   "cyclic",
+   "indirect",
+   "confusing",
+   "crooked"
+  ]
+ },
+ {
+  "num": 58,
+  "subj": "ga",
+  "topic": "Sentence completion",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Choose the most appropriate word from the options given below to complete the following sentence:\nIf we manage to ________ our natural resources, we would leave a better planet for our children.",
+  "code": "",
+  "opts": [
+   "uphold",
+   "restrain",
+   "cherish",
+   "conserve"
+  ]
+ },
+ {
+  "num": 59,
+  "subj": "ga",
+  "topic": "Sets (Venn diagram)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "25 persons are in a room. 15 of them play hockey, 17 of them play football and 10 of them play both hockey and football. Then the number of persons playing neither hockey nor football is:",
+  "code": "",
+  "opts": [
+   "2",
+   "17",
+   "13",
+   "3"
+  ]
+ },
+ {
+  "num": 60,
+  "subj": "ga",
+  "topic": "Analogy",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The question below consists of a pair of related words followed by four pairs of words. Select the pair that best expresses the relation in the original pair.\nUnemployed : Worker",
+  "code": "",
+  "opts": [
+   "fallow : land",
+   "unaware : sleeper",
+   "wit : jester",
+   "renovated : house"
+  ]
+ },
+ {
+  "num": 61,
+  "subj": "ga",
+  "topic": "Number systems",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "If 137 + 276 = 435 how much is 731 + 672?",
+  "code": "",
+  "opts": [
+   "534",
+   "1403",
+   "1623",
+   "1513"
+  ]
+ },
+ {
+  "num": 62,
+  "subj": "ga",
+  "topic": "Logical reasoning (ordering)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Hari (H), Gita (G), Irfan (I) and Saira (S) are siblings (i.e. brothers and sisters). All were born on 1st January. The age difference between any two successive siblings (that is born one after another) is less than 3 years. Given the following facts:\ni. Hari's age + Gita's age > Irfan's age + Saira's age.\nii. The age difference between Gita and Saira is 1 year. However, Gita is not the oldest and Saira is not the youngest.\niii. There are no twins.\nIn what order were they born (oldest first)?",
+  "code": "",
+  "opts": [
+   "HSIG",
+   "SGHI",
+   "IGSH",
+   "IHSG"
+  ]
+ },
+ {
+  "num": 63,
+  "subj": "ga",
+  "topic": "Reading comprehension",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Modern warfare has changed from large scale clashes of armies to suppression of civilian populations. Chemical agents that do their work silently appear to be suited to such warfare; and regretfully, there exist people in military establishments who think that chemical agents are useful tools for their cause.\nWhich of the following statements best sums up the meaning of the above passage:",
+  "code": "",
+  "opts": [
+   "Modern warfare has resulted in civil strife.",
+   "Chemical agents are useful in modern warfare.",
+   "Use of chemical agents in warfare would be undesirable.",
+   "People in military establishments like to use chemical agents in war."
+  ]
+ },
+ {
+  "num": 64,
+  "subj": "ga",
+  "topic": "Work and time",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "5 skilled workers can build a wall in 20 days; 8 semi-skilled workers can build a wall in 25 days; 10 unskilled workers can build a wall in 30 days. If a team has 2 skilled, 6 semi-skilled and 5 unskilled workers, how long will it take to build the wall?",
+  "code": "",
+  "opts": [
+   "20 days",
+   "18 days",
+   "16 days",
+   "15 days"
+  ]
+ },
+ {
+  "num": 65,
+  "subj": "ga",
+  "topic": "Permutations with repetition",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Given digits 2, 2, 3, 3, 3, 4, 4, 4, 4 how many distinct 4 digit numbers greater than 3000 can be formed?",
+  "code": "",
+  "opts": [
+   "50",
+   "51",
+   "52",
+   "54"
+  ]
+ }
+]

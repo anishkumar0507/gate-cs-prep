@@ -1,0 +1,131 @@
+Q. No Type Section  Key        Marks
+
+1 MCQ GA            D          1
+
+2 MCQ GA            A          1
+
+3 MCQ GA            A          1
+
+4 MCQ GA            C          1
+
+5 MCQ GA            D          1
+
+6 MCQ GA            B          2
+
+7 MCQ GA            D          2
+
+8 MCQ GA            D          2
+
+9 MCQ GA            B          2
+
+10 MCQ GA           B          2
+
+1 NAT CS-1 11.0 : 11.0         1
+
+2 MCQ CS-1          B          1
+
+3 NAT CS-1          1.0 : 1.0  1
+
+4 NAT CS-1          0.5 : 0.5  1
+
+5 NAT CS-1 15.0 : 15.0         1
+
+6 MCQ CS-1          A          1
+
+7 NAT CS-1 -11.0 : -11.0 1
+
+8 NAT CS-1          3.0 : 4.0  1
+
+9 NAT CS-1 31.0 : 31.0         1
+
+10 MCQ CS-1         A          1
+
+11 NAT CS-1         6.0 : 6.0  1
+
+12 MCQ CS-1         D          1
+
+13 MCQ CS-1         D          1
+
+14 MCQ CS-1         A          1
+
+15 NAT CS-1 2016.0 : 2016.0 1
+
+16 MCQ CS-1         D          1
+
+17 MCQ CS-1         C          1
+
+18 MCQ CS-1         B          1
+
+19 NAT CS-1 10.0 : 10.0        1
+
+20 MCQ CS-1         A          1
+
+21 MCQ CS-1         B          1
+
+22 MCQ CS-1         D          1
+
+23 MCQ CS-1         B          1
+
+24 MCQ CS-1         C          1
+
+25 MCQ CS-1         C          1
+
+26 NAT CS-1 10.0 : 10.0        2
+
+27 NAT CS-1 197.9 : 198.1 2
+
+28 NAT CS-1         2.0 : 2.0  2
+
+29 NAT CS-1 0.33 : 0.34        2
+
+30 MCQ CS-1         D          2
+
+31 NAT CS-1 456.0 : 456.0 2
+
+32 NAT CS-1 33.0 : 34.0        2
+
+33 MCQ CS-1         B          2
+
+34 MCQ CS-1         D          2
+
+35 MCQ CS-1         A          2
+
+36 MCQ CS-1         D          2
+
+37 MCQ CS-1         B          2
+
+38 NAT CS-1 12.0 : 12.0        2
+
+39 NAT CS-1         7.0 : 7.0  2
+40 MCQ CS-1  B           2
+
+41 NAT CS-1 256.0 : 256.0 2
+
+42 MCQ CS-1  D           2
+
+43 MCQ CS-1  D           2
+
+44 MCQ CS-1  C           2
+
+45 NAT CS-1  9.0 : 9.0   2
+
+46 MCQ CS-1  C           2
+
+47 NAT CS-1 384.0 : 384.0 2
+
+48 NAT CS-1 346.0 : 346.0 2
+
+49 NAT CS-1  1.0 : 1.0   2
+
+50 MCQ CS-1  A           2
+
+51 MCQ CS-1  A           2
+
+52 MCQ CS-1  B           2
+
+53 NAT CS-1 13.0 : 13.0  2
+
+54 NAT CS-1  1.1 : 1.1   2
+
+55 NAT CS-1 2500.0 : 2500.0 2
+

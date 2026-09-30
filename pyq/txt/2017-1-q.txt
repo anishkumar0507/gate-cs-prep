@@ -1,0 +1,91 @@
+Question Paper Name:  Graduate Aptitude Test in Engineering 2017
+Subject Name:
+Duration:              Computer Science and Information Technology 11th Feb 2017 Session 1
+Total Marks:           180
+                       100
+Question Number : 1  Correct : 1 Wrong : -0.33
+
+Question Number : 2  Correct : 1 Wrong : -0.33
+Question Number : 3  Correct : 1 Wrong : -0.33
+
+Question Number : 4  Correct : 1 Wrong : -0.33
+Question Number : 5  Correct : 1 Wrong : -0.33
+
+Question Number : 6  Correct : 1 Wrong : -0.33
+
+Question Number : 7  Correct : 1 Wrong : -0.33
+Question Number : 8  Correct : 1 Wrong : -0.33
+
+Question Number : 9  Correct : 1 Wrong : -0.33
+Question Number : 10  Correct : 1 Wrong : -0.33
+
+Question Number : 11  Correct : 1 Wrong : -0.33
+Question Number : 12  Correct : 1 Wrong : -0.33
+Question Number : 13  Correct : 1 Wrong : -0.33
+
+Question Number : 14  Correct : 1 Wrong : -0.33
+Question Number : 15  Correct : 1 Wrong : -0.33
+
+Question Number : 16  Correct : 1 Wrong : -0.33
+Question Number : 17  Correct : 1 Wrong : -0.33
+
+Question Number : 18  Correct : 1 Wrong : -0.33
+Question Number : 19      Correct : 1 Wrong : 0
+Question Number : 20      Correct : 1 Wrong : 0
+Question Number : 21  Correct : 1 Wrong : 0
+
+Question Number : 22  Correct : 1 Wrong : 0
+Question Number : 23  Correct : 1 Wrong : 0
+
+Question Number : 24  Correct : 1 Wrong : 0
+Question Number : 25      Correct : 1 Wrong : 0
+Question Number : 26  Correct : 2 Wrong : -0.66
+
+Question Number : 27  Correct : 2 Wrong : -0.66
+Question Number : 28  Correct : 2 Wrong : -0.66
+Question Number : 29  Correct : 2 Wrong : -0.66
+Question Number : 30  Correct : 2 Wrong : -0.66
+Question Number : 31  Correct : 2 Wrong : -0.66
+Question Number : 32  Correct : 2 Wrong : -0.66
+Question Number : 33  Correct : 2 Wrong : -0.66
+
+Question Number : 34  Correct : 2 Wrong : -0.66
+Question Number : 35  Correct : 2 Wrong : -0.66
+
+Question Number : 36  Correct : 2 Wrong : -0.66
+Question Number : 37  Correct : 2 Wrong : -0.66
+
+Question Number : 38  Correct : 2 Wrong : -0.66
+
+Question Number : 39  Correct : 2 Wrong : -0.66
+Question Number : 40  Correct : 2 Wrong : -0.66
+
+Question Number : 41  Correct : 2 Wrong : -0.66
+Question Number : 42  Correct : 2 Wrong : -0.66
+
+Question Number : 43  Correct : 2 Wrong : 0
+Question Number : 44  Correct : 2 Wrong : 0
+Question Number : 45  Correct : 2 Wrong : 0
+Question Number : 46  Correct : 2 Wrong : 0
+
+Question Number : 47  Correct : 2 Wrong : 0
+Question Number : 48  Correct : 2 Wrong : 0
+Question Number : 49  Correct : 2 Wrong : 0
+
+Question Number : 50  Correct : 2 Wrong : 0
+Question Number : 51   Correct : 2 Wrong : 0
+Question Number : 52  Correct : 2 Wrong : 0
+Question Number : 53  Correct : 2 Wrong : 0
+Question Number : 54  Correct : 2 Wrong : 0
+Question Number : 55  Correct : 2 Wrong : 0
+Question Number : 56  Correct : 1 Wrong : -0.33
+Question Number : 57  Correct : 1 Wrong : -0.33
+Question Number : 58  Correct : 1 Wrong : -0.33
+Question Number : 59  Correct : 1 Wrong : -0.33
+Question Number : 60  Correct : 1 Wrong : -0.33
+Question Number : 61  Correct : 2 Wrong : -0.66
+Question Number : 62  Correct : 2 Wrong : -0.66
+Question Number : 63  Correct : 2 Wrong : -0.66
+Question Number : 64  Correct : 2 Wrong : -0.66
+Question Number : 65  Correct : 2 Wrong : -0.66
+

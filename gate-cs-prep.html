@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GATE CS Prep Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<style>
+/* Layout: an exam answer sheet — graph-ruled ground, white sheets, pen-blue ink, highlighter for your picks. */
+:root{
+  --paper:#F3F4EF; --sheet:#FFFFFF; --ink:#16213E; --muted:#5A6377; --line:#D9DCE3;
+  --grid:rgba(44,75,214,.07); --pen:#2C4BD6; --pen-ink:#FFFFFF; --pen-soft:#E8ECFB;
+  --marker:#FFE36B; --ok:#1C7C45; --ok-bg:#E2F3E8; --bad:#B8342A; --bad-bg:#FAE6E3;
+  --review:#6E45BF; --review-bg:#EEE7FA;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1220; --sheet:#161B2B; --ink:#E5E8F1; --muted:#9BA4B9; --line:#2A3147;
+  --grid:rgba(124,149,255,.06); --pen:#8098FF; --pen-ink:#0E1220; --pen-soft:#1F2744;
+  --marker:#5E5214; --ok:#5BD08A; --ok-bg:#15301F; --bad:#FF8577; --bad-bg:#3A1C19;
+  --review:#B596F2; --review-bg:#2A2040; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1220; --sheet:#161B2B; --ink:#E5E8F1; --muted:#9BA4B9; --line:#2A3147;
+  --grid:rgba(124,149,255,.06); --pen:#8098FF; --pen-ink:#0E1220; --pen-soft:#1F2744;
+  --marker:#5E5214; --ok:#5BD08A; --ok-bg:#15301F; --bad:#FF8577; --bad-bg:#3A1C19;
+  --review:#B596F2; --review-bg:#2A2040; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h2{font-size:1.15rem;font-weight:800;letter-spacing:.01em}
+h3{font-size:1rem;font-weight:600}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--pen);outline-offset:2px}
+.mono{font-family:var(--f-mono)}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap;padding-block:10px}
+.brand{font-family:var(--f-display);font-weight:800;font-size:1.05rem;display:flex;align-items:baseline;gap:8px;margin-right:auto}
+.brand .tag{font:600 .7rem var(--f-mono);letter-spacing:.08em;color:var(--pen);border:1px solid var(--pen);padding:1px 6px;border-radius:3px}
+nav.tabs{display:flex;gap:4px;flex-wrap:wrap}
+nav.tabs button{background:none;border:1px solid transparent;border-radius:6px;padding:6px 12px;cursor:pointer;font-weight:600;color:var(--muted)}
+nav.tabs button:hover{color:var(--ink);border-color:var(--line)}
+nav.tabs button[aria-selected="true"]{color:var(--pen-ink);background:var(--pen)}
+.lang{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--muted)}
+select,input[type=text],textarea{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px;max-width:100%}
+textarea{width:100%;resize:vertical}
+
+/* shared blocks */
+.sheet,.panel{background:var(--sheet);border:1px solid var(--line);border-radius:8px}
+.panel{padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.stack{display:flex;flex-direction:column;gap:20px;margin-top:24px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.btn{border:1px solid var(--line);background:var(--sheet);border-radius:6px;padding:8px 14px;cursor:pointer;font-weight:600}
+.btn:hover{border-color:var(--pen)}
+.btn.primary{background:var(--pen);color:var(--pen-ink);border-color:var(--pen)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.danger{color:var(--bad);border-color:var(--bad)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.eyebrow{font:600 .75rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--pen);margin:0}
+.notice{border:1px dashed var(--line);border-radius:8px;padding:12px 14px;color:var(--muted);font-size:.92rem;background:var(--sheet)}
+.chip{display:inline-flex;align-items:center;gap:4px;font:600 .72rem var(--f-mono);letter-spacing:.03em;padding:2px 8px;border-radius:999px;background:var(--pen-soft);color:var(--pen);white-space:nowrap}
+.chip.pyq{background:var(--marker);color:var(--ink)}
+.chip.ai{background:var(--review-bg);color:var(--review)}
+.chip.plain{background:transparent;border:1px solid var(--line);color:var(--muted)}
+
+/* home */
+.hero{padding-block:36px 8px;display:flex;flex-direction:column;gap:10px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 mark{background:linear-gradient(transparent 55%,var(--marker) 55%);color:inherit;padding:0 .08em}
+.hero .lede{max-width:62ch;color:var(--muted);margin:0;font-size:1.05rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.stat b{display:block;font:800 1.6rem var(--f-display);font-variant-numeric:tabular-nums}
+.stat span{font-size:.85rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tscroll{overflow-x:auto}
+.types{display:grid;gap:10px}
+.type{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:start;font-size:.93rem}
+.type .t{font:700 .8rem var(--f-mono);border:1px solid var(--ink);border-radius:4px;text-align:center;padding:3px 0}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:minmax(0,1.4fr) 64px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:.9rem}
+.bar .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .wt{font:600 .75rem var(--f-mono);color:var(--muted)}
+.bar .track{height:8px;border-radius:4px;background:var(--pen-soft);overflow:hidden}
+.bar .fill{height:100%;background:var(--pen)}
+.bar .pct{font:600 .8rem var(--f-mono);text-align:right}
+ol.steps{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px}
+
+/* questions */
+.q{display:flex;flex-direction:column;gap:14px}
+.qmeta{display:flex;flex-wrap:wrap;gap:6px}
+.qtext{white-space:pre-wrap;font-size:1.05rem;line-height:1.6;overflow-wrap:anywhere}
+pre.code{font:.9rem/1.5 var(--f-mono);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0;white-space:pre}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;text-align:left;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;white-space:pre-wrap;overflow-wrap:anywhere}
+.opt:hover{border-color:var(--pen)}
+.bub{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font:700 .8rem var(--f-mono)}
+.q.msq .bub{border-radius:5px}
+.opt.on{background:var(--marker);border-color:var(--ink)}
+.opt.on .bub{background:var(--ink);color:var(--sheet)}
+.opt.right{background:var(--ok-bg);border-color:var(--ok)}
+.opt.right .bub{background:var(--ok);border-color:var(--ok);color:var(--sheet)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.opt.wrong .bub{background:var(--bad);border-color:var(--bad);color:var(--sheet)}
+.nat{font:600 1.1rem var(--f-mono);width:220px}
+.fig{font-size:.88rem;color:var(--muted);border-left:3px solid var(--marker);padding-left:10px}
+.feedback{border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.feedback.ok{background:var(--ok-bg)}
+.feedback.bad{background:var(--bad-bg)}
+.verdict{font:800 1.05rem var(--f-display)}
+.feedback.ok .verdict{color:var(--ok)}
+.feedback.bad .verdict{color:var(--bad)}
+.exp{white-space:pre-wrap}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.toolbar label{display:flex;flex-direction:column;gap:3px;font-size:.78rem;color:var(--muted);font-weight:600}
+#pCard{padding:22px;margin-top:16px}
+.qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;font:600 .82rem var(--f-mono);color:var(--muted)}
+.empty{color:var(--muted);margin:0}
+
+/* lesson */
+.learn{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;margin-top:24px;align-items:start}
+@media (max-width:760px){.learn{grid-template-columns:1fr}}
+.subjlist{display:flex;flex-direction:column;gap:2px;padding:8px}
+.subjlist button{text-align:left;background:none;border:0;border-radius:6px;padding:8px 10px;cursor:pointer;font-weight:600;color:var(--muted)}
+.subjlist button:hover{color:var(--ink);background:var(--paper)}
+.subjlist button[aria-pressed="true"]{color:var(--ink);background:var(--pen-soft)}
+@media (max-width:760px){.subjlist{flex-direction:row;overflow-x:auto}.subjlist button{white-space:nowrap}}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics button{border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:.9rem}
+.topics button[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.lesson{min-height:120px;max-width:72ch}
+.lesson h4{font:800 1.02rem var(--f-display);margin:18px 0 6px}
+.lesson p{margin:6px 0}
+.lesson ul{margin:6px 0;padding-left:1.2em}
+.lesson code{font:.88em var(--f-mono);background:var(--paper);padding:1px 4px;border-radius:3px}
+.lesson pre.code{margin:8px 0}
+.thinking{color:var(--muted);font-style:italic}
+.chat{display:flex;flex-direction:column;gap:10px}
+.msg{padding:10px 12px;border-radius:8px;max-width:72ch}
+.msg.me{background:var(--pen-soft);align-self:flex-end;white-space:pre-wrap}
+.msg.ai{background:var(--paper);border:1px solid var(--line)}
+
+/* mock */
+.mock{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px;margin-top:20px;align-items:start}
+@media (max-width:860px){.mock{grid-template-columns:1fr}}
+.mockbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;padding:12px 16px}
+.timer{font:800 1.4rem var(--f-mono);font-variant-numeric:tabular-nums}
+.timer.low{color:var(--bad)}
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px}
+.palette button{height:38px;border-radius:6px;border:1px solid var(--line);background:var(--sheet);cursor:pointer;font:600 .8rem var(--f-mono)}
+.palette button.ans{background:var(--ok);border-color:var(--ok);color:var(--sheet)}
+.palette button.nans{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.palette button.rev{background:var(--review);border-color:var(--review);color:var(--sheet)}
+.palette button.cur{outline:2px solid var(--ink);outline-offset:1px}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.8rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid var(--line)}
+.score{font:800 clamp(2.4rem,7vw,3.4rem) var(--f-display);font-variant-numeric:tabular-nums;line-height:1}
+details.rev{border-bottom:1px solid var(--line);padding:10px 0}
+details.rev summary{cursor:pointer;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+details.rev .body{padding-top:12px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.ok{background:var(--ok)}.dot.bad{background:var(--bad)}.dot.na{background:var(--line)}
+
+/* import */
+.log{font:.82rem/1.5 var(--f-mono);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px;max-height:220px;overflow:auto;white-space:pre-wrap}
+.papers{display:flex;flex-direction:column}
+.paper{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line)}
+.field{display:flex;flex-direction:column;gap:5px;font-size:.88rem;font-weight:600}
+.field input[type=file]{font-size:.88rem}
+
+/* today / revision */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.big{font:800 2.4rem var(--f-display);font-variant-numeric:tabular-nums;line-height:1}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;padding:10px 14px;border-radius:8px;background:var(--pen-soft);font-weight:600}
+.chip.old{background:var(--bad-bg);color:var(--bad)}
+.chip.rev{background:var(--review-bg);color:var(--review)}
+/* gate 2027 */
+.fact{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:6px 16px;font-size:.95rem}
+.fact dt{color:var(--muted);font-weight:600}
+.fact dd{margin:0}
+.pred{border-left:3px solid var(--review);padding-left:12px}
+.heat td,.heat th{text-align:right;padding:6px 8px}
+.heat td:first-child,.heat th:first-child{text-align:left}
+.heat td.c{font:600 .82rem var(--f-mono)}
+.src{font-size:.82rem;color:var(--muted)}
+.src a{color:var(--pen)}
+/* settings */
+dialog{border:1px solid var(--line);border-radius:10px;background:var(--sheet);color:var(--ink);padding:22px;width:min(520px,calc(100% - 32px))}
+dialog::backdrop{background:rgba(10,14,30,.45)}
+.iconbtn{background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer;font-weight:600;color:var(--muted)}
+.iconbtn:hover{color:var(--ink);border-color:var(--pen)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:10px 16px;border-radius:8px;font-size:.9rem;z-index:50;max-width:calc(100% - 32px)}
+@media (prefers-reduced-motion:no-preference){.opt,.btn,nav.tabs button{transition:background .12s,border-color .12s}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Prep Desk <span class="tag">GATE CS 2027</span></div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="home" aria-selected="true">Home</button>
+      <button role="tab" data-tab="today" aria-selected="false">Aaj</button>
+      <button role="tab" data-tab="learn" aria-selected="false">Learn</button>
+      <button role="tab" data-tab="practice" aria-selected="false">Practice</button>
+      <button role="tab" data-tab="mock" aria-selected="false">Mock Test</button>
+      <button role="tab" data-tab="pyq" aria-selected="false">PYQ Papers</button>
+      <button role="tab" data-tab="g27" aria-selected="false">GATE 2027</button>
+    </nav>
+    <label class="lang" for="lang">Explain in
+      <select id="lang"><option value="hinglish">Hinglish</option><option value="english">English</option></select>
+    </label>
+    <button class="iconbtn" id="setBtn" type="button">Settings</button>
+  </div>
+</header>
+
+<dialog id="setDlg" aria-labelledby="setTitle">
+  <form method="dialog" class="stack" style="margin-top:0">
+    <h2 id="setTitle">Settings</h2>
+    <p class="small muted" style="margin:0" id="setAIstate"></p>
+    <label class="field" for="apiKey">Anthropic API key
+      <input type="password" id="apiKey" autocomplete="off" placeholder="sk-ant-..." style="background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:7px 10px">
+    </label>
+    <label class="field" for="apiModel">Model
+      <select id="apiModel">
+        <option value="claude-opus-5-5">Claude Opus 5.5 (best explanations)</option>
+        <option value="claude-sonnet-5-5">Claude Sonnet 5.5 (about half the cost)</option>
+      </select>
+    </label>
+    <p class="small muted" style="margin:0">The key is saved only in this browser on this computer and is sent only to api.anthropic.com. Every lesson, explanation and generated question is billed to your Anthropic account. Don't use this on a shared computer.</p>
+    <div class="row"><button class="btn primary" id="setSave" value="save">Save</button><button class="btn danger" id="setClear" value="clear" type="button">Remove key</button><button class="btn" value="cancel">Close</button></div>
+  </form>
+</dialog>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section id="tab-home" class="tab">
+  <div class="hero">
+    <p class="eyebrow">Computer Science &amp; IT · paper code CS</p>
+    <h1>Crack <mark>GATE 2027</mark>, one question at a time.</h1>
+    <p class="lede">Every official GATE CS paper from 2007 to 2026, checked against the official answer keys. Practise with instant checking, get each mistake explained, revise it on a schedule until it sticks, and sit full mocks with the real marking scheme.</p>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h2>Exam pattern</h2>
+      <div class="tscroll"><table>
+        <thead><tr><th>Section</th><th>Questions</th><th>Marks</th></tr></thead>
+        <tbody>
+          <tr><td>General Aptitude</td><td>10 (5 × 1-mark, 5 × 2-mark)</td><td>15</td></tr>
+          <tr><td>Engineering Maths + CS subjects</td><td>55 (25 × 1-mark, 30 × 2-mark)</td><td>85</td></tr>
+          <tr><th>Total</th><th>65 in 180 minutes</th><th>100</th></tr>
+        </tbody>
+      </table></div>
+      <div class="types">
+        <div class="type"><span class="t">MCQ</span><span>One correct option. Wrong answer costs <b>−1/3</b> (1-mark) or <b>−2/3</b> (2-mark).</span></div>
+        <div class="type"><span class="t">MSQ</span><span>One or more options correct. Full marks only if you pick exactly the right set. No negative, no partial marks.</span></div>
+        <div class="type"><span class="t">NAT</span><span>Type a number on the virtual keypad. Answer is accepted within a range. No negative marking.</span></div>
+      </div>
+      <p class="small muted" style="margin:0">Pattern confirmed by the GATE 2027 brochure (IIT Madras). Exam days: 6, 7, 13, 14, 20 and 21 Feb 2027. Registration closes 5 Oct 2026 (late fee till 12 Oct). Details in the GATE 2027 tab.</p>
+    </div>
+    <div class="panel">
+      <h2>Subjects · typical marks · your accuracy</h2>
+      <div class="bars" id="subjBars"></div>
+      <p class="small muted" style="margin:0">Marks per subject vary each year; ranges are typical of recent papers. Accuracy counts your latest attempt of each question.</p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h2>Daily routine that works</h2>
+    <ol class="steps">
+      <li><b>Aaj → Revision:</b> clear the questions due today first. They are the ones you got wrong 1, 3, 7, 15 or 30 days ago.</li>
+      <li><b>Aaj → Today's PYQs:</b> solve the day's set of real questions you have never seen. A wrong answer shows the official solution, then a step-by-step explanation of your exact mistake, and joins your revision list.</li>
+      <li><b>Learn:</b> for any topic that keeps going wrong, read the lesson and "How GATE asks it + traps", and clear doubts in the chat.</li>
+      <li><b>GATE 2027 tab:</b> check which topics carry the most marks and practise those PYQs topic by topic.</li>
+      <li><b>Mock Test:</b> every weekend sit one full official paper in 180 minutes, newest first, then study the subject-wise breakdown.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- TODAY -->
+<section id="tab-today" class="tab" hidden>
+  <div class="hero" style="padding-block:28px 4px">
+    <p class="eyebrow" id="tDate"></p>
+    <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">Aaj ka kaam</h1>
+    <p class="lede" id="tLede"></p>
+  </div>
+  <div class="cards" style="margin-top:16px">
+    <div class="panel">
+      <p class="eyebrow">1 · Revision due</p>
+      <div class="big" id="tDue">0</div>
+      <p class="small muted" style="margin:0">Questions you got wrong come back after 1, 3, 7, 15 and 30 days. Get one right at every step and it leaves the list.</p>
+      <div class="row"><button class="btn primary" id="tRevGo">Start revision</button></div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">2 · Today's new PYQs</p>
+      <div class="big" id="tNew">0</div>
+      <p class="small muted" style="margin:0" id="tNewInfo">Real GATE questions you have never attempted, picked each day with more from the high-weightage subjects.</p>
+      <div class="row">
+        <label class="field" for="tNewN" style="flex-direction:row;align-items:center;gap:8px">Questions<select id="tNewN"><option>10</option><option selected>15</option><option>20</option><option>30</option></select></label>
+        <button class="btn primary" id="tNewGo">Start today's set</button>
+      </div>
+    </div>
+    <div class="panel" data-ai>
+      <p class="eyebrow">3 · Fresh questions</p>
+      <p style="margin:0">New GATE-level questions on your weakest subject, written today. They go into the practice pool marked <span class="chip ai">AI</span>.</p>
+      <p class="small muted" style="margin:0" id="tWeak"></p>
+      <div class="row"><button class="btn" id="tGenGo">Write 5 fresh questions</button></div>
+      <p class="small muted" style="margin:0" id="tGenMsg"></p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h2>Your streak</h2>
+    <p style="margin:0" id="tStreak"></p>
+    <div class="palette" id="tDays" style="grid-template-columns:repeat(auto-fill,minmax(22px,1fr));gap:4px"></div>
+    <p class="small muted" style="margin:0">Each square is one of the last 60 days. Filled = you solved at least one question that day.</p>
+  </div>
+</section>
+
+<!-- LEARN -->
+<section id="tab-learn" class="tab" hidden>
+  <div class="learn">
+    <aside class="sheet subjlist" id="lSubj" aria-label="Subjects"></aside>
+    <div class="stack" style="margin-top:0">
+      <div class="panel">
+        <div>
+          <p class="eyebrow" id="lWeight"></p>
+          <h2 id="lTitle" style="font-size:1.5rem;margin-top:4px"></h2>
+        </div>
+        <div class="topics" id="lTopics"></div>
+        <div class="row" data-ai>
+          <button class="btn primary" id="lTeach">Teach this topic</button>
+          <button class="btn" id="lPattern">How GATE asks it + traps</button>
+          <button class="btn" id="lRevise">1-page revision sheet</button>
+          <button class="btn" id="lPractice">Practise this topic</button>
+          <button class="btn" id="lStop" hidden>Stop</button>
+        </div>
+        <div class="lesson" id="lOut"><p class="muted">Pick a topic, then choose <b>Teach this topic</b>. You get the concepts, formulas, two worked GATE-level examples and a checklist.</p></div>
+      </div>
+      <div class="panel" data-ai>
+        <h2>Ask a doubt</h2>
+        <div class="chat" id="dLog"></div>
+        <label for="dIn" class="small muted">Paste a question or describe what's confusing. The chat knows which topic you're on.</label>
+        <textarea id="dIn" rows="3" placeholder="e.g. LALR aur SLR me conflict ka difference samjhao example ke saath"></textarea>
+        <div class="row"><button class="btn primary" id="dSend">Ask</button><button class="btn" id="dClear">Clear chat</button></div>
+      </div>
+      <div class="notice" data-noai hidden>Lessons, doubt chat and question generation use Claude. Add your Anthropic API key in Settings (top right), or open this page inside Claude and allow it when asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="tab-practice" class="tab" hidden>
+  <div class="toolbar">
+    <label for="pSubj">Subject<select id="pSubj"></select></label>
+    <label for="pSrc">Source<select id="pSrc">
+      <option value="all">All questions</option>
+      <option value="pyq">Official PYQs (imported)</option>
+      <option value="builtin">Starter set</option>
+      <option value="ai">AI-generated</option>
+    </select></label>
+    <label for="pStatus">Show<select id="pStatus">
+      <option value="all">All</option>
+      <option value="new">Not attempted</option>
+      <option value="wrong">Got wrong last time</option>
+    </select></label>
+    <label for="pYear">Year<select id="pYear"><option value="all">All years</option></select></label>
+    <label for="pTopic">Topic contains<input type="text" id="pTopic" placeholder="e.g. cache"></label>
+    <button class="btn" id="pShuffle" style="align-self:flex-end">Shuffle</button>
+  </div>
+  <div class="banner" id="pBanner" hidden><span id="pBannerTxt"></span><button class="btn" id="pBannerExit" type="button">Back to all questions</button></div>
+  <div class="sheet" id="pCard"></div>
+  <div class="panel" data-ai style="margin-top:20px">
+    <h2>Need more on one topic? Generate fresh GATE-level questions</h2>
+    <div class="row">
+      <label class="field" for="gSubj">Subject<select id="gSubj"></select></label>
+      <label class="field" for="gTopic" style="flex:1;min-width:200px">Topic<input type="text" id="gTopic" placeholder="e.g. LRU page replacement with page faults"></label>
+      <label class="field" for="gN">How many<select id="gN"><option>5</option><option>10</option></select></label>
+      <button class="btn primary" id="gGo" style="align-self:flex-end">Generate</button>
+    </div>
+    <p class="small muted" id="gMsg" style="margin:0">Generated questions are modelled on how GATE has asked the topic, marked <span class="chip ai">AI</span>, and added to your practice pool.</p>
+  </div>
+</section>
+
+<!-- MOCK -->
+<section id="tab-mock" class="tab" hidden>
+  <div id="mSetup" class="stack">
+    <div class="panel">
+      <h2>Start a mock test</h2>
+      <div class="row">
+        <label class="field" for="mSrc" style="min-width:260px">Paper<select id="mSrc"></select></label>
+        <button class="btn primary" id="mStart" style="align-self:flex-end">Start test</button>
+      </div>
+      <p class="small muted" id="mInfo" style="margin:0"></p>
+      <p class="small muted" style="margin:0">Marking follows GATE: MCQ −1/3 or −2/3 for a wrong answer, MSQ and NAT no negative. The timer submits automatically when it hits zero.</p>
+    </div>
+    <div class="panel">
+      <h2>Past mocks</h2>
+      <div id="mHist"></div>
+    </div>
+  </div>
+  <div id="mTest" hidden>
+    <div class="sheet mockbar">
+      <div><div class="small muted" id="tLabel"></div><div class="small mono" id="tProg"></div></div>
+      <div class="row"><span class="timer" id="tTimer">00:00:00</span><button class="btn danger" id="tSubmit">Submit test</button></div>
+    </div>
+    <div class="row" id="tConfirm" hidden style="margin-top:10px;justify-content:flex-end">
+      <span class="small" id="tConfirmTxt"></span>
+      <button class="btn danger" id="tConfirmYes">Yes, submit</button>
+      <button class="btn" id="tConfirmNo">Keep going</button>
+    </div>
+    <div class="mock">
+      <div class="sheet" style="padding:22px">
+        <div class="qhead"><span id="tQnum"></span><span id="tQmarks"></span></div>
+        <div id="tQ"></div>
+        <div class="row" style="margin-top:20px">
+          <button class="btn" id="tPrev">Previous</button>
+          <button class="btn" id="tClear">Clear response</button>
+          <button class="btn" id="tMark">Mark for review &amp; next</button>
+          <button class="btn primary" id="tNext">Save &amp; next</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Question palette</h3>
+        <div class="palette" id="tPal"></div>
+        <div class="legend">
+          <span><i style="background:var(--ok);border-color:var(--ok)"></i>Answered</span>
+          <span><i style="background:var(--bad-bg);border-color:var(--bad)"></i>Not answered</span>
+          <span><i style="background:var(--review);border-color:var(--review)"></i>Marked</span>
+          <span><i></i>Not visited</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mResult" hidden class="stack"></div>
+</section>
+
+<!-- PYQ -->
+<section id="tab-pyq" class="tab" hidden>
+  <div class="stack">
+    <div class="panel">
+      <h2>Import an official GATE CS paper</h2>
+      <p style="margin:0;max-width:70ch">Download the question paper and answer key PDFs for any year from the official GATE website of that year (the "Previous year question papers" page). Upload both here. Claude reads every question, sorts it by subject and topic, takes the answer from the official key, and writes a step-by-step solution.</p>
+      <div class="grid2">
+        <label class="field" for="iLabel">Paper name<input type="text" id="iLabel" placeholder="GATE CS 2024 Set 1"></label>
+        <span></span>
+        <label class="field" for="iPaper">Question paper PDF<input type="file" id="iPaper" accept="application/pdf"></label>
+        <label class="field" for="iKey">Answer key PDF (recommended)<input type="file" id="iKey" accept="application/pdf"></label>
+      </div>
+      <details>
+        <summary class="small" style="cursor:pointer">No PDF? Paste the text instead</summary>
+        <div class="stack" style="margin-top:10px">
+          <label class="field" for="iPaperTxt">Question paper text<textarea id="iPaperTxt" rows="5"></textarea></label>
+          <label class="field" for="iKeyTxt">Answer key text<textarea id="iKeyTxt" rows="3"></textarea></label>
+        </div>
+      </details>
+      <div class="row" data-ai><button class="btn primary" id="iGo">Import questions</button><button class="btn" id="iStop" hidden>Stop</button></div>
+      <div class="notice" data-noai hidden>Importing uses Claude to read the paper. Add your Anthropic API key in Settings, or open this page inside Claude and allow it when asked.</div>
+      <div class="log" id="iLog" hidden></div>
+      <p class="small muted" style="margin:0">Questions built on a figure (a circuit, a graph drawing, a table image) keep a note to check the figure in the original PDF. Without an answer key, answers are solved by Claude and marked "verify with key".</p>
+    </div>
+    <div class="panel">
+      <h2>Papers in your question bank</h2>
+      <div class="papers" id="iList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GATE 2027 -->
+<section id="tab-g27" class="tab" hidden>
+  <div class="stack">
+    <div class="panel" id="gFacts"></div>
+    <div class="panel">
+      <h2>Marks per subject, paper by paper</h2>
+      <p class="small muted" style="margin:0">Counted from the official papers in your bank (1-mark and 2-mark questions added up). General Aptitude is always 15.</p>
+      <div class="tscroll"><table class="heat" id="gHeat"></table></div>
+    </div>
+    <div class="panel">
+      <h2>Most-asked topics</h2>
+      <p class="small muted" style="margin:0">How many times each topic appeared across the official papers in your bank. Click a topic to practise every PYQ on it.</p>
+      <label class="field" for="gSubjSel" style="max-width:320px">Subject<select id="gSubjSel"></select></label>
+      <div class="bars" id="gTopics"></div>
+    </div>
+    <div class="panel pred">
+      <p class="eyebrow" style="color:var(--review)">Prediction · statistics, not a leak</p>
+      <h2>Topics most likely to appear in GATE 2027</h2>
+      <p class="small muted" style="margin:0">Ranked by how often each topic appeared in the last 5 years of papers, with recent years counting more. Nobody knows the real paper; this only shows where past papers have spent their marks.</p>
+      <div class="tscroll"><table id="gPred"></table></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+/* GATE 2027 facts, checked against the official IIT Madras pages on 30 Sep 2026 */
+window.GATE27_INFO={
+ asof:'30 September 2026',
+ title:'GATE 2027 · Computer Science & IT (CS)',
+ lead:'Organised by IIT Madras. Registration closes on 5 October 2026 (regular fee); with the late fee, on 12 October 2026.',
+ facts:[
+  ['Organising institute','IIT Madras · gate2027.iitm.ac.in'],
+  ['Registration (GOAPS)','Opened 2 Sep 2026. Regular deadline 5 Oct 2026. Late-fee deadline 12 Oct 2026. Correction window 14–21 Oct 2026.'],
+  ['Exam dates','6, 7, 13, 14, 20 and 21 February 2027. Forenoon 9:30–12:30, afternoon 14:30–17:30. The day for CS is not announced yet.'],
+  ['Exam city and admit card','Exam city notice 4 January 2027. Admit card date to be announced.'],
+  ['Result','19 March 2027. The score is valid for 3 years.'],
+  ['Pattern','65 questions, 100 marks, 3 hours. General Aptitude 15 + Engineering Mathematics (includes Discrete Maths) 13 + core CS 72. 30 one-mark and 35 two-mark questions. Unchanged from 2026.'],
+  ['Marking','MCQ: −1/3 (1-mark) or −2/3 (2-mark) for a wrong answer. MSQ and NAT: no negative marks. MSQ: no partial marks. Only the on-screen virtual calculator is allowed.'],
+  ['Syllabus changes for 2027','Digital Logic now names K-map, the tabular (Quine–McCluskey) method, circuit design and fixed/floating-point arithmetic. COA now names ALU design, hardwired vs microprogrammed control and memory interfacing; secondary storage is dropped. Computer Networks is narrower: ARP, DHCP, ICMP, UDP, SMTP, FTP and e-mail are no longer named; switching performance metrics, NAT and the socket API are added. All other subjects are unchanged.'],
+  ['GATE 2026 CS cut-off','Qualifying marks: General 30, OBC-NCL/EWS 27, SC/ST/PwD 20. All India Rank 1 scored 92.57 out of 100.']
+ ],
+ notes:['PYQs on topics removed long ago (software engineering, web technologies, numerical methods) carry an "Old syllabus" tag. Older networking PYQs on ARP, DHCP, ICMP, SMTP or FTP are still useful for concepts, but the 2027 syllabus no longer names those protocols.'],
+ sources:[
+  ['GATE 2027 Information Brochure','https://gate2027ib.iitm.ac.in/GATE2027-IB.pdf'],
+  ['Important dates','https://gate2027.iitm.ac.in/important_dates'],
+  ['Question paper pattern','https://gate2027.iitm.ac.in/question_paper_pattern'],
+  ['CS syllabus 2027','https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/CS_GATE2027_Syllabus.pdf'],
+  ['IIT Madras announcement','https://www.iitm.ac.in/happenings/press-releases-and-coverages/iit-madras-announces-dates-syllabus-revision-new-paper'],
+  ['GATE 2026 cut-off','https://gate2026.iitg.ac.in/cut-off.html']
+ ]
+};
+</script>
+<script src="pyq/pyq-data.js"></script>
+<script>
+/* ---------- data ---------- */
+const SUBJECTS=[
+ {id:'ga',name:'General Aptitude',w:'15',topics:['Verbal Ability','Quantitative Aptitude','Analytical Reasoning','Spatial Reasoning','Data Interpretation']},
+ {id:'em',name:'Engineering Mathematics',w:'5–9',topics:['Linear Algebra (rank, eigenvalues, systems)','Calculus (limits, maxima-minima, integrals)','Probability & Statistics (conditional, Bayes, distributions)']},
+ {id:'dm',name:'Discrete Mathematics',w:'5–9',topics:['Propositional & First-order Logic','Sets, Relations, Functions, Partial Orders, Lattices','Combinatorics & Recurrence Relations','Graph Theory (connectivity, matching, colouring)','Groups & Monoids']},
+ {id:'dl',name:'Digital Logic',w:'5–9',topics:['Boolean Algebra & Minimization (K-map, tabular / Quine–McCluskey)','Design of Combinational Circuits (MUX, decoders, adders)','Design of Sequential Circuits (flip-flops, counters)','Number Representation & Arithmetic (fixed and floating point)']},
+ {id:'coa',name:'Computer Organization & Architecture',w:'5–10',topics:['Instruction Set & Addressing Modes','Design of ALU','Control Unit Design (hardwired, microprogrammed)','Memory Interfacing, Hierarchy & Cache Mapping','Instruction Pipelining & Hazards','I/O Interface, Interrupts & DMA']},
+ {id:'pds',name:'Programming & Data Structures',w:'8–12',topics:['C Programming: pointers, recursion, static, parameter passing','Arrays, Stacks, Queues, Linked Lists','Trees, Binary Search Trees, Binary Heaps','Hashing','Graphs (representation)']},
+ {id:'algo',name:'Algorithms',w:'6–10',topics:['Asymptotic Analysis & Recurrences (Master theorem)','Searching & Sorting','Greedy Algorithms','Dynamic Programming','Divide & Conquer','Graph Traversals, MST, Shortest Paths']},
+ {id:'toc',name:'Theory of Computation',w:'6–9',topics:['Regular Expressions & Finite Automata','Context-free Grammars & Pushdown Automata','Regular & Context-free Languages, Pumping Lemma','Turing Machines & Undecidability']},
+ {id:'cd',name:'Compiler Design',w:'3–6',topics:['Lexical Analysis','Parsing (LL(1), LR(0), SLR, LALR, CLR)','Syntax-directed Translation','Runtime Environments','Intermediate Code, Liveness, Optimisation']},
+ {id:'os',name:'Operating System',w:'7–10',topics:['System Calls, Processes, Threads','CPU Scheduling','Synchronisation, Semaphores, Classic problems','Deadlock & Banker\'s Algorithm','Memory Management, Paging, TLB','Virtual Memory & Page Replacement','File Systems & Disk Scheduling']},
+ {id:'db',name:'Databases',w:'6–9',topics:['ER Model','Relational Algebra, Tuple Calculus, SQL','Functional Dependencies & Normal Forms','Transactions & Concurrency Control','File Organisation, Indexing, B and B+ Trees']},
+ {id:'cn',name:'Computer Networks',w:'6–10',topics:['Layering; Switching (circuit, packet, virtual circuit) & Performance Metrics','Data Link: error detection (CRC), sliding window','MAC & Ethernet (CSMA/CD)','IPv4: Subnetting, CIDR, Fragmentation, NAT','Routing: Distance Vector, Link State','TCP: flow control, congestion control, socket API','DNS & HTTP']},
+];
+const SUBJ=Object.fromEntries(SUBJECTS.map(s=>[s.id,s]));
+
+const BUILTIN=[
+ {id:'b1',subj:'ga',topic:'Quantitative Aptitude',type:'NAT',marks:1,q:'A can finish a piece of work in 10 days and B can finish it in 15 days. Working together, in how many days will they finish the work?',ans:{min:6,max:6},exp:'A ka 1 din ka kaam = 1/10, B ka = 1/15.\nSaath me 1 din = 1/10 + 1/15 = 5/30 = 1/6.\nPoora kaam = 6 din.'},
+ {id:'b2',subj:'ga',topic:'Analytical Reasoning',type:'MCQ',marks:1,q:'If CODE is written as DPEF in a certain code, how is GATE written in that code?',opts:['HBUF','HBTF','GBUF','HCUF'],ans:'A',exp:'Har letter ko +1 shift kiya gaya hai: C→D, O→P, D→E, E→F.\nG→H, A→B, T→U, E→F = HBUF.'},
+ {id:'b3',subj:'ga',topic:'Verbal Ability',type:'MCQ',marks:1,q:'Choose the word most nearly OPPOSITE in meaning to "frugal".',opts:['Thrifty','Extravagant','Careful','Modest'],ans:'B',exp:'Frugal = paisa soch samajh ke kharch karna. Opposite = extravagant (bahut zyada kharch karne wala). Thrifty to synonym hai — GATE me ye common trap hai.'},
+ {id:'b4',subj:'ga',topic:'Quantitative Aptitude',type:'NAT',marks:2,q:'The average of five consecutive odd numbers is 27. What is the largest of these numbers?',ans:{min:31,max:31},exp:'Consecutive odd numbers ka average = beech wala number = 27.\nNumbers: 23, 25, 27, 29, 31. Largest = 31.'},
+ {id:'b5',subj:'em',topic:'Linear Algebra',type:'NAT',marks:1,q:'Let M = [[2, 1], [1, 2]] (rows written left to right). The sum of the squares of the eigenvalues of M is ______.',ans:{min:10,max:10},exp:'Characteristic eqn: (2−λ)² − 1 = 0 ⇒ λ = 1, 3.\nSum of squares = 1 + 9 = 10.\nShortcut: sum of squares of eigenvalues = trace(M²). M² = [[5,4],[4,5]], trace = 10.'},
+ {id:'b6',subj:'em',topic:'Probability',type:'NAT',marks:2,q:'Two fair six-sided dice are rolled. Given that at least one die shows 3, the probability that the sum is 7 is ______ (round off to two decimal places).',ans:{min:0.17,max:0.19},exp:'Event B (at least one 3): 6 + 6 − 1 = 11 outcomes.\nA ∩ B (sum 7 with a 3): (3,4), (4,3) = 2 outcomes.\nP(A|B) = 2/11 ≈ 0.18.'},
+ {id:'b7',subj:'em',topic:'Linear Algebra',type:'MCQ',marks:1,q:'The rank of the matrix [[1, 2, 3], [2, 4, 6], [1, 1, 1]] is',opts:['1','2','3','0'],ans:'B',exp:'Row 2 = 2 × Row 1, isliye dependent.\nRow 1 aur Row 3 independent hain (proportional nahi).\nRank = 2.'},
+ {id:'b8',subj:'dm',topic:'Sets, Relations, Functions',type:'NAT',marks:1,q:'The number of reflexive relations on a set with 4 elements is ______.',ans:{min:4096,max:4096},exp:'n×n = 16 ordered pairs. Reflexive ke liye 4 diagonal pairs (a,a) hone hi chahiye.\nBaaki 16 − 4 = 12 pairs free: 2¹² = 4096.\nFormula: 2^(n² − n).'},
+ {id:'b9',subj:'dm',topic:'Graph Theory',type:'MCQ',marks:1,q:'The chromatic number of a cycle graph C₇ (7 vertices) is',opts:['2','3','4','7'],ans:'B',exp:'Even cycle → 2 colours kaafi. Odd cycle → alternate colouring last vertex pe fail hoti hai, isliye 3 chahiye.\nC₇ odd hai ⇒ 3.'},
+ {id:'b10',subj:'dm',topic:'Propositional Logic',type:'MSQ',marks:2,q:'Which of the following formulas are tautologies?',opts:['p → (q → p)','(p → q) → (q → p)','(p ∧ (p → q)) → q','(p ∨ q) → (p ∧ q)'],ans:['A','C'],exp:'(A) False tabhi hoga jab p = T aur (q→p) = F, par p = T hone par q→p hamesha T. Tautology.\n(B) p = F, q = T: (T) → (F) = F. Not tautology.\n(C) Modus ponens — tautology.\n(D) p = T, q = F: T → F = F. Not tautology.'},
+ {id:'b11',subj:'dl',topic:'Combinational Circuits',type:'MCQ',marks:1,q:'The minimum number of 2-input NAND gates required to implement a 2-input XOR gate is',opts:['3','4','5','6'],ans:'B',exp:'Standard construction: N1 = NAND(a,b); N2 = NAND(a,N1); N3 = NAND(b,N1); out = NAND(N2,N3).\nTotal 4 gates. (XNOR ke liye 5 lagte hain — common trap.)'},
+ {id:'b12',subj:'dl',topic:'Number Representation',type:'MCQ',marks:1,q:'The 8-bit two\'s complement representation of −37, written in hexadecimal, is',opts:['DB','DA','A5','25'],ans:'A',exp:'+37 = 0010 0101.\n1\'s complement: 1101 1010. +1 ⇒ 1101 1011 = 0xDB.\nDA 1\'s complement hai — trap option.'},
+ {id:'b13',subj:'coa',topic:'Cache Memory',type:'NAT',marks:2,q:'A byte-addressable machine has 32-bit physical addresses and a 32 KB direct-mapped cache with 64-byte blocks. The number of bits in the tag field is ______.',ans:{min:17,max:17},exp:'Offset = log₂64 = 6 bits.\nLines = 32 KB / 64 B = 512 ⇒ index = 9 bits.\nTag = 32 − 9 − 6 = 17 bits.'},
+ {id:'b14',subj:'coa',topic:'Pipelining',type:'NAT',marks:1,q:'A 5-stage instruction pipeline with 1 clock cycle per stage executes 100 independent instructions with no stalls. The number of clock cycles needed is ______.',ans:{min:104,max:104},exp:'Cycles = k + (n − 1) = 5 + 99 = 104.\nPehli instruction 5 cycle leti hai, baaki har cycle me ek complete hoti hai.'},
+ {id:'b15',subj:'coa',topic:'Cache Memory',type:'NAT',marks:1,q:'A cache has hit time 1 ns and hit ratio 0.95. The miss penalty is 50 ns. Using AMAT = hit time + miss rate × miss penalty, the average memory access time in ns is ______.',ans:{min:3.5,max:3.5},exp:'AMAT = 1 + (1 − 0.95) × 50 = 1 + 2.5 = 3.5 ns.\nDhyan do: question kaunsa model bol raha hai (hierarchical vs simultaneous) — GATE me yahi trap hota hai.'},
+ {id:'b16',subj:'pds',topic:'C Programming (static, recursion)',type:'NAT',marks:2,q:'Consider the following C function. What value does f(1) return?',code:'int f(int n) {\n    static int i = 1;\n    if (n >= 5) return n;\n    n = n + i;\n    i++;\n    return f(n);\n}',ans:{min:7,max:7},exp:'static i sirf ek baar initialise hota hai aur calls ke beech value yaad rakhta hai.\nf(1): n = 1+1 = 2, i = 2 → f(2)\nf(2): n = 2+2 = 4, i = 3 → f(4)\nf(4): n = 4+3 = 7, i = 4 → f(7)\nf(7): 7 ≥ 5 ⇒ return 7.'},
+ {id:'b17',subj:'pds',topic:'Binary Search Trees',type:'NAT',marks:1,q:'The number of structurally distinct binary search trees that can be formed with 4 distinct keys is ______.',ans:{min:14,max:14},exp:'Catalan number Cₙ = (2n)! / ((n+1)! n!).\nC₄ = 8! / (5! · 4!) = 14.'},
+ {id:'b18',subj:'pds',topic:'Stacks (postfix evaluation)',type:'MCQ',marks:1,q:'The value of the postfix expression  6 2 3 + − 3 8 2 / + * 2 ^ 3 +  (^ is exponentiation) is',opts:['49','52','55','43'],ans:'B',exp:'6 2 3 + → 6 5; − → 1\n3 8 2 / → 1 3 4; + → 1 7; * → 7\n2 ^ → 49; 3 + → 52.\nOperand order yaad rakho: pop kiya second operand pehle.'},
+ {id:'b19',subj:'algo',topic:'Recurrences',type:'MCQ',marks:1,q:'The solution of T(n) = 2T(n/2) + n log n is',opts:['Θ(n log n)','Θ(n log² n)','Θ(n²)','Θ(n)'],ans:'B',exp:'n^(log₂2) = n. f(n) = n log n = n · log¹ n.\nExtended Master theorem case 2 (k = 1): T(n) = Θ(n log^(k+1) n) = Θ(n log² n).\nBasic Master theorem is case ko cover nahi karta — trap.'},
+ {id:'b20',subj:'algo',topic:'Sorting',type:'MSQ',marks:1,q:'Which of the following sorting algorithms are stable in their standard implementations?',opts:['Merge sort','Quick sort (in-place partition)','Insertion sort','Heap sort'],ans:['A','C'],exp:'Merge sort (left half ko tie par pehle lete hain) aur insertion sort stable hain.\nIn-place quicksort ka partition aur heapsort ka swap equal keys ka order bigaad dete hain.'},
+ {id:'b21',subj:'algo',topic:'Shortest Paths',type:'MCQ',marks:2,q:'The time complexity of Dijkstra\'s algorithm on a graph with V vertices and E edges, using a binary min-heap and adjacency lists, is',opts:['Θ(V²)','Θ(E + V log V)','Θ((V + E) log V)','Θ(V E)'],ans:'C',exp:'V extract-min × O(log V) + E decrease-key × O(log V) = Θ((V+E) log V).\nΘ(E + V log V) Fibonacci heap ke saath hota hai; Θ(V²) array ke saath.'},
+ {id:'b22',subj:'algo',topic:'Dynamic Programming',type:'NAT',marks:2,q:'The length of the longest common subsequence of X = ABCBDAB and Y = BDCABA is ______.',ans:{min:4,max:4},exp:'DP table L[i][j] = L[i−1][j−1]+1 if match, else max(L[i−1][j], L[i][j−1]).\nFinal value = 4, e.g. BCBA or BDAB.'},
+ {id:'b23',subj:'toc',topic:'Context-free Languages',type:'MSQ',marks:2,q:'Which of the following languages are context-free?',opts:['{ aⁿbⁿ | n ≥ 0 }','{ aⁿbⁿcⁿ | n ≥ 0 }','{ wwᴿ | w ∈ {a,b}* }','{ ww | w ∈ {a,b}* }'],ans:['A','C'],exp:'(A) Ek stack se count match — CFL.\n(C) Palindrome of even length — PDA stack me w push karke reverse match karta hai. CFL.\n(B) Teen counts ek saath — pumping lemma se not CFL.\n(D) ww me first half ka order same chahiye, stack reverse deta hai — not CFL.'},
+ {id:'b24',subj:'toc',topic:'Finite Automata',type:'NAT',marks:1,q:'Binary strings are read most significant bit first, and the empty string is treated as 0. The minimum number of states in a DFA that accepts exactly the strings whose value is divisible by 5 is ______.',ans:{min:5,max:5},exp:'State = value mod 5. Transition: r → (2r + bit) mod 5.\nPaanchon remainders distinguishable hain, dead state ki zarurat nahi ⇒ 5 states.'},
+ {id:'b25',subj:'toc',topic:'Decidability',type:'MCQ',marks:1,q:'Which of the following problems is decidable?',opts:['Whether a given DFA accepts the empty language','Whether a given Turing machine halts on blank tape','Whether the language of a given Turing machine is regular','Whether two given context-free grammars generate the same language'],ans:'A',exp:'DFA emptiness: start se koi final state reachable hai ya nahi — graph search, decidable.\nTM halting on blank tape aur "L(TM) regular" (Rice\'s theorem) undecidable.\nCFG equivalence bhi undecidable.'},
+ {id:'b26',subj:'cd',topic:'Lexical Analysis',type:'NAT',marks:1,q:'The number of tokens in the C statement\nprintf("x=%d", x);\nis ______.',ans:{min:7,max:7},exp:'printf | ( | "x=%d" | , | x | ) | ;  = 7 tokens.\nString literal poora ek token hai.'},
+ {id:'b27',subj:'cd',topic:'Parsing',type:'MCQ',marks:1,q:'Which ordering correctly compares the power (set of grammars handled) of these parsers?',opts:['LR(0) < SLR(1) < LALR(1) < LR(1)','SLR(1) < LR(0) < LALR(1) < LR(1)','LR(0) < LALR(1) < SLR(1) < LR(1)','LR(1) < LALR(1) < SLR(1) < LR(0)'],ans:'A',exp:'LR(0) sabse weak, SLR follow sets use karta hai, LALR lookaheads merge karta hai, CLR/LR(1) sabse powerful.\nNumber of states: SLR = LALR = LR(0) ≤ CLR.'},
+ {id:'b28',subj:'os',topic:'CPU Scheduling',type:'NAT',marks:2,q:'Three processes are scheduled with Round Robin, time quantum 2.\nP1: arrival 0, burst 4\nP2: arrival 1, burst 3\nP3: arrival 2, burst 1\nA newly arriving process joins the ready queue before a process that is preempted at the same instant. The average waiting time is ______.',ans:{min:3,max:3},exp:'Gantt: P1 0–2 | P2 2–4 | P3 4–5 | P1 5–7 | P2 7–8.\nCompletion: P1 = 7, P2 = 8, P3 = 5.\nTAT = CT − AT: 7, 7, 3. WT = TAT − BT: 3, 4, 2.\nAverage = 9/3 = 3.'},
+ {id:'b29',subj:'os',topic:'Paging',type:'MCQ',marks:1,q:'A system uses 32-bit virtual addresses, 4 KB pages, and a single-level page table with 4-byte entries. The size of the page table per process is',opts:['1 MB','2 MB','4 MB','8 MB'],ans:'C',exp:'Pages = 2³² / 2¹² = 2²⁰.\nPage table = 2²⁰ × 4 B = 4 MB.'},
+ {id:'b30',subj:'os',topic:'Semaphores',type:'NAT',marks:1,q:'A counting semaphore S is initialised to 10. Then 6 P (wait) operations and 4 V (signal) operations are performed on S. The final value of S is ______.',ans:{min:8,max:8},exp:'Har P −1, har V +1.\n10 − 6 + 4 = 8.'},
+ {id:'b31',subj:'os',topic:'Deadlock',type:'NAT',marks:1,q:'Three processes share a resource type R. Each process needs at most 2 instances of R to complete. The minimum number of instances of R that guarantees the system never deadlocks is ______.',ans:{min:4,max:4},exp:'Worst case: har process (need − 1) = 1 instance pakad ke wait kare ⇒ 3 instances busy.\nEk extra instance diya to koi ek complete hoga ⇒ 3 + 1 = 4.\nFormula: Σ(nᵢ − 1) + 1.'},
+ {id:'b32',subj:'db',topic:'Normalization',type:'MCQ',marks:2,q:'Relation R(A, B, C, D) has the functional dependencies A → B, B → C, C → D. The highest normal form R satisfies is',opts:['1NF only','2NF','3NF','BCNF'],ans:'B',exp:'A⁺ = ABCD ⇒ candidate key sirf A.\nKey single attribute hai ⇒ partial dependency possible nahi ⇒ 2NF.\nB → C me B superkey nahi aur C prime nahi ⇒ 3NF violate (transitive). Answer: 2NF.'},
+ {id:'b33',subj:'db',topic:'Keys',type:'NAT',marks:1,q:'Relation R(A, B, C, D) has A as its only candidate key. The number of superkeys of R is ______.',ans:{min:8,max:8},exp:'Har superkey me A hona chahiye; baaki B, C, D ho bhi sakte hain ya nahi.\n2³ = 8.'},
+ {id:'b34',subj:'cn',topic:'Subnetting',type:'NAT',marks:1,q:'For the network 200.10.5.0/27, the number of usable host addresses in each subnet is ______.',ans:{min:30,max:30},exp:'Host bits = 32 − 27 = 5 ⇒ 2⁵ = 32 addresses.\nNetwork aur broadcast hata ke 30 usable.'},
+ {id:'b35',subj:'cn',topic:'Flow Control',type:'NAT',marks:2,q:'In a stop-and-wait protocol the frame transmission time is 1 ms and the one-way propagation delay is 2 ms. Ignoring acknowledgement transmission time and processing delays, the link utilisation (between 0 and 1) is ______.',ans:{min:0.2,max:0.2},exp:'Efficiency = Tt / (Tt + 2·Tp) = 1 / (1 + 4) = 0.2.\na = Tp/Tt = 2 ⇒ 1/(1+2a).'},
+ {id:'b36',subj:'cn',topic:'Application Layer',type:'MCQ',marks:1,q:'Which of the following application-layer protocols normally uses UDP port 53 for queries?',opts:['HTTP','SMTP','DNS','FTP'],ans:'C',exp:'DNS queries UDP port 53 pe jaati hain (bade responses / zone transfer TCP 53 pe).\nHTTP, SMTP, FTP TCP use karte hain.'},
+].map(q=>({...q,src:'builtin'}));
+
+/* ---------- storage ---------- */
+const LS='gatecs27.v1';
+function defState(){return{bank:[],stats:{},mocks:[],lang:'hinglish',srs:{},days:{},daily:null}}
+let S=(()=>{try{const r=localStorage.getItem(LS);if(r)return Object.assign(defState(),JSON.parse(r))}catch(e){}return defState()})();
+function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){toast('Your browser did not keep this change. Progress stays for this visit only.')}}
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+/* official PYQs bundled from pyq/pyq-data.js (built from the official papers; absent in the published page) */
+const PYQ=(Array.isArray(window.PYQ_BANK)?window.PYQ_BANK:[]).map(q=>({...q,src:'pyq',bundled:true}));
+function allQ(){return BUILTIN.concat(PYQ,S.bank)}
+function qById(id){return allQ().find(q=>q.id===id)}
+function toast(msg){const t=el('div','toast',msg);document.body.append(t);setTimeout(()=>t.remove(),3200)}
+const FENCE='`'.repeat(3);
+function langName(){return S.lang==='hinglish'?'Hinglish (Hindi written in Roman script, mixed naturally with English technical terms, the way Indian GATE teachers explain)':'simple English'}
+function fmtOne(t,a){if(t==='MCQ')return a;if(t==='MSQ')return a.join(', ');return a.min===a.max?String(a.min):a.min+' to '+a.max}
+function fmtAns(q){return fmtOne(q.type,q.ans)+(q.alt&&q.alt.length?' (key also accepts '+q.alt.map(a=>fmtOne(q.type,a)).join(' / ')+')':'')}
+function fmtResp(q,r){if(r==null||r===''||(Array.isArray(r)&&!r.length))return 'not answered';return Array.isArray(r)?r.join(', '):String(r)}
+function isEmpty(r){return r==null||r===''||(Array.isArray(r)&&!r.length)}
+function isCorrect(q,r){
+  if(isEmpty(r))return false;
+  const one=a=>{if(q.type==='MCQ')return r===a;if(q.type==='MSQ')return [...r].sort().join()===[...a].sort().join();
+    const v=parseFloat(r);return !isNaN(v)&&v>=a.min-1e-9&&v<=a.max+1e-9};
+  return one(q.ans)||(q.alt||[]).some(one);
+}
+function grade(q,r){if(isEmpty(r))return{st:'na',m:0};if(isCorrect(q,r))return{st:'ok',m:q.marks};return{st:'bad',m:q.type==='MCQ'?-q.marks/3:0}}
+function record(q,ok){const s=S.stats[q.id]||{a:0,w:0,c:false};s.a++;if(!ok)s.w++;s.c=ok;s.t=Date.now();S.stats[q.id]=s;srsUpdate(q.id,ok);const d=today();S.days[d]=(S.days[d]||0)+1;save()}
+/* spaced revision: a wrong answer comes back after 1, 3, 7, 15, 30 days; a right answer on its due day moves it one step on */
+const GAPS=[1,3,7,15,30];
+function today(){const d=new Date();return Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5)}
+function srsUpdate(id,ok){const t=today(),r=S.srs[id];
+  if(!ok){S.srs[id]={box:0,due:t+GAPS[0]};return}
+  if(r&&r.due<=t){const b=r.box+1;if(b>=GAPS.length)delete S.srs[id];else S.srs[id]={box:b,due:t+GAPS[b]}}}
+function dueList(){const t=today();return Object.entries(S.srs).filter(([,r])=>r.due<=t).map(([id])=>qById(id)).filter(Boolean)}
+function r2(n){return Math.round(n*100)/100}
+
+/* mini markdown for AI text */
+function md(src){
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const inline=s=>esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  let out='',inCode=false,code='',inList=false;
+  for(const l of src.split('\n')){
+    if(l.trim().startsWith(FENCE)){if(inCode){out+='<pre class="code">'+esc(code.replace(/\n$/,''))+'</pre>';code='';inCode=false}else{if(inList){out+='</ul>';inList=false}inCode=true}continue}
+    if(inCode){code+=l+'\n';continue}
+    const b=l.match(/^\s*(?:[-*•]|\d+[.)])\s+(.*)/),h=l.match(/^#{1,4}\s+(.*)/);
+    if(b){if(!inList){out+='<ul>';inList=true}out+='<li>'+inline(b[1])+'</li>';continue}
+    if(inList){out+='</ul>';inList=false}
+    if(h){out+='<h4>'+inline(h[1])+'</h4>';continue}
+    if(l.trim())out+='<p>'+inline(l)+'</p>';
+  }
+  if(inCode)out+='<pre class="code">'+esc(code)+'</pre>';if(inList)out+='</ul>';
+  return out;
+}
+
+/* ---------- Claude: inside claude.ai (sample) or with the user's own API key ---------- */
+let sample=null;
+const KEY_LS=LS+'.apikey',MODEL_LS=LS+'.model';
+function apiKey(){try{return localStorage.getItem(KEY_LS)||''}catch(e){return ''}}
+function apiModel(){try{return localStorage.getItem(MODEL_LS)||'claude-opus-5-5'}catch(e){return 'claude-opus-5-5'}}
+function aiOn(){return !!(sample||apiKey())}
+function setAI(){const on=aiOn();$$('[data-ai]').forEach(e=>e.hidden=!on);$$('[data-noai]').forEach(e=>e.hidden=on)}
+setAI();
+(async()=>{try{sample=window.claude?await window.claude.use('sample'):null}catch(e){sample=null}setAI()})();
+
+let sdkClient=null,sdkFor='';
+async function client(){
+  const k=apiKey();if(sdkClient&&sdkFor===k)return sdkClient;
+  const {default:Anthropic}=await import('https://cdn.jsdelivr.net/npm/@anthropic-ai/sdk@0.129.0/+esm');
+  sdkClient=new Anthropic({apiKey:k,dangerouslyAllowBrowser:true});sdkFor=k;return sdkClient;
+}
+function apiErr(e){
+  const err=new Error(e&&e.message||'API error');const st=e&&e.status;
+  if(e&&(e.name==='AbortError'||e.name==='APIUserAbortError'))err.code='cancelled';
+  else if(st===401||st===403)err.code='bad_key';
+  else if(st===429)err.code='rate_limited';
+  else if(st===413)err.code='prompt_too_large';
+  else if(st===400&&/credit|billing/i.test(err.message))err.code='no_credit';
+  else if(!st)err.code='network';
+  return err;
+}
+/* Same call shape as window.claude sample: ai(prompt | messages, {signal,onText,effort}) -> {text,truncated} */
+async function ai(input,o={}){
+  if(sample&&!apiKey())return sample(input,o);
+  const c=await client();
+  const messages=typeof input==='string'?[{role:'user',content:input}]:input;
+  let text='',msg;
+  try{
+    const stream=c.messages.stream({model:apiModel(),max_tokens:32000,output_config:{effort:o.effort||'medium'},messages},{signal:o.signal});
+    for await(const ev of stream){if(ev.type==='content_block_delta'&&ev.delta.type==='text_delta'){text+=ev.delta.text;if(o.onText)o.onText({text})}}
+    msg=await stream.finalMessage();
+  }catch(e){const err=apiErr(e);err.text=text;throw err}
+  if(msg.stop_reason==='refusal'){const err=new Error('refused');err.code='refused';err.text=text;throw err}
+  return{text,truncated:msg.stop_reason==='max_tokens'};
+}
+ai.json=async(prompt,o={})=>{
+  if(sample&&!apiKey())return sample.json(prompt,o);
+  const{text}=await ai(prompt+'\n\nReply with the JSON only — no prose, no code fences.',{...o,effort:o.effort||'high'});
+  const m=text.match(/[\[{][\s\S]*[\]}]/);
+  try{return JSON.parse(m?m[0]:text)}catch(e){const err=new Error('invalid json');err.code='invalid_json';throw err}
+};
+function aiErr(e){
+  const c=e&&e.code;
+  if(c==='not_granted'||c==='sampling_disabled'||c==='not_declared'||c==='capability_disabled'){sample=null;setAI()}
+  return({not_granted:'Claude was not allowed for this page. Reload and choose Allow to use lessons and imports.',bad_key:'The API key was rejected. Check it in Settings.',no_credit:'Your Anthropic account has no credit left. Add credit in the Anthropic Console, then retry.',network:'Could not reach Claude. Check your internet connection, then retry.',rate_limited:'Too many requests right now. Wait a minute, then try again.',session_expired:'Your Claude session expired. Sign in again, then retry.',refused:'Claude declined this request. Rephrase it and try again.',invalid_json:'Claude\'s reply could not be read as questions. Try again.',prompt_too_large:'That text is too long for one request. Split it and try again.',cancelled:'Stopped.'})[c]||'The request did not complete. Try again.';
+}
+
+/* settings */
+function openSettings(){
+  $('#apiKey').value=apiKey();$('#apiModel').value=apiModel();
+  $('#setAIstate').textContent=apiKey()?'AI features use your API key.':sample?'AI features use Claude inside claude.ai. Add a key to use them when you open this file directly.':'AI features are off. Add an Anthropic API key to turn on lessons, doubt chat, mistake explanations and fresh questions.';
+  $('#setDlg').showModal();
+}
+$('#setBtn').onclick=openSettings;
+$('#setSave').onclick=()=>{try{const k=$('#apiKey').value.trim();if(k)localStorage.setItem(KEY_LS,k);else localStorage.removeItem(KEY_LS);localStorage.setItem(MODEL_LS,$('#apiModel').value)}catch(e){toast('This browser blocked saving the key.')}sdkClient=null;setAI();toast(apiKey()?'Saved. AI features are on.':'Saved.')};
+$('#setClear').onclick=()=>{try{localStorage.removeItem(KEY_LS)}catch(e){}sdkClient=null;$('#apiKey').value='';setAI();$('#setDlg').close();toast('Key removed from this browser.')};
+
+/* ---------- tabs ---------- */
+function showTab(t){
+  $$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  $$('.tab').forEach(s=>s.hidden=s.id!=='tab-'+t);
+  if(t==='home')renderHome();if(t==='today')renderToday();if(t==='practice'){if(P.session)renderPractice();else buildPractice(true)}if(t==='mock'&&!T)renderMockSetup();if(t==='pyq')renderPapers();if(t==='g27')renderG27();
+  try{localStorage.setItem(LS+'.tab',t)}catch(e){}
+}
+$$('nav.tabs button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+
+/* ---------- home ---------- */
+function subjAcc(){
+  const m={};SUBJECTS.forEach(s=>m[s.id]={a:0,c:0});
+  const map=Object.fromEntries(allQ().map(q=>[q.id,q]));
+  for(const[id,st]of Object.entries(S.stats)){const q=map[id];if(!q||!m[q.subj])continue;m[q.subj].a++;if(st.c)m[q.subj].c++}
+  return m;
+}
+function renderHome(){
+  const acc=subjAcc();let a=0,c=0;Object.values(acc).forEach(x=>{a+=x.a;c+=x.c});
+  const pyq=allQ().filter(q=>q.src==='pyq').length;
+  const best=S.mocks.length?Math.max(...S.mocks.map(m=>m.score/m.max*100)):null;
+  const st=$('#stats');st.innerHTML='';
+  [[a,'questions attempted'],[a?Math.round(c/a*100)+'%':'—','accuracy (latest attempts)'],[pyq,'official PYQs in your bank'],[dueList().length,'due for revision today'],[S.mocks.length,'mock tests taken'],[best==null?'—':Math.round(best)+'%','best mock score']].forEach(([v,l])=>{const d=el('div','stat');d.append(el('b',null,v),el('span',null,l));st.append(d)});
+  const bars=$('#subjBars');bars.innerHTML='';
+  SUBJECTS.forEach(s=>{const x=acc[s.id];const p=x.a?Math.round(x.c/x.a*100):null;
+    const r=el('div','bar');r.append(el('span','nm',s.name),el('span','wt',s.w+' marks'));
+    const tr=el('div','track'),f=el('div','fill');f.style.width=(p||0)+'%';tr.append(f);r.append(tr,el('span','pct',p==null?'—':p+'%'));bars.append(r)});
+}
+
+/* ---------- question renderer ---------- */
+function srcChip(q){if(q.src==='pyq')return el('span','chip pyq',q.paper||'PYQ');if(q.src==='ai')return el('span','chip ai','AI');return el('span','chip plain','Starter')}
+function renderQ(q,o){
+  const w=el('div','q'+(q.type==='MSQ'?' msq':''));
+  const meta=el('div','qmeta');
+  meta.append(srcChip(q),el('span','chip',SUBJ[q.subj]?SUBJ[q.subj].name:q.subj));
+  if(q.topic)meta.append(el('span','chip plain',q.topic+(q.sub?' · '+q.sub:'')));
+  if(q.offsyl)meta.append(el('span','chip old','Old syllabus'));
+  if(S.srs[q.id])meta.append(el('span','chip rev','Revision · step '+(S.srs[q.id].box+1)+' of '+GAPS.length));
+  meta.append(el('span','chip plain',q.type+(q.type==='MSQ'?' · one or more':'')));
+  if(o.showMeta!==false)w.append(meta);
+  w.append(el('div','qtext',q.q));
+  if(q.code){const p=el('pre','code',q.code);w.append(p)}
+  if(q.fig){const f=el('div','fig','This question uses a figure from the original paper. ');if(q.pdf){const a=el('a',null,'Open the official PDF');a.href=q.pdf;a.target='_blank';a.rel='noopener';f.append(a,' and find Q.'+(q.pnum||q.num)+'.')}else f.append('Open the PDF to see it.');w.append(f)}
+  let box=null,inp=null;
+  if(q.type==='NAT'){
+    const lab=el('label','field');lab.htmlFor='nat-'+q.id;lab.textContent='Your answer';
+    inp=document.createElement('input');inp.type='text';inp.inputMode='decimal';inp.className='nat';inp.id='nat-'+q.id;inp.placeholder='Enter a number';inp.autocomplete='off';
+    inp.value=o.getResp()??'';inp.oninput=()=>{if(!o.locked())o.onResp(inp.value.trim())};
+    lab.append(inp);w.append(lab);
+  }else{
+    box=el('div','opts');
+    (q.opts||[]).forEach((txt,i)=>{const L='ABCD'[i];const b=el('button','opt');b.type='button';b.dataset.l=L;
+      b.append(el('span','bub',L),el('span',null,txt));
+      b.onclick=()=>{if(o.locked())return;let r=o.getResp();if(q.type==='MCQ')r=(r===L&&o.toggleOff)?null:L;else{const s=new Set(r||[]);s.has(L)?s.delete(L):s.add(L);r=[...s].sort()}o.onResp(r);paint()};
+      box.append(b)});
+    w.append(box);
+  }
+  function paint(){if(!box)return;const r=o.getResp();box.querySelectorAll('.opt').forEach(b=>{const on=q.type==='MCQ'?r===b.dataset.l:(r||[]).includes(b.dataset.l);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)})}
+  paint();
+  w.reveal=()=>{if(inp){inp.readOnly=true;return}const r=o.getResp();const correct=q.type==='MCQ'?[q.ans]:q.ans;const picked=q.type==='MCQ'?(r?[r]:[]):(r||[]);
+    box.querySelectorAll('.opt').forEach(b=>{b.classList.remove('on');const L=b.dataset.l;if(correct.includes(L))b.classList.add('right');else if(picked.includes(L))b.classList.add('wrong')})};
+  w.refresh=()=>{paint();if(inp)inp.value=o.getResp()??''};
+  return w;
+}
+
+/* ---------- practice ---------- */
+const P={list:[],i:0,resp:null,checked:false,session:null};
+function fillSubjSelect(sel,withAll){sel.innerHTML='';if(withAll)sel.append(new Option('All subjects','all'));SUBJECTS.forEach(s=>sel.append(new Option(s.name,s.id)))}
+fillSubjSelect($('#pSubj'),true);fillSubjSelect($('#gSubj'),false);
+function buildPractice(keepPos){
+  const sj=$('#pSubj').value,src=$('#pSrc').value,stt=$('#pStatus').value,tp=$('#pTopic').value.trim().toLowerCase();
+  const cur=P.list[P.i]&&P.list[P.i].id;
+  const yr=$('#pYear').value;P.session=null;$('#pBanner').hidden=true;
+  P.list=allQ().filter(q=>(sj==='all'||q.subj===sj)&&(src==='all'||q.src===src)&&(yr==='all'||String(q.year)===yr)&&(!tp||(q.topic||'').toLowerCase().includes(tp)||(q.sub||'').toLowerCase().includes(tp)||q.q.toLowerCase().includes(tp))&&(stt==='all'||(stt==='new'?!S.stats[q.id]:(S.stats[q.id]&&!S.stats[q.id].c))));
+  P.list.sort((a,b)=>(a.src==='pyq'?0:1)-(b.src==='pyq'?0:1)||(b.year||0)-(a.year||0)||String(a.paper).localeCompare(String(b.paper))||(a.num||0)-(b.num||0));
+  P.i=keepPos&&cur?Math.max(0,P.list.findIndex(q=>q.id===cur)):0;if(P.i<0)P.i=0;
+  renderPractice();
+}
+(()=>{const ys=[...new Set(allQ().filter(q=>q.year).map(q=>q.year))].sort((a,b)=>b-a);ys.forEach(y=>$('#pYear').append(new Option(String(y),String(y))))})();
+['#pSubj','#pSrc','#pStatus','#pYear'].forEach(s=>$(s).onchange=()=>buildPractice());
+/* a fixed list of questions (today's set, revision, one paper) shown in the practice card */
+function startSession(list,label){showTab('practice');P.session=label;P.list=list;P.i=0;$('#pBanner').hidden=false;renderPractice();$('#pCard').scrollIntoView({behavior:'smooth'})}
+$('#pBannerExit').onclick=()=>buildPractice();
+function todayStart(){const d=new Date();d.setHours(0,0,0,0);return d.getTime()}
+function renderPracticeBanner(){const done=P.list.filter(q=>S.stats[q.id]&&(S.stats[q.id].t||0)>=todayStart()).length;$('#pBannerTxt').textContent=P.session+' · '+done+' of '+P.list.length+' done today'}
+$('#pTopic').oninput=()=>buildPractice();
+$('#pShuffle').onclick=()=>{P.list=shuffle(P.list);P.i=0;renderPractice()};
+function renderPractice(){
+  const card=$('#pCard');card.innerHTML='';
+  if(P.session)renderPracticeBanner();
+  if(!P.list.length){const p=el('p','empty','No questions match these filters. ');if($('#pSrc').value==='pyq'){p.append('Import an official paper from the PYQ Papers tab first.')}else p.append('Change a filter, or generate questions on this topic below.');card.append(p);return}
+  const q=P.list[P.i];P.resp=null;P.checked=false;
+  const head=el('div','qhead');head.append(el('span',null,'Question '+(P.i+1)+' of '+P.list.length),el('span',null,q.marks+' mark'+(q.marks>1?'s':'')+(q.type==='MCQ'?' · −'+(q.marks===1?'1/3':'2/3')+' if wrong':' · no negative')));
+  card.append(head);
+  const qe=renderQ(q,{getResp:()=>P.resp,onResp:r=>{P.resp=r;msg.textContent=''},locked:()=>P.checked,toggleOff:true});
+  card.append(qe);
+  const msg=el('p','small muted');msg.style.margin='10px 0 0';
+  const row=el('div','row');row.style.marginTop='18px';
+  const chk=el('button','btn primary','Check answer'),prev=el('button','btn','Previous'),next=el('button','btn','Next question'),show=el('button','btn','Show solution');
+  prev.disabled=P.i===0;next.disabled=P.i>=P.list.length-1;
+  row.append(chk,show,prev,next);card.append(msg,row);
+  const fb=el('div','feedback');fb.hidden=true;fb.style.marginTop='18px';card.append(fb);
+  prev.onclick=()=>{P.i--;renderPractice()};next.onclick=()=>{P.i++;renderPractice()};
+  function reveal(ok,gaveUp){
+    P.checked=true;qe.reveal();chk.disabled=true;show.disabled=true;
+    fb.hidden=false;fb.className='feedback '+(ok?'ok':'bad');fb.innerHTML='';
+    fb.append(el('div','verdict',gaveUp?'Solution':ok?'Correct. +'+q.marks:'Wrong. '+(q.type==='MCQ'?'−'+r2(q.marks/3)+' in the real exam':'0 marks')));
+    const line=el('div','small');line.textContent='Correct answer: '+fmtAns(q)+(gaveUp?'':'   ·   Your answer: '+fmtResp(q,P.resp));
+    if(q.src==='pyq')line.textContent+=q.key==='official'?'   ·   from the official key':q.key==='mta'?'   ·   official key gave marks to all; best answer shown':(q.bundled?'   ·   no official key exists for this year; solved independently twice':'   ·   solved by Claude, verify with the official key');
+    if(q.src==='ai')line.textContent+='   ·   AI-generated question';
+    fb.append(line);
+    if(q.exp)fb.append(el('div','exp',q.exp));
+    if(q.sim&&q.sim.length){const qs=q.sim.map(qById).filter(Boolean);if(qs.length){const r=el('div','row');r.append(el('span','small','GATE asked this pattern in other years too: '+[...new Set(qs.map(x=>x.year))].sort().join(', ')+'.'));const b=el('button','btn','Practise these '+qs.length+' PYQs');b.onclick=()=>startSession([q,...qs],'Same pattern · '+(q.sub||q.topic));r.append(b);fb.append(r)}}
+    if(!ok){const n=el('p','small');n.style.margin='0';n.textContent=S.srs[q.id]?'Added to revision: this question comes back tomorrow, then after 3, 7, 15 and 30 days.':'';fb.append(n)}
+    if(!ok&&!gaveUp&&aiOn()){const b=el('button','btn','Explain again');const out=el('div','lesson');b.onclick=()=>explainMistake(q,P.resp,out,b);fb.append(out,b);explainMistake(q,P.resp,out,b)}
+    if(P.i<P.list.length-1){next.classList.add('primary');next.focus()}
+    if(P.session)renderPracticeBanner()
+  }
+  chk.onclick=()=>{if(isEmpty(P.resp)){msg.textContent=q.type==='NAT'?'Type a number first.':'Choose an option first.';return}
+    if(q.type==='NAT'&&isNaN(parseFloat(P.resp))){msg.textContent='Enter a plain number, like 3.5 or -2.';return}
+    const ok=isCorrect(q,P.resp);record(q,ok);reveal(ok,false)};
+  show.onclick=()=>{record(q,false);reveal(false,true)};
+}
+async function explainMistake(q,r,out,btn){
+  btn.disabled=true;out.innerHTML='<p class="thinking">Thinking...</p>';
+  const prompt=`You are India's best GATE CS teacher. A student just answered this GATE question wrongly. Teach them so they never make this mistake again. Write in ${langName()}, with these short sections:
+## Tumhari galti kahan hui
+The exact misconception or calculation slip that leads to the student's answer (work backwards from their answer).
+## Sahi tareeka, step by step
+Every step and every number, ending with the correct answer.
+## Concept jo yaad rakhna hai
+The underlying rule or formula in 2–4 lines.
+## Trap se kaise bachein
+One or two concrete checks to do in the exam.
+## Chhota practice question
+One quick question on the same concept, with its answer on the last line as "Answer: ...".
+Use "## " headings, "- " bullets and **bold**; math in plain Unicode (x², √, ≤, log₂ n), never LaTeX. Be precise: double-check every number.
+
+Question (${q.type}, ${q.marks} mark): ${q.q}
+${q.code?'Code:\n'+q.code+'\n':''}${q.opts&&q.opts.length?'Options:\n'+q.opts.map((o,i)=>'ABCD'[i]+') '+o).join('\n')+'\n':''}Correct answer: ${fmtAns(q)}
+Student's answer: ${fmtResp(q,r)}
+Reference solution: ${q.exp||'(none)'}`;
+  try{await ai(prompt,{modelTier:'default',onText:({text})=>{out.innerHTML=md(text)}});btn.disabled=false}catch(e){out.innerHTML='';out.append(el('p','small',aiErr(e)));btn.disabled=false}
+}
+
+/* generate */
+const Q_SCHEMA=(lang)=>`Each object: {"subj": subject id, "topic": short topic, "type": "MCQ"|"MSQ"|"NAT", "marks": 1 or 2, "q": question text (plain text; put any C code or pseudo-code inside "code" instead), "code": code block text or "", "opts": four option strings without A/B/C/D labels for MCQ/MSQ, [] for NAT, "ans": for MCQ one letter "A".."D", for MSQ an array of letters, for NAT {"min": number, "max": number}, "exp": step-by-step solution in ${lang}, 3–8 short lines separated by \\n}. Write math in plain Unicode (x², √, ≤, ⌈ ⌉, Σ, log₂), never LaTeX.`;
+function normQ(o,extra){
+  const types=['MCQ','MSQ','NAT'];if(!o||typeof o!=='object')return null;
+  const type=String(o.type||'').toUpperCase();if(!types.includes(type))return null;
+  const subj=SUBJ[o.subj]?o.subj:null;if(!subj)return null;
+  const q={subj,topic:String(o.topic||''),type,marks:Number(o.marks)===2?2:1,q:String(o.q||'').trim(),code:o.code?String(o.code):'',exp:String(o.exp||''),fig:!!o.fig,...extra};
+  if(!q.q)return null;
+  if(type==='NAT'){let a=o.ans;if(typeof a==='number')a={min:a,max:a};if(!a||isNaN(parseFloat(a.min))||isNaN(parseFloat(a.max)))return null;q.ans={min:parseFloat(a.min),max:parseFloat(a.max)};q.opts=[]}
+  else{if(!Array.isArray(o.opts)||o.opts.length!==4)return null;q.opts=o.opts.map(String);
+    if(type==='MCQ'){const a=String(Array.isArray(o.ans)?o.ans[0]:o.ans).trim().toUpperCase();if(!'ABCD'.includes(a)||a.length!==1)return null;q.ans=a}
+    else{const a=(Array.isArray(o.ans)?o.ans:String(o.ans).split(/[,\s]+/)).map(x=>String(x).trim().toUpperCase()).filter(x=>x&&'ABCD'.includes(x)&&x.length===1);if(!a.length)return null;q.ans=[...new Set(a)].sort()}}
+  return q;
+}
+async function generate(subj,topic,n,btn,msgEl){
+  btn.disabled=true;msgEl.textContent='Writing '+n+' questions. This usually takes 30–60 seconds...';
+  const s=SUBJ[subj];
+  const prompt=`You are a GATE Computer Science paper setter. Write ${n} new, original questions on "${topic||s.name}" (subject: ${s.name}, id "${subj}") at genuine GATE CS difficulty, modelled on how this topic has been asked in recent GATE CS papers: mix MCQ, MSQ and NAT, mostly 2-mark numerical/analytical questions, with realistic trap options. Solve each question twice independently and keep only those where both solutions agree. For NAT give a tight range only if rounding is involved.
+Reply with ONLY a JSON array. ${Q_SCHEMA(langName())} Use "${subj}" as subj for every question.`;
+  try{
+    const arr=await ai.json(prompt,{modelTier:'default',cache:false});
+    const stamp=Date.now().toString(36);let added=0;
+    (Array.isArray(arr)?arr:[]).forEach((o,i)=>{const q=normQ(o,{id:'ai-'+stamp+'-'+i,src:'ai'});if(q){S.bank.push(q);added++}});
+    save();
+    msgEl.textContent=added?`Added ${added} question${added>1?'s':''}. They're open below.`:'No usable questions came back. Try again or narrow the topic.';
+    if(added){$('#pSubj').value=subj;$('#pSrc').value='ai';$('#pStatus').value='new';$('#pTopic').value='';buildPractice();$('#pCard').scrollIntoView({behavior:'smooth'})}
+  }catch(e){msgEl.textContent=aiErr(e)}
+  btn.disabled=false;
+}
+$('#gGo').onclick=()=>generate($('#gSubj').value,$('#gTopic').value.trim(),Number($('#gN').value),$('#gGo'),$('#gMsg'));
+
+/* ---------- learn ---------- */
+const L={subj:'os',topic:null,ctl:null,chat:[]};
+function renderLearn(){
+  const box=$('#lSubj');box.innerHTML='';
+  SUBJECTS.forEach(s=>{const b=el('button',null,s.name);b.setAttribute('aria-pressed',s.id===L.subj);b.onclick=()=>{L.subj=s.id;L.topic=s.topics[0];renderLearn()};box.append(b)});
+  const s=SUBJ[L.subj];if(!L.topic||!s.topics.includes(L.topic))L.topic=s.topics[0];
+  $('#lTitle').textContent=s.name;$('#lWeight').textContent='Typically '+s.w+' marks';
+  const t=$('#lTopics');t.innerHTML='';
+  s.topics.forEach(tp=>{const b=el('button',null,tp);b.setAttribute('aria-pressed',tp===L.topic);b.onclick=()=>{L.topic=tp;renderLearn()};t.append(b)});
+}
+function stream(prompt){
+  if(L.ctl)L.ctl.abort();const ctl=new AbortController();L.ctl=ctl;
+  const out=$('#lOut');out.innerHTML='<p class="thinking">Thinking... a full lesson takes about a minute.</p>';
+  $('#lStop').hidden=false;
+  ai(prompt,{signal:ctl.signal,modelTier:'default',onText:({text})=>{out.innerHTML=md(text)}})
+    .then(r=>{if(r.truncated)out.append(el('p','small muted','The lesson was cut short. Ask for one sub-topic at a time.'))})
+    .catch(e=>{if(e.code!=='cancelled'){out.innerHTML=e.text?md(e.text):'';out.append(el('p','small',aiErr(e)))}})
+    .finally(()=>{if(L.ctl===ctl){L.ctl=null;$('#lStop').hidden=true}});
+}
+const ctx=()=>`Subject: ${SUBJ[L.subj].name}. Topic: ${L.topic}. Exam: GATE 2027, Computer Science & IT paper.`;
+const fmt=()=>`Write in ${langName()}. Format: "## " headings, "- " bullets, **bold** for key terms, code in ${FENCE} blocks. Math in plain Unicode (x², √, ≤, log₂ n, Σ) — never LaTeX.`;
+$('#lTeach').onclick=()=>stream(`You are India's best GATE CS teacher. ${ctx()}
+Teach this topic so a student can solve GATE questions on it. Sections:
+## Core idea (intuition first, then definitions)
+## Formulas and results to memorise
+## Worked example 1 (GATE 1-mark level) — full step-by-step
+## Worked example 2 (GATE 2-mark level, numerical or tricky) — full step-by-step
+## Common mistakes
+## 60-second checklist
+Be precise and correct; double-check every number in the examples. ${fmt()}`);
+$('#lPattern').onclick=()=>stream(`You are a GATE CS expert who has analysed every GATE CS paper. ${ctx()}
+Explain how GATE has tested this topic over the years:
+## Recurring question types (what is given, what is asked, typical numbers)
+## Traps examiners use (with a mini example of each)
+## Fast methods and shortcuts
+## Which related concepts appear together with this topic
+Describe patterns; do not state that a specific question appeared in a specific year unless you are certain. ${fmt()}`);
+$('#lRevise').onclick=()=>stream(`${ctx()}
+Write a dense one-page revision sheet for the night before GATE: definitions, formulas, standard results, complexities, and edge cases, grouped under short headings. No long explanations. ${fmt()}`);
+$('#lStop').onclick=()=>{if(L.ctl)L.ctl.abort()};
+$('#lPractice').onclick=()=>{showTab('practice');$('#pSubj').value=L.subj;$('#pSrc').value='all';$('#pStatus').value='all';$('#pTopic').value='';buildPractice();$('#gSubj').value=L.subj;$('#gTopic').value=L.topic};
+function renderChat(){const log=$('#dLog');log.innerHTML='';L.chat.forEach(m=>{const d=el('div','msg '+(m.role==='user'?'me':'ai'));if(m.role==='user')d.textContent=m.content;else d.innerHTML=md(m.content);log.append(d)})}
+$('#dSend').onclick=async()=>{
+  const txt=$('#dIn').value.trim();if(!txt)return;
+  L.chat.push({role:'user',content:txt});$('#dIn').value='';renderChat();
+  const bubble=el('div','msg ai');bubble.innerHTML='<span class="thinking">Thinking...</span>';$('#dLog').append(bubble);
+  const btn=$('#dSend');btn.disabled=true;
+  const rules=`You are a patient GATE CS tutor. ${ctx()} Answer the student's doubts precisely, with a small example where it helps. If they paste a question, solve it step by step and point out the trap. ${fmt()} Keep answers focused, under 300 words unless a full solution needs more.`;
+  const turns=L.chat.slice(-12);
+  try{const{text}=await ai([{role:'user',content:rules},...turns],{cache:false,onText:({text})=>{bubble.innerHTML=md(text)}});L.chat.push({role:'assistant',content:text});renderChat()}
+  catch(e){bubble.textContent=aiErr(e);L.chat.pop();$('#dIn').value=txt}
+  btn.disabled=false;
+};
+$('#dClear').onclick=()=>{L.chat=[];renderChat()};
+
+/* ---------- mock ---------- */
+let T=null,tick=null;
+function paperLabels(){const y={};allQ().forEach(q=>{if(q.src==='pyq'&&q.paper)y[q.paper]=q.year||0});return Object.keys(y).sort((a,b)=>y[b]-y[a]||a.localeCompare(b))}
+function renderMockSetup(){
+  $('#mSetup').hidden=false;$('#mTest').hidden=true;$('#mResult').hidden=true;
+  const sel=$('#mSrc');const prev=sel.value;sel.innerHTML='';
+  paperLabels().forEach(p=>sel.append(new Option(p+' (official paper)',p)));
+  sel.append(new Option('Mixed practice paper (all sources)','mixed'));
+  sel.append(new Option('Mixed — PYQs only','mixed-pyq'));
+  if([...sel.options].some(o=>o.value===prev))sel.value=prev;
+  updateMockInfo();
+  const h=$('#mHist');h.innerHTML='';
+  if(!S.mocks.length){h.append(el('p','empty','No mocks yet. Your scores and weak subjects will show here.'));return}
+  const wrap=el('div','tscroll'),t=el('table');t.innerHTML='<thead><tr><th>Date</th><th>Paper</th><th>Score</th><th>Correct / Wrong / Skipped</th></tr></thead>';
+  const tb=el('tbody');[...S.mocks].reverse().forEach(m=>{const r=el('tr');[new Date(m.date).toLocaleDateString('en-IN',{day:'numeric',month:'short'}),m.label,r2(m.score)+' / '+m.max,m.ok+' / '+m.bad+' / '+m.na].forEach(v=>r.append(el('td',null,v)));tb.append(r)});
+  t.append(tb);wrap.append(t);h.append(wrap);
+}
+function mockPool(src){
+  let pool;
+  if(src==='mixed'||src==='mixed-pyq'){const base=(src==='mixed'?allQ():allQ().filter(q=>q.src==='pyq')).filter(q=>!q.offsyl&&!q.fig);
+    const ga=shuffle(base.filter(q=>q.subj==='ga')).slice(0,10),cs=shuffle(base.filter(q=>q.subj!=='ga')).slice(0,55);pool=[...ga,...cs]}
+  else pool=allQ().filter(q=>q.paper===src).sort((a,b)=>(a.num||0)-(b.num||0));
+  return pool;
+}
+function mockMinutes(src,n){return(src==='mixed'||src==='mixed-pyq')?Math.max(10,Math.round(n*180/65)):180}
+function updateMockInfo(){const src=$('#mSrc').value;const n=src==='mixed'?Math.min(65,Math.min(10,allQ().filter(q=>q.subj==='ga').length)+Math.min(55,allQ().filter(q=>q.subj!=='ga').length)):mockPool(src).length;
+  const max=src==='mixed'||src==='mixed-pyq'?'':'';$('#mInfo').textContent=n?`${n} questions · ${mockMinutes(src,n)} minutes${n<65?' (time scaled to the number of questions)':''}.`+max:'No questions in this pool yet. Import a paper from the PYQ Papers tab.';$('#mStart').disabled=!n}
+$('#mSrc').onchange=updateMockInfo;
+$('#mStart').onclick=()=>{
+  const src=$('#mSrc').value;const qs=mockPool(src);if(!qs.length)return;
+  T={qs,resp:{},mark:{},seen:{},idx:0,label:$('#mSrc').selectedOptions[0].textContent.replace(' (official paper)',''),endAt:Date.now()+mockMinutes(src,qs.length)*60000};
+  $('#mSetup').hidden=true;$('#mResult').hidden=true;$('#mTest').hidden=false;$('#tConfirm').hidden=true;
+  $('#tLabel').textContent=T.label;
+  clearInterval(tick);tick=setInterval(updTimer,1000);updTimer();renderTQ();
+};
+function updTimer(){if(!T)return;const ms=Math.max(0,T.endAt-Date.now());const s=Math.floor(ms/1000);
+  const t=$('#tTimer');t.textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(x=>String(x).padStart(2,'0')).join(':');t.classList.toggle('low',s<300);
+  if(ms<=0)finishMock(true)}
+function renderTQ(){
+  const q=T.qs[T.idx];T.seen[q.id]=true;
+  $('#tQnum').textContent='Question '+(T.idx+1)+' of '+T.qs.length+' · '+q.type;
+  $('#tQmarks').textContent=q.marks+' mark'+(q.marks>1?'s':'')+(q.type==='MCQ'?' · −'+(q.marks===1?'1/3':'2/3'):'');
+  const box=$('#tQ');box.innerHTML='';
+  T.cur=renderQ(q,{getResp:()=>T.resp[q.id],onResp:r=>{T.resp[q.id]=r;renderPal()},locked:()=>false,toggleOff:false,showMeta:false});
+  box.append(T.cur);
+  $('#tPrev').disabled=T.idx===0;
+  renderPal();
+}
+function renderPal(){
+  const pal=$('#tPal');pal.innerHTML='';let ans=0;
+  T.qs.forEach((q,i)=>{const b=el('button',null,String(i+1));const a=!isEmpty(T.resp[q.id]);if(a)ans++;
+    if(T.mark[q.id])b.className='rev';else if(a)b.className='ans';else if(T.seen[q.id])b.className='nans';
+    if(i===T.idx)b.classList.add('cur');b.setAttribute('aria-label','Question '+(i+1));b.onclick=()=>{T.idx=i;renderTQ()};pal.append(b)});
+  $('#tProg').textContent=ans+' answered · '+Object.values(T.mark).filter(Boolean).length+' marked';
+}
+$('#tPrev').onclick=()=>{if(T.idx>0){T.idx--;renderTQ()}};
+$('#tNext').onclick=()=>{const q=T.qs[T.idx];T.mark[q.id]=false;if(T.idx<T.qs.length-1)T.idx++;renderTQ()};
+$('#tMark').onclick=()=>{const q=T.qs[T.idx];T.mark[q.id]=true;if(T.idx<T.qs.length-1)T.idx++;renderTQ()};
+$('#tClear').onclick=()=>{const q=T.qs[T.idx];delete T.resp[q.id];T.cur.refresh();renderPal()};
+$('#tSubmit').onclick=()=>{const left=T.qs.filter(q=>isEmpty(T.resp[q.id])).length;$('#tConfirmTxt').textContent=left?`${left} question${left>1?'s':''} unanswered. Submit now?`:'Submit the test now?';$('#tConfirm').hidden=false};
+$('#tConfirmNo').onclick=()=>$('#tConfirm').hidden=true;
+$('#tConfirmYes').onclick=()=>finishMock(false);
+function finishMock(auto){
+  if(!T)return;clearInterval(tick);
+  const res=T.qs.map(q=>({q,r:T.resp[q.id],...grade(q,T.resp[q.id])}));
+  const max=T.qs.reduce((s,q)=>s+q.marks,0),score=res.reduce((s,x)=>s+x.m,0);
+  const by={};res.forEach(x=>{const k=x.q.subj;by[k]=by[k]||{ok:0,bad:0,na:0,m:0,max:0};by[k][x.st]++;by[k].m+=x.m;by[k].max+=x.q.marks;if(x.st!=='na')record(x.q,x.st==='ok')});
+  const m={date:Date.now(),label:T.label,score:r2(score),max,ok:res.filter(x=>x.st==='ok').length,bad:res.filter(x=>x.st==='bad').length,na:res.filter(x=>x.st==='na').length};
+  S.mocks.push(m);save();
+  const R=$('#mResult');R.innerHTML='';$('#mTest').hidden=true;R.hidden=false;T=null;
+  const top=el('div','panel');
+  top.append(el('p','eyebrow',(auto?'Time up · ':'')+m.label));
+  const sc=el('div','score');sc.textContent=r2(score)+' / '+max;top.append(sc);
+  const neg=res.filter(x=>x.m<0).reduce((s,x)=>s+x.m,0);
+  top.append(el('p',null,`${m.ok} correct · ${m.bad} wrong · ${m.na} not attempted · negative marks lost: ${r2(-neg)}`));
+  const row=el('div','row');const again=el('button','btn primary','Back to mock setup');again.onclick=renderMockSetup;const prac=el('button','btn','Practise my wrong answers');prac.onclick=()=>{showTab('practice');$('#pSubj').value='all';$('#pSrc').value='all';$('#pStatus').value='wrong';$('#pTopic').value='';buildPractice()};row.append(again,prac);top.append(row);
+  R.append(top);
+  const sub=el('div','panel');sub.append(el('h2',null,'Subject-wise'));
+  const w=el('div','tscroll'),t=el('table');t.innerHTML='<thead><tr><th>Subject</th><th>Marks</th><th>Correct</th><th>Wrong</th><th>Skipped</th></tr></thead>';
+  const tb=el('tbody');Object.entries(by).sort((a,b)=>(a[1].m/a[1].max)-(b[1].m/b[1].max)).forEach(([k,v])=>{const r=el('tr');[SUBJ[k].name,r2(v.m)+' / '+v.max,v.ok,v.bad,v.na].forEach(x=>r.append(el('td',null,x)));tb.append(r)});
+  t.append(tb);w.append(t);sub.append(w,el('p','small muted','Sorted weakest first. Start revision from the top row.'));R.append(sub);
+  const rv=el('div','panel');rv.append(el('h2',null,'Review every question'));
+  res.forEach((x,i)=>{const d=el('details','rev');const s=el('summary');s.append(el('span','dot '+x.st),el('b',null,'Q'+(i+1)),el('span','small muted',SUBJ[x.q.subj].name+' · '+(x.st==='ok'?'+':'')+r2(x.m)));d.append(s);
+    const body=el('div','body');const qe=renderQ(x.q,{getResp:()=>x.r,onResp:()=>{},locked:()=>true});qe.reveal();body.append(qe);
+    const fb=el('div','feedback '+(x.st==='ok'?'ok':'bad'));fb.append(el('div','small','Correct answer: '+fmtAns(x.q)+'   ·   Your answer: '+fmtResp(x.q,x.r)));if(x.q.exp)fb.append(el('div','exp',x.q.exp));
+    if(x.st==='bad'&&aiOn()){const b=el('button','btn','Explain my mistake'),out=el('div','lesson');b.onclick=()=>explainMistake(x.q,x.r,out,b);fb.append(b,out)}
+    body.append(fb);d.append(body);rv.append(d)});
+  R.append(rv);window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- PYQ import ---------- */
+if(window.pdfjsLib){try{pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'}catch(e){}}
+async function pdfPages(file){
+  if(!window.pdfjsLib)throw new Error('The PDF reader did not load. Paste the text instead.');
+  const pdf=await pdfjsLib.getDocument({data:await file.arrayBuffer()}).promise;const pages=[];
+  for(let i=1;i<=pdf.numPages;i++){const tc=await(await pdf.getPage(i)).getTextContent();let last=null,s='';
+    for(const it of tc.items){if(!it.str)continue;if(last!==null&&Math.abs(it.transform[5]-last)>2)s+='\n';else if(s&&!/\s$/.test(s))s+=' ';s+=it.str;last=it.transform[5]}
+    pages.push(s)}
+  return pages;
+}
+function log(t){const l=$('#iLog');l.hidden=false;l.textContent+=t+'\n';l.scrollTop=l.scrollHeight}
+let ICTL=null;
+$('#iStop').onclick=()=>{if(ICTL)ICTL.abort()};
+$('#iGo').onclick=async()=>{
+  const label=$('#iLabel').value.trim();
+  $('#iLog').textContent='';
+  if(!label){log('Give the paper a name first, like "GATE CS 2024 Set 1".');$('#iLabel').focus();return}
+  const pf=$('#iPaper').files[0],kf=$('#iKey').files[0];let pages,key='';
+  try{
+    if(pf){log('Reading '+pf.name+'...');pages=await pdfPages(pf);log(pages.length+' pages read.')}
+    else if($('#iPaperTxt').value.trim()){pages=[$('#iPaperTxt').value]}
+    else{log('Choose the question paper PDF, or paste its text.');return}
+    if(kf){log('Reading answer key '+kf.name+'...');key=(await pdfPages(kf)).join('\n')}else key=$('#iKeyTxt').value.trim();
+  }catch(e){log(e.message||'Could not read that PDF. Check it opens normally, or paste the text instead.');return}
+  if(pages.join('').trim().length<200){log('Almost no text found. This PDF is probably scanned images. Use the text-based paper PDF from the official site, or paste the text.');return}
+  const chunks=[];let cur='';pages.forEach(p=>{if(cur.length+p.length>7000&&cur){chunks.push(cur);cur=cur.slice(-1500)+'\n'}cur+=p+'\n'});if(cur.trim())chunks.push(cur);
+  const btn=$('#iGo');btn.disabled=true;$('#iStop').hidden=false;ICTL=new AbortController();
+  const slug=label.toLowerCase().replace(/[^a-z0-9]+/g,'-');const found={};
+  log(`Sending ${chunks.length} part${chunks.length>1?'s':''} to Claude${key?' with the answer key':' (no key: Claude will solve the answers)'}. Each part takes about a minute.`);
+  if(chunks.length>0)log('Allow Claude when the page asks.');
+  const ids=SUBJECTS.map(s=>`"${s.id}" = ${s.name}`).join('; ');
+  for(let i=0;i<chunks.length;i++){
+    if(ICTL.signal.aborted)break;
+    log(`Part ${i+1} of ${chunks.length}...`);
+    const prompt=`You are extracting questions from an official GATE Computer Science & IT (CS) question paper, "${label}", for a student's practice tool. The text below was extracted from the PDF, so line breaks and spacing may be messy.
+Reply with ONLY a JSON array with one object per COMPLETE question in the PAPER TEXT.
+Each object: {"num": the question number as printed (General Aptitude questions are usually Q.1–Q.10 and CS questions Q.11–Q.65; if the paper restarts numbering for the CS section, add 10 to CS numbers), "subj": one of these ids — ${ids}, "topic": short topic name, "type": "MCQ"|"MSQ"|"NAT", "marks": 1 or 2 (use the section headers such as "Q.11 – Q.35 carry ONE mark each"), "q": the question text cleaned up — rejoin broken lines, keep the exact meaning and all numbers, math in plain Unicode (x², √, ≤, ⌈ ⌉, Σ, log₂), "code": any program/pseudo-code block with its line breaks and indentation, else "", "opts": the four options without (A)/(B)/(C)/(D) labels for MCQ/MSQ, [] for NAT, "ans": MCQ one letter "A".."D"; MSQ an array of letters; NAT {"min": number, "max": number}, "key": "official" if the answer comes from the ANSWER KEY below, otherwise "solved", "fig": true if the question depends on a figure, circuit, graph drawing or table image missing from the text, else false, "exp": a correct step-by-step solution in ${langName()}, 3–8 short lines separated by \\n}.
+Rules: Do not invent or alter questions. Skip a question that is cut off at the very start or very end of the text. Skip instructions, headers and footers. If you solve a question yourself, solve it carefully twice. In the answer key, "MTA" means marks to all — then use key "official" and put your own solved answer.
+${key?'ANSWER KEY:\n'+key.slice(0,24000)+'\n':''}
+PAPER TEXT:
+${chunks[i]}`;
+    try{
+      const arr=await ai.json(prompt,{modelTier:'default',signal:ICTL.signal});
+      let n=0;(Array.isArray(arr)?arr:[]).forEach(o=>{const num=parseInt(o&&o.num);if(!num)return;const q=normQ(o,{id:'pyq-'+slug+'-'+num,src:'pyq',paper:label,num,key:o.key==='official'?'official':'solved'});if(!q)return;if(!found[num]||q.q.length>found[num].q.length)found[num]=q;n++});
+      log(`  ${n} questions read.`);
+    }catch(e){log('  '+aiErr(e));if(e.code==='cancelled'||e.code==='not_granted'||e.code==='rate_limited'||e.code==='session_expired')break}
+  }
+  const list=Object.values(found);
+  if(list.length){S.bank=S.bank.filter(q=>!(q.src==='pyq'&&q.paper===label)).concat(list);save();
+    const off=list.filter(q=>q.key==='official').length;
+    log(`Done. Saved ${list.length} questions from "${label}" (${off} with official answers). Open Practice or take it as a Mock Test.`)}
+  else log('No questions were saved.');
+  btn.disabled=false;$('#iStop').hidden=true;ICTL=null;renderPapers();
+};
+function renderPapers(){
+  const box=$('#iList');box.innerHTML='';const labels=paperLabels();
+  if(!labels.length){box.append(el('p','empty','No papers yet. Start with the latest year and work backwards; GATE repeats concepts heavily.'));return}
+  labels.forEach(p=>{const qs=allQ().filter(q=>q.paper===p);const bundled=qs.some(q=>q.bundled);const done=qs.filter(q=>S.stats[q.id]).length;
+    const r=el('div','paper');const info=el('div');info.append(el('b',null,p),el('div','small muted',`${qs.length} questions · ${qs.filter(q=>q.key==='official').length} official answers · ${done} attempted`));
+    const act=el('div','row');const pr=el('button','btn','Practise');pr.onclick=()=>startSession([...qs].sort((a,b)=>a.num-b.num),p);
+    const mk=el('button','btn','Mock test');mk.onclick=()=>{showTab('mock');$('#mSrc').value=p;updateMockInfo()};
+    const del=el('button','btn danger','Remove');let armed=false;del.onclick=()=>{if(!armed){armed=true;del.textContent='Confirm remove';setTimeout(()=>{armed=false;del.textContent='Remove'},4000);return}
+      S.bank=S.bank.filter(q=>q.paper!==p);save();renderPapers()};
+    act.append(pr,mk);if(!bundled)act.append(del);r.append(info,act);box.append(r)});
+}
+
+/* ---------- today ---------- */
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function subjWeight(s){const n=String(s.w).split(/[–-]/).map(Number);return n.length>1?(n[0]+n[1])/2:n[0]}
+/* today's new PYQs: never-attempted official questions, more from high-weightage subjects; the same set all day */
+function dailySet(n){
+  const d=today();
+  if(S.daily&&S.daily.day===d&&S.daily.n===n)return S.daily.ids.map(qById).filter(Boolean);
+  const r=rng(d),pool=allQ().filter(q=>q.src==='pyq'&&!q.offsyl&&!S.stats[q.id]);
+  const by={};pool.forEach(q=>(by[q.subj]=by[q.subj]||[]).push(q));
+  Object.values(by).forEach(a=>a.sort((x,y)=>(y.year||0)-(x.year||0)||r()-.5));
+  const pick=[];
+  while(pick.length<n&&Object.values(by).some(a=>a.length)){
+    const subs=SUBJECTS.filter(s=>by[s.id]&&by[s.id].length),tot=subs.reduce((t,s)=>t+subjWeight(s),0);
+    let x=r()*tot,s=subs[0];for(const c of subs){x-=subjWeight(c);if(x<=0){s=c;break}}
+    const a=by[s.id];pick.push(a.splice(Math.floor(r()*Math.min(a.length,8)),1)[0]);
+  }
+  S.daily={day:d,n,ids:pick.map(q=>q.id)};save();return pick;
+}
+function weakest(){
+  const acc=subjAcc();const tried=SUBJECTS.filter(s=>s.id!=='ga'&&acc[s.id].a>=5);
+  if(tried.length)return tried.sort((a,b)=>acc[a.id].c/acc[a.id].a-acc[b.id].c/acc[b.id].a)[0];
+  return SUBJECTS.filter(s=>s.id!=='ga').sort((a,b)=>acc[a.id].a-acc[b.id].a||subjWeight(b)-subjWeight(a))[0];
+}
+function streak(){let d=today(),n=0;if(!S.days[d])d--;while(S.days[d]){n++;d--}return n}
+function renderToday(){
+  $('#tDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const pyq=allQ().filter(q=>q.src==='pyq'),done=pyq.filter(q=>S.stats[q.id]).length;
+  $('#tLede').textContent=pyq.length?`${done} of ${pyq.length} official PYQs solved so far. Revision first, then today's new questions.`:'Official PYQs are not loaded in this copy. Open the local copy with pyq-data.js, or import papers in the PYQ Papers tab.';
+  const due=dueList();$('#tDue').textContent=due.length;$('#tRevGo').disabled=!due.length;
+  $('#tRevGo').onclick=()=>startSession(shuffle(dueList()),'Revision');
+  const n=Number($('#tNewN').value),set=dailySet(n),left=set.filter(q=>!S.stats[q.id]).length;
+  $('#tNew').textContent=left;$('#tNewGo').disabled=!set.length;
+  $('#tNewInfo').textContent=set.length?(left?`${left} of ${set.length} still to solve. `:'Done for today. ')+'Real GATE questions you have never attempted, with more from the high-weightage subjects.':'You have attempted every PYQ in your bank.';
+  $('#tNewGo').textContent=left?"Start today's set":'Review today\'s set';
+  $('#tNewGo').onclick=()=>startSession(dailySet(n),"Today's PYQs");
+  $('#tNewN').onchange=()=>{S.daily=null;renderToday()};
+  const w=weakest();$('#tWeak').textContent='Picked for today: '+w.name+'.';
+  $('#tGenGo').onclick=()=>generate(w.id,'',5,$('#tGenGo'),$('#tGenMsg'));
+  const st=streak();$('#tStreak').textContent=st?`${st} day${st>1?'s':''} in a row. Keep it going.`:'Solve one question today to start a streak.';
+  const days=$('#tDays');days.innerHTML='';const t=today();
+  for(let d=t-59;d<=t;d++){const b=el('button');b.type='button';b.tabIndex=-1;b.style.height='22px';b.title=new Date(d*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short'})+': '+(S.days[d]||0)+' questions';if(S.days[d])b.className='ans';days.append(b)}
+}
+
+/* ---------- GATE 2027 ---------- */
+const G27=window.GATE27_INFO||null;
+function renderG27(){
+  const f=$('#gFacts');f.innerHTML='';
+  if(G27){f.append(el('p','eyebrow','As of '+G27.asof),el('h2',null,G27.title));
+    if(G27.lead)f.append(el('p',null,G27.lead));
+    const dl=el('dl','fact');G27.facts.forEach(([k,v])=>{dl.append(el('dt',null,k),el('dd',null,v))});f.append(dl);
+    if(G27.notes)G27.notes.forEach(n=>f.append(el('p','small muted',n)));
+    const src=el('p','src','Sources: ');G27.sources.forEach(([t,u],i)=>{const a=el('a',null,t);a.href=u;a.target='_blank';a.rel='noopener';src.append(i?' · ':'',a)});f.append(src);
+  }else f.append(el('h2',null,'GATE 2027'),el('p','muted','Official GATE 2027 details are not loaded in this copy.'));
+  const pyq=allQ().filter(q=>q.src==='pyq'&&q.year);
+  const papers=paperLabels().filter(p=>pyq.some(q=>q.paper===p));
+  const heat=$('#gHeat');heat.innerHTML='';
+  if(!papers.length){heat.append(el('caption',null,'No official papers in the bank yet.'))}
+  else{const hr=el('tr');hr.append(el('th',null,'Subject'));papers.forEach(p=>hr.append(el('th',null,p.replace('GATE CS ','').replace(' Set ','·'))));const th=el('thead');th.append(hr);heat.append(th);
+    const tb=el('tbody');SUBJECTS.forEach(s=>{const r=el('tr');r.append(el('td',null,s.name));papers.forEach(p=>{const m=pyq.filter(q=>q.paper===p&&q.subj===s.id).reduce((t,q)=>t+q.marks,0);const c=el('td','c',m||'·');c.style.background=m?`color-mix(in srgb, var(--pen) ${Math.min(60,m*4)}%, transparent)`:'';r.append(c)});tb.append(r)});heat.append(tb)}
+  const sel=$('#gSubjSel');if(!sel.options.length){fillSubjSelect(sel,false);sel.value='os';sel.onchange=renderG27}
+  const byT={};pyq.filter(q=>q.subj===sel.value).forEach(q=>{const k=(q.topic||'Other').trim();(byT[k]=byT[k]||[]).push(q)});
+  const tops=Object.entries(byT).sort((a,b)=>b[1].length-a[1].length).slice(0,15),mx=tops.length?tops[0][1].length:1;
+  const box=$('#gTopics');box.innerHTML='';
+  tops.forEach(([t,qs])=>{const r=el('div','bar');const nm=el('button','nm',t);nm.style.cssText='background:none;border:0;padding:0;text-align:left;cursor:pointer;color:var(--pen);font:inherit';nm.onclick=()=>startSession([...qs].sort((a,b)=>b.year-a.year),'PYQs · '+t);
+    const tr=el('div','track'),fl=el('div','fill');fl.style.width=(qs.length/mx*100)+'%';tr.append(fl);r.append(nm,el('span','wt',qs.length+' Qs'),tr,el('span','pct',qs.reduce((s,q)=>s+q.marks,0)+'m'));box.append(r)});
+  if(!tops.length)box.append(el('p','empty','No PYQs for this subject yet.'));
+  const ys=[...new Set(pyq.map(q=>q.year))].sort((a,b)=>b-a),last=ys.slice(0,5),y0=last[last.length-1];
+  const sc={};pyq.filter(q=>last.includes(q.year)&&!q.offsyl&&q.subj!=='ga').forEach(q=>{const k=q.subj+'|'+(q.topic||'Other').trim();const papersInYear=new Set(pyq.filter(x=>x.year===q.year).map(x=>x.paper)).size;const w=(1+(q.year-y0)*.25)/papersInYear;const e=sc[k]=sc[k]||{s:0,n:0,m:0,yrs:new Set()};e.s+=q.marks*w;e.n++;e.m+=q.marks;e.yrs.add(q.year)});
+  const pred=$('#gPred');pred.innerHTML='';
+  const rows=Object.entries(sc).sort((a,b)=>b[1].s-a[1].s).slice(0,20);
+  if(rows.length){pred.innerHTML='<thead><tr><th>#</th><th>Topic</th><th>Subject</th><th>Years asked (of last '+last.length+')</th><th>Questions</th><th>Marks</th></tr></thead>';
+    const tb=el('tbody');rows.forEach(([k,e],i)=>{const[sj,t]=k.split('|');const r=el('tr');[i+1,t,SUBJ[sj].name,e.yrs.size,e.n,e.m].forEach(v=>r.append(el('td',null,v)));tb.append(r)});pred.append(tb)}
+  else pred.append(el('caption',null,'Needs official papers in the bank.'));
+}
+
+/* ---------- boot ---------- */
+$('#lang').value=S.lang;$('#lang').onchange=()=>{S.lang=$('#lang').value;save()};
+renderLearn();
+(()=>{let t=location.hash.replace('#','');if(!['home','today','learn','practice','mock','pyq','g27'].includes(t)){try{t=localStorage.getItem(LS+'.tab')||'home'}catch(e){t='home'}}if(!['home','today','learn','practice','mock','pyq','g27'].includes(t))t='home';showTab(t)})();
+</script>
+</body>
+</html>

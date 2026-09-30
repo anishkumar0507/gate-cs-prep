@@ -1,0 +1,73 @@
+                                       GATE 2014
+    Answer Keys for CS - Computer Science and Information Technology
+
+Section Q. No.  SESSION - 7        Section Q. No.  SESSION - 7
+
+                Key / Range Marks                  Key / Range Marks
+
+GA  1           B             1    CS  24          C                  1
+
+GA  2           C             1    CS  25          A                  1
+
+GA  3           C             1    CS  26          28 to 30           2
+
+GA  4           96 to 96      1    CS  27          1100 to 1300 2
+
+GA  5           D             1    CS  28          5 to 5             2
+
+GA  6           C             2    CS  29          D                  2
+
+GA  7           B             2    CS  30          A                  2
+
+GA  8           850 to 850    2    CS  31          B                  2
+
+GA  9           48 to 48      2    CS  32          7.2 to 7.2         2
+
+GA 10           6 to 6        2    CS  33          7 to 7             2
+
+CS  1           D             1    CS  34          D                  2
+
+CS  2           0.24 to 0.27  1    CS  35          C                  2
+
+CS  3           B             1    CS  36          B                  2
+
+CS  4           1 to 1        1    CS  37          12 to 12           2
+
+CS  5           0 to 0        1    CS  38          D                  2
+
+CS  6           C             1    CS  39          147.1 to 148.1 2
+
+CS  7           A             1    CS  40          A                  2
+
+CS  8           5 to 5        1    CS  41          A                  2
+
+CS  9           16383 to 16383 1   CS  42          C                  2
+
+CS  10          D             1    CS  43          4 to 4             2
+
+CS  11          C             1    CS  44          A                  2
+
+CS  12          1 to 1        1    CS  45          A                  2
+
+CS  13          C             1    CS  46          -2 to -2           2
+
+CS  14          C             1    CS  47          A                  2
+
+CS  15          C             1    CS  48          10 to 10           2
+
+CS  16          A             1    CS  49          88.9 to 89.1       2
+
+CS  17          D             1    CS  50          16 to 16           2
+
+CS  18          B             1    CS  51          506 to 506         2
+
+CS  19          3 to 3        1    CS  52          C                  2
+
+CS  20          D             1    CS  53          B                  2
+
+CS  21          B             1    CS  54          B                  2
+
+CS  22          D             1    CS  55          1.6 to 1.6         2
+
+CS  23          D             1
+

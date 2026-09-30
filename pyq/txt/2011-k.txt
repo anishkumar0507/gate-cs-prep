@@ -1,0 +1,72 @@
+       GATE 2011 - Answer Key - Paper : CS
+
+Paper  Question no.  Code : A  Code : B  Code : C  Code : D
+  CS           1          C         B         A         C
+  CS           2          D         D         D         A
+  CS           3          A         A         D         B
+  CS           4          C         C         D         C
+  CS           5          B         B         B         D
+  CS           6          C         C         A         B
+  CS           7          A         A         C         A
+  CS           8          B         B         B         C
+  CS           9          D         D         C         B
+  CS          10          D         C         A         C
+  CS          11          D         B         D         A
+  CS          12          A         A         C         B
+  CS          13          D         C         A         A
+  CS          14          B         C         C         D
+  CS          15          A         D         B         D
+  CS          16          C         A         C         D
+  CS          17          B         C         D         D
+  CS          18          C         B         B         B
+  CS          19          A         C         A         A
+  CS          20          B         A         C         C
+  CS          21          D         B         B         B
+  CS          22          C         D         C         C
+  CS          23          B         D         A         A
+  CS          24          C         D         B         D
+  CS          25          A         A         D         C
+  CS          26          C         A         D         C
+  CS          27          B         C         A         C
+  CS          28          A         C         A         A
+  CS          29          B         A         D         B
+  CS          30          A         B         A         D
+  CS          31          D         B         D         B
+  CS          32          A         D         A         B
+  CS          33          D         B         B         A
+  CS          34          A         A         A         C
+  CS          35          A         C         C         C
+  CS          36          D         C         B         A
+  CS          37          A         B         C         D
+  CS          38          C         C         C         A
+  CS          39          C         A         A         A
+  CS          40          A         B         B         D
+       GATE 2011 - Answer Key - Paper : CS
+
+Paper  Question no.  Code : A  Code : B  Code : C  Code : D
+  CS          41          B         A         D         A
+  CS          42          B         D         B         D
+  CS          43          D         A         B         A
+  CS          44          B         D         A         B
+  CS          45          A         A         C         A
+  CS          46          C         A         C         C
+  CS          47          C         D         A         B
+  CS          48          B         D         D         B
+  CS          49          D         B         B         D
+  CS          50          D         B         B         D
+  CS          51          B         D         D         B
+  CS          52          A         B         A         B
+  CS          53          C         C         C         C
+  CS          54          B         A         B         A
+  CS          55          C         C         C         C
+  CS          56          A         B         C         B
+  CS          57          B         C         B         D
+  CS          58          C         B         D         A
+  CS          59          B         D         A         B
+  CS          60          D         A         B         C
+  CS          61          C         D         A         C
+  CS          62          D         A         C         D
+  CS          63          A         C         D         C
+  CS          64          C         D         C         D
+  CS          65          D         C         D         A
+

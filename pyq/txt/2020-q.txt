@@ -1,0 +1,445 @@
+GATE 2020                                                           IIT Delhi
+
+Graduate Aptitude Test in Engineering 2020                            Organising Institute
+
+Home     Information Brochure  GATE International  Pre Examination  Important Dates  FAQs   Contact Us
+
+ CS: Computer Sc. and Information Technology
+
+GA - General Aptitude
+
+Q1 - Q5 carry one mark each.
+
+
+  Q.No. 1
+
+  (A)
+  (B)
+  (C)
+  (D)
+
+  Q.No. 2
+  (A)
+  (B)
+  (C)
+  (D)
+
+  Q.No. 3
+
+(A)
+(B)
+(C)
+(D)
+
+Q.No. 4
+
+(A)
+(B)
+(C)
+(D)
+
+Q.No. 5
+  (A)
+  (B)
+  (C)
+  (D)
+
+Q6 - Q10 carry two marks each.
+
+
+  Q.No. 6
+
+  (A)
+  (B)
+  (C)
+  (D)
+
+  Q.No. 7
+  (A)
+  (B)
+  (C)
+  (D)
+
+  Q.No. 8
+  (A)
+  (B)
+  (C)
+  (D)
+  Q.No. 9
+  (A)
+  (B)
+  (C)
+  (D)
+  Q.No. 10
+
+  (A)
+  (B)
+  (C)
+  (D)
+
+CS: Computer Sc. and Information Technology
+
+Q1 - Q25 carry one mark each.
+
+
+  Q.No. 1
+
+  (A)
+  (B)
+  (C)
+  (D)
+  Q.No. 2
+(A)
+(B)
+(C)
+(D)
+Q.No. 3
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 4
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 5
+(A)
+(B)
+(C)
+(D)
+Q.No. 6
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 7
+(A)
+(B)
+(C)
+(D)
+Q.No. 8
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 9
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 10
+(A)
+(B)
+(C)
+(D)
+Q.No. 11
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 12
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 13
+(A)
+(B)
+(C)
+(D)
+Q.No. 14
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 15
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 16
+(A)
+(B)
+(C)
+(D)
+Q.No. 17
+Q.No. 18
+Q.No. 19
+Q.No. 20
+Q.No. 21
+
+Q.No. 22
+
+Q.No. 23
+
+Q.No. 24
+  Q.No. 25
+
+Q26 - Q55 carry two marks each.
+
+
+  Q.No. 26
+
+  (A)
+  (B)
+  (C)
+  (D)
+  Q.No. 27
+
+  (A)
+  (B)
+  (C)
+  (D)
+  Q.No. 28
+(A)
+(B)
+(C)
+(D)
+Q.No. 29
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 30
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 31
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 32
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 33
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 34
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 35
+(A)
+(B)
+(C)
+(D)
+Q.No. 36
+(A)
+(B)
+(C)
+(D)
+Q.No. 37
+
+(A)
+(B)
+(C)
+(D)
+
+Q.No. 38
+(A)
+(B)
+(C)
+(D)
+Q.No. 39
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 40
+
+(A)
+(B)
+(C)
+(D)
+
+Q.No. 41
+
+(A)
+(B)
+(C)
+(D)
+Q.No. 42
+Q.No. 43
+
+Q.No. 44
+Q.No. 45
+Q.No. 46
+
+Q.No. 47
+Q.No. 48
+Q.No. 49
+Q.No. 50
+
+Q.No. 51
+Q.No. 52
+Q.No. 53
+Q.No. 54
+Q.No. 55
+
+          Copyright : GATE 2020, IIT Delhi
+GATE 2020                                                           IIT Delhi
+
+Graduate Aptitude Test in Engineering 2020                            Organising Institute
+
+Home  Information Brochure  GATE International  Pre Examination     Important Dates  FAQs   Contact Us
+
+Answer Key - CS: Computer Sc. and Information Technology
+
+      Q.No.                 Session  Que.Type Sec. Name Key                  Marks
+      1                     6                                                1
+      2                     6        MCQ        GA  D                        1
+      3                     6                                                1
+      4                     6        MCQ        GA  A                        1
+      5                     6                                                1
+      6                     6        MCQ        GA  A                        2
+      7                     6                                                2
+      8                     6        MCQ        GA  D                        2
+      9                     6                                                2
+      10                    6        MCQ        GA  B                        2
+      1                     6                                                1
+      2                     6        MCQ        GA  D                        1
+      3                     6                                                1
+      4                     6        MCQ        GA  C                        1
+      5                     6                                                1
+      6                     6        MCQ        GA  A                        1
+      7                     6                                                1
+      8                     6        MCQ        GA  B                        1
+      9                     6                                                1
+      10                    6        MCQ        GA  C                        1
+      11                    6                                                1
+      12                    6        MCQ        CS  A                        1
+      13                    6                                                1
+      14                    6        MCQ        CS  A                        1
+      15                    6                                                1
+      16                    6        MCQ        CS  C                        1
+      17                    6                                                1
+      18                    6        MCQ        CS  C                        1
+      19                    6                                                1
+      20                    6        MCQ        CS  B                        1
+
+      21                    6        MCQ        CS  C                        1
+
+      22                    6        MCQ        CS  MTA                      1
+      23                    6                                                1
+      24                    6        MCQ        CS  D                        1
+      25                    6                                                1
+      26                    6        MCQ        CS  D                        2
+      27                    6                                                2
+      28                    6        MCQ        CS  C                        2
+      29                    6                                                2
+      30                    6        MCQ        CS  C                        2
+      31                    6                                                2
+      32                    6        MCQ        CS  C                        2
+
+                                     MCQ        CS  A
+
+                                     MCQ        CS  A
+
+                                     MCQ        CS  D
+
+                                     MCQ        CS  C
+
+                                     NAT        CS  0.125 to 0.125
+
+                                     NAT        CS  7 to 7
+
+                                     NAT        CS  5 to 5
+
+                                     NAT        CS  1034 to 1034
+
+                                     NAT        CS  13.3 to 13.3 OR 13.5 to
+                                                    13.5
+
+                                     NAT        CS  19 to 19
+
+                                     NAT        CS  13 to 13
+
+                                     NAT        CS  7 to 7
+
+                                     NAT        CS  6 to 6
+
+                                     MCQ        CS  A
+
+                                     MCQ        CS  C
+
+                                     MCQ        CS  B
+
+                                     MCQ        CS  B
+
+                                     MCQ        CS  B
+
+                                     MCQ        CS  D
+
+                                     MCQ        CS  A
+33  6  MCQ  CS  B                             2
+
+34  6  MCQ  CS  A                             2
+
+35  6  MCQ  CS  B                             2
+
+36  6  MCQ  CS  A                             2
+
+37  6  MCQ  CS  A                             2
+
+38  6  MCQ  CS  B                             2
+
+39  6  MCQ  CS  C                             2
+
+40  6  MCQ  CS  A                             2
+
+41  6  MCQ  CS  B                             2
+
+42  6  NAT  CS  12 to 12                      2
+
+43  6  NAT  CS  2.15 to 2.18                  2
+
+44  6  NAT  CS  14 to 14                      2
+
+45  6  NAT  CS  0.5 to 0.5                    2
+
+46  6  NAT  CS  55 to 55                      2
+
+47  6  NAT  CS  511 to 511                    2
+
+48  6  NAT  CS  81 to 81                      2
+
+49  6  NAT  CS  99 to 99                      2
+
+50  6  NAT  CS  5.25 to 5.25                  2
+
+51  6  NAT  CS  6 to 6                        2
+
+52  6  NAT  CS  7 to 7                        2
+
+53  6  NAT  CS  154.5 to 155.5                2
+
+54  6  NAT  CS  4 to 4                        2
+
+55  6  NAT  CS  44 to 44                      2
+
+            Copyright : GATE 2020, IIT Delhi
+

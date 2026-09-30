@@ -1,0 +1,97 @@
+Q. No.  Type  Section       Key       Marks
+   1    MCQ     CS-2          D          1
+   2    MCQ     CS-2          A          1
+   3    MCQ     CS-2          C          1
+   4    MCQ     CS-2          B          1
+   5    MCQ     CS-2          C          1
+   6    MCQ     CS-2          A          1
+   7    MCQ     CS-2          B          1
+   8    MCQ     CS-2          D          1
+   9    MCQ     CS-2          C          1
+  10    MCQ     CS-2          C          1
+  11    MCQ     CS-2          A          1
+  12    MCQ     CS-2          C          1
+  13    MCQ     CS-2          B          1
+  14    MCQ     CS-2          C          1
+  15    MCQ     CS-2          D          1
+  16    MCQ     CS-2          C          1
+  17    MCQ     CS-2          C          1
+  18    MCQ     CS-2          B          1
+  19    NAT     CS-2                     1
+  20    NAT     CS-2    0.0 to 0.0       1
+  21    NAT     CS-2    9.0 to 9.0       1
+  22    NAT     CS-2   -0.01 to 0.01     1
+  23    NAT     CS-2    2.0 to 2.0       1
+  24    NAT     CS-2   16.0 to 16.0      1
+  25    NAT     CS-2    8.0 to 8.0       1
+  26    MCQ     CS-2    8.0 to 8.0       2
+  27    MCQ     CS-2                     2
+  28    MCQ     CS-2          A          2
+  29    MCQ     CS-2          C          2
+  30    MCQ     CS-2          A          2
+  31    MCQ     CS-2          A          2
+  32    MCQ     CS-2          B          2
+  33    MCQ     CS-2          B          2
+  34    MCQ     CS-2          C          2
+  35    MCQ     CS-2          B          2
+  36    MCQ     CS-2          A          2
+                              D
+                              B
+37  MCQ  CS-2  C               2
+
+38  MCQ  CS-2  C               2
+
+39  MCQ  CS-2  C               2
+
+40  MCQ  CS-2  D               2
+
+41  MCQ  CS-2  D               2
+
+42  MCQ  CS-2  B               2
+
+43  NAT  CS-2  3.0 to 3.0      2
+
+44  NAT  CS-2  54.0 to 54.0    2
+
+45  NAT  CS-2  4.72 to 4.72    2
+
+46  NAT  CS-2  7.0 to 7.0      2
+
+47  NAT  CS-2  15.0 to 15.0    2
+
+48  NAT  CS-2  54.0 to 54.0    2
+
+49  NAT  CS-2  52.0 to 52.0    2
+
+50  NAT  CS-2  225.0 to 225.0  2
+
+51  NAT  CS-2  29.0 to 29.0    2
+
+52  NAT  CS-2  5.0 to 5.0      2
+
+53  NAT  CS-2  18.0 to 18.0    2
+
+54  NAT  CS-2  0.0 to 0.0      2
+
+55  NAT  CS-2  2.0 to 2.0      2
+
+56  MCQ  GA    D               1
+
+57  MCQ  GA    B               1
+
+58  MCQ  GA    A               1
+
+59  MCQ  GA    B               1
+
+60  MCQ  GA    D               1
+
+61  MCQ  GA    B               2
+
+62  MCQ  GA    B               2
+
+63  MCQ  GA    A               2
+
+64  MCQ  GA    C               2
+
+65  MCQ  GA    C               2
+

@@ -1,0 +1,1248 @@
+[
+ {
+  "num": 1,
+  "subj": "dm",
+  "topic": "Propositional logic",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Consider the following expressions:\n(i) false\n(ii) Q\n(iii) true\n(iv) P ∨ Q\n(v) ¬Q ∨ P\nThe number of expressions given above that are logically implied by P ∧ (P ⇒ Q) is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 4,
+   "max": 4
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "P ∧ (P ⇒ Q) = P ∧ (¬P ∨ Q) = P ∧ Q.\nMatlab premise true hai sirf jab P = T aur Q = T.\nAb check karo P=T, Q=T par kaunse expressions true hain:\n(i) false → F, implied nahi.\n(ii) Q → T ✓, (iii) true → T ✓, (iv) P ∨ Q → T ✓, (v) ¬Q ∨ P → F ∨ T = T ✓.\nTotal = 4.\nTrap: 'false' kabhi implied nahi hota jab tak premise khud contradiction na ho."
+ },
+ {
+  "num": 2,
+  "subj": "em",
+  "topic": "Polynomials / derivatives",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Let f(x) be a polynomial and g(x) = f′(x) be its derivative. If the degree of (f(x) + f(−x)) is 10, then the degree of (g(x) − g(−x)) is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 9,
+   "max": 9
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "f(x) + f(−x) = 2 × (even-power terms of f). Degree 10 ⇒ f ka highest even power x¹⁰ hai (coefficient ≠ 0).\ng(x) − g(−x) = 2 × (odd-power terms of g).\ng = f′: f ke even power terms x²ᵏ → derivative mein x²ᵏ⁻¹ (odd) ban jaate hain.\nf ke odd terms → g mein even terms banenge, jo g(x) − g(−x) mein cancel ho jaate hain.\nToh highest odd term of g = derivative of x¹⁰ = 10x⁹.\nDegree = 9."
+ },
+ {
+  "num": 3,
+  "subj": "dm",
+  "topic": "Graph colouring",
+  "type": "NAT",
+  "marks": 1,
+  "q": "The minimum number of colours that is sufficient to vertex-colour any planar graph is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 4,
+   "max": 4
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Four Colour Theorem: har planar graph ko 4 colours se properly vertex-colour kiya ja sakta hai.\nAur 4 zaroori bhi hai: K₄ planar hai aur uska chromatic number 4 hai.\nIsliye minimum sufficient number = 4."
+ },
+ {
+  "num": 4,
+  "subj": "em",
+  "topic": "System of linear equations",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the systems, each consisting of m linear equations in n variables.\nI. If m < n, then all such systems have a solution\nII. If m > n, then none of these systems has a solution\nIII. If m = n, then there exists a system which has a solution\nWhich one of the following is CORRECT?",
+  "code": "",
+  "opts": [
+   "I, II and III are true",
+   "Only II and III are true",
+   "Only III is true",
+   "None of them is true"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "I: m < n par bhi system inconsistent ho sakta hai, e.g. x + y + z = 1 aur x + y + z = 2 (m = 2 < n = 3) → no solution. I false.\nII: m > n par bhi solution ho sakta hai, e.g. x=1, 2x=2, 3x=3 (m=3, n=1) consistent hai. II false.\nIII: m = n, e.g. homogeneous system AX = 0 hamesha X = 0 solution rakhta hai → aisa system exist karta hai. III true.\nAnswer: Only III → (C)."
+ },
+ {
+  "num": 5,
+  "subj": "em",
+  "topic": "Conditional probability / total probability",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Suppose that a shop has an equal number of LED bulbs of two different types. The probability of an LED bulb lasting more than 100 hours given that it is of Type 1 is 0.7, and given that it is of Type 2 is 0.4. The probability that an LED bulb chosen uniformly at random lasts more than 100 hours is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 0.55,
+   "max": 0.55
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Equal number ⇒ P(Type1) = P(Type2) = 0.5.\nTotal probability theorem: P(L) = P(L|T1)P(T1) + P(L|T2)P(T2).\n= 0.7 × 0.5 + 0.4 × 0.5 = 0.35 + 0.20 = 0.55."
+ },
+ {
+  "num": 6,
+  "subj": "em",
+  "topic": "Eigenvalues / determinant",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Suppose that the eigenvalues of matrix A are 1, 2, 4. The determinant of (A⁻¹)ᵀ is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 0.124,
+   "max": 0.126
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "det(A) = product of eigenvalues = 1 × 2 × 4 = 8.\ndet(Mᵀ) = det(M), aur det(A⁻¹) = 1/det(A).\nIsliye det((A⁻¹)ᵀ) = 1/8 = 0.125."
+ },
+ {
+  "num": 7,
+  "subj": "dl",
+  "topic": "Ripple carry adder",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Consider an eight-bit ripple-carry adder for computing the sum of A and B, where A and B are integers represented in 2's complement form. If the decimal value of A is one, the decimal value of B that leads to the longest latency for the sum to stabilize is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": -1,
+   "max": -1
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Ripple-carry adder mein longest delay tab hota hai jab carry LSB se MSB tak har stage se propagate ho.\nA = 1 = 00000001.\nB = 11111111 lo (2's complement mein −1).\nBit 0: 1+1 → carry 1; phir har bit mein 1 + carry 1 → sum 0, carry 1 ... yeh carry saare 8 stages se ripple karta hai.\nIsliye B = −1 (decimal).\nTrap: 255 answer nahi hai, kyunki 8-bit 2's complement mein 11111111 = −1."
+ },
+ {
+  "num": 8,
+  "subj": "dl",
+  "topic": "XOR properties",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Let x₁ ⊕ x₂ ⊕ x₃ ⊕ x₄ = 0 where x₁, x₂, x₃, x₄ are Boolean variables, and ⊕ is the XOR operator. Which one of the following must always be TRUE?",
+  "code": "",
+  "opts": [
+   "x₁x₂x₃x₄ = 0",
+   "x₁x₃ + x₂ = 0",
+   "x̄₁ ⊕ x̄₃ = x̄₂ ⊕ x̄₄",
+   "x₁ + x₂ + x₃ + x₄ = 0"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "x₁ ⊕ x₂ ⊕ x₃ ⊕ x₄ = 0 ⇒ x₁ ⊕ x₃ = x₂ ⊕ x₄.\nProperty: ā ⊕ b̄ = a ⊕ b (dono complement cancel ho jaate hain).\nToh x̄₁ ⊕ x̄₃ = x₁ ⊕ x₃ aur x̄₂ ⊕ x̄₄ = x₂ ⊕ x₄ → dono equal. (C) always true.\nCounter-examples: all xᵢ = 1 → XOR = 0 but (A) x₁x₂x₃x₄ = 1, (B) = 1, (D) = 1 → A, B, D false.\nAnswer: (C)."
+ },
+ {
+  "num": 9,
+  "subj": "dl",
+  "topic": "Number representation (2's complement / sign magnitude)",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Let X be the number of distinct 16-bit integers in 2's complement representation. Let Y be the number of distinct 16-bit integers in sign magnitude representation. Then X − Y is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 1,
+   "max": 1
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "2's complement 16-bit: range −2¹⁵ to 2¹⁵ − 1 → X = 2¹⁶ distinct integers (sirf ek zero).\nSign magnitude: range −(2¹⁵ − 1) to +(2¹⁵ − 1), zero ke do representations (+0 aur −0).\nY = 2¹⁶ − 1 distinct integers.\nX − Y = 1."
+ },
+ {
+  "num": 10,
+  "subj": "coa",
+  "topic": "Instruction format",
+  "type": "NAT",
+  "marks": 1,
+  "q": "A processor has 40 distinct instructions and 24 general purpose registers. A 32-bit instruction word has an opcode, two register operands and an immediate operand. The number of bits available for the immediate operand field is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 16,
+   "max": 16
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Opcode bits: 40 instructions → ⌈log₂ 40⌉ = 6 bits.\nRegister field: 24 registers → ⌈log₂ 24⌉ = 5 bits, do operands → 10 bits.\nImmediate = 32 − 6 − 10 = 16 bits."
+ },
+ {
+  "num": 11,
+  "subj": "algo",
+  "topic": "BFS on binary tree",
+  "type": "NAT",
+  "marks": 1,
+  "q": "Breadth First Search (BFS) is started on a binary tree beginning from the root vertex. There is a vertex t at a distance four from the root. If t is the n-th vertex in this BFS traversal, then the maximum possible value of n is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 31,
+   "max": 31
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "n maximum tab hoga jab t se pehle zyada se zyada vertices visit hon.\nLevels 0 to 3 full ho: 1 + 2 + 4 + 8 = 15 vertices.\nLevel 4 full: 16 vertices, aur t level 4 ka last vertex ho.\nn = 15 + 16 = 31."
+ },
+ {
+  "num": 12,
+  "subj": "pds",
+  "topic": "C pointers / parameter passing",
+  "type": "NAT",
+  "marks": 1,
+  "q": "The value printed by the following program is ______.",
+  "code": "void f(int* p, int m){\n    m = m + 5;\n    *p = *p + m;\n    return;\n}\n\nvoid main(){\n    int i=5, j=10;\n\n    f(&i, j);\n    printf(\"%d\", i+j);\n}",
+  "opts": [],
+  "ans": {
+   "min": 30,
+   "max": 30
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "i = 5, j = 10. f(&i, j) call: p → i, m = 10 (copy of j).\nm = m + 5 = 15 (sirf local copy change hoti hai, j = 10 hi rahega).\n*p = *p + m → i = 5 + 15 = 20.\nprintf i + j = 20 + 10 = 30.\nTrap: j call-by-value hai, isliye j change nahi hota."
+ },
+ {
+  "num": 13,
+  "subj": "algo",
+  "topic": "Sorting on sorted input",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Assume that the algorithms considered here sort the input sequences in ascending order. If the input is already in ascending order, which of the following are TRUE?\nI. Quicksort runs in Θ(n²) time\nII. Bubblesort runs in Θ(n²) time\nIII. Mergesort runs in Θ(n) time\nIV. Insertion sort runs in Θ(n) time",
+  "code": "",
+  "opts": [
+   "I and II only",
+   "I and III only",
+   "II and IV only",
+   "I and IV only"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "I: Quicksort (first/last element pivot) sorted input par har baar unbalanced partition (0 aur n−1) → Θ(n²). True.\nII: Bubble sort with 'swapped' flag: pehla pass mein koi swap nahi → stop → Θ(n). Isliye Θ(n²) false.\nIII: Merge sort hamesha Θ(n log n), input se independent. False.\nIV: Insertion sort sorted input par har element ek comparison → Θ(n). True.\nAnswer: I and IV → (D).\nTrap: Bubble sort ka standard (optimized) version sorted input par linear hota hai."
+ },
+ {
+  "num": 14,
+  "subj": "algo",
+  "topic": "Algorithm design paradigms",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The Floyd-Warshall algorithm for all-pair shortest paths computation is based on",
+  "code": "",
+  "opts": [
+   "Greedy paradigm.",
+   "Divide-and-Conquer paradigm.",
+   "Dynamic Programming paradigm.",
+   "neither Greedy nor Divide-and-Conquer nor Dynamic Programming paradigm."
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Floyd-Warshall recurrence: dᵏ[i][j] = min(dᵏ⁻¹[i][j], dᵏ⁻¹[i][k] + dᵏ⁻¹[k][j]).\nYeh overlapping subproblems + optimal substructure use karta hai, table bottom-up bharta hai.\nIsliye Dynamic Programming → (C)."
+ },
+ {
+  "num": 15,
+  "subj": "pds",
+  "topic": "Linked list operations complexity",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "N items are stored in a sorted doubly linked list. For a delete operation, a pointer is provided to the record to be deleted. For a decrease-key operation, a pointer is provided to the record on which the operation is to be performed.\nAn algorithm performs the following operations on the list in this order: Θ(N) delete, O(log N) insert, O(log N) find, and Θ(N) decrease-key. What is the time complexity of all these operations put together?",
+  "code": "",
+  "opts": [
+   "O(log² N)",
+   "O(N)",
+   "O(N²)",
+   "Θ(N² log N)"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Delete (pointer given, doubly linked): O(1) each → Θ(N) × O(1) = O(N).\nInsert in sorted list: position dhoondhne mein O(N) → O(log N) × O(N) = O(N log N).\nFind: O(N) each → O(log N) × O(N) = O(N log N).\nDecrease-key: value kam karne ke baad sorted order maintain karne ke liye node ko peeche shift karna padta hai → O(N) each → Θ(N) × O(N) = O(N²).\nTotal = O(N²) → (C)."
+ },
+ {
+  "num": 16,
+  "subj": "toc",
+  "topic": "Minimal DFA",
+  "type": "NAT",
+  "marks": 1,
+  "q": "The number of states in the minimum sized DFA that accepts the language defined by the regular expression\n(0 + 1)*(0 + 1)(0 + 1)*\nis ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 2,
+   "max": 2
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "(0+1)*(0+1)(0+1)* = kam se kam ek symbol wali saari strings = Σ⁺ (length ≥ 1).\nDFA: start state q0 (non-final, ε ke liye), kisi bhi symbol par q1 (final), q1 par 0/1 self-loop.\nq0 aur q1 distinguishable hain (ε se), toh minimum 2 states."
+ },
+ {
+  "num": 17,
+  "subj": "toc",
+  "topic": "Regular vs non-regular languages",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Language L₁ is defined by the grammar: S₁ → aS₁b | ε\nLanguage L₂ is defined by the grammar: S₂ → abS₂ | ε\nConsider the following statements:\nP: L₁ is regular\nQ: L₂ is regular\nWhich one of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Both P and Q are true",
+   "P is true and Q is false",
+   "P is false and Q is true",
+   "Both P and Q are false"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "L₁ = {aⁿbⁿ : n ≥ 0} → counting chahiye, pumping lemma se non-regular. P false.\nL₂ = {(ab)ⁿ : n ≥ 0} = (ab)* → regular expression hai, regular. Q true.\nAnswer: (C)."
+ },
+ {
+  "num": 18,
+  "subj": "toc",
+  "topic": "Closure properties",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the following types of languages: L₁ : Regular, L₂ : Context-free, L₃ : Recursive, L₄ : Recursively enumerable. Which of the following is/are TRUE?\nI. L̄₃ ∪ L₄ is recursively enumerable\nII. L̄₂ ∪ L₃ is recursive\nIII. L₁* ∩ L₂ is context-free\nIV. L₁ ∪ L̄₂ is context-free",
+  "code": "",
+  "opts": [
+   "I only",
+   "I and III only",
+   "I and IV only",
+   "I, II and III only"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "I: L₃ recursive ⇒ L̄₃ recursive ⇒ RE. RE ∪ RE = RE. True.\nII: Har CFL recursive hai, recursive complement ke under closed ⇒ L̄₂ recursive. Recursive ∪ recursive = recursive. True.\nIII: L₁* regular hai; regular ∩ CFL = CFL. True.\nIV: CFL complement ke under closed nahi hai, L̄₂ CFL na bhi ho; regular ∪ non-CFL CFL guarantee nahi. False.\nAnswer: I, II, III → (D)."
+ },
+ {
+  "num": 19,
+  "subj": "cd",
+  "topic": "Compiler phases",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Match the following:\n(P) Lexical analysis — (i) Leftmost derivation\n(Q) Top down parsing — (ii) Type checking\n(R) Semantic analysis — (iii) Regular expressions\n(S) Runtime environments — (iv) Activation records",
+  "code": "",
+  "opts": [
+   "P ↔ i, Q ↔ ii, R ↔ iv, S ↔ iii",
+   "P ↔ iii, Q ↔ i, R ↔ ii, S ↔ iv",
+   "P ↔ ii, Q ↔ iii, R ↔ i, S ↔ iv",
+   "P ↔ iv, Q ↔ i, R ↔ ii, S ↔ iii"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Lexical analysis: tokens regular expressions se define hote hain → P–iii.\nTop-down parsing: leftmost derivation banata hai → Q–i.\nSemantic analysis: type checking → R–ii.\nRuntime environment: activation records (stack frames) → S–iv.\nAnswer: (B)."
+ },
+ {
+  "num": 20,
+  "subj": "os",
+  "topic": "Page replacement (Belady's anomaly)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "In which one of the following page replacement algorithms it is possible for the page fault rate to increase even when the number of allocated frames increases?",
+  "code": "",
+  "opts": [
+   "LRU (Least Recently Used)",
+   "OPT (Optimal Page Replacement)",
+   "MRU (Most Recently Used)",
+   "FIFO (First In First Out)"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Frames badhane par faults badhna = Belady's anomaly.\nLRU aur OPT stack algorithms hain → anomaly nahi hoti.\nFIFO stack algorithm nahi hai; classic example 1,2,3,4,1,2,5,1,2,3,4,5 par 3 frames → 9 faults, 4 frames → 10 faults.\nAnswer: FIFO (D)."
+ },
+ {
+  "num": 21,
+  "subj": "db",
+  "topic": "B+ trees",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "B+ Trees are considered BALANCED because",
+  "code": "",
+  "opts": [
+   "the lengths of the paths from the root to all leaf nodes are all equal.",
+   "the lengths of the paths from the root to all leaf nodes differ from each other by at most 1.",
+   "the number of children of any two non-leaf sibling nodes differ by at most 1.",
+   "the number of records in any two leaf nodes differ by at most 1."
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "B+ tree mein saare leaves same level par hote hain (tree root split se hi height badhata hai).\nIsliye root se har leaf tak path length exactly equal hoti hai.\nAnswer: (A).\nTrap: 'differ by at most 1' AVL tree ki property hai, B+ tree ki nahi."
+ },
+ {
+  "num": 22,
+  "subj": "db",
+  "topic": "Conflict serializability",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Suppose a database schedule S involves transactions T₁, . . . , Tₙ. Construct the precedence graph of S with vertices representing the transactions and edges representing the conflicts. If S is serializable, which one of the following orderings of the vertices of the precedence graph is guaranteed to yield a serial schedule?",
+  "code": "",
+  "opts": [
+   "Topological order",
+   "Depth-first order",
+   "Breadth-first order",
+   "Ascending order of transaction indices"
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Serializable ⇒ precedence graph acyclic (DAG).\nEdge Ti → Tj ka matlab Ti ko serial order mein Tj se pehle aana chahiye.\nDAG ka topological order har edge ki direction respect karta hai → equivalent serial schedule.\nDFS/BFS order ya index order edges ko violate kar sakte hain.\nAnswer: (A)."
+ },
+ {
+  "num": 23,
+  "subj": "cn",
+  "topic": "Digital signatures",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Anarkali digitally signs a message and sends it to Salim. Verification of the signature by Salim requires",
+  "code": "",
+  "opts": [
+   "Anarkali's public key.",
+   "Salim's public key.",
+   "Salim's private key.",
+   "Anarkali's private key."
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Signing: sender (Anarkali) apni private key se sign karti hai.\nVerification: receiver sender ki public key se signature check karta hai.\nIsliye Salim ko Anarkali ki public key chahiye → (A)."
+ },
+ {
+  "num": 24,
+  "subj": "cn",
+  "topic": "Ethernet / CSMA-CD",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "In an Ethernet local area network, which one of the following statements is TRUE?",
+  "code": "",
+  "opts": [
+   "A station stops to sense the channel once it starts transmitting a frame.",
+   "The purpose of the jamming signal is to pad the frames that are smaller than the minimum frame size.",
+   "A station continues to transmit the packet even after the collision is detected.",
+   "The exponential backoff mechanism reduces the probability of collision on retransmissions."
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "(A) False: CSMA/CD mein transmit karte waqt bhi channel sense karte rehte hain (collision detection).\n(B) False: jam signal collision ki khabar sab stations ko dene ke liye hai, padding ke liye nahi.\n(C) False: collision detect hote hi station transmission abort karta hai (jam bhej kar).\n(D) True: binary exponential backoff random wait range badhata hai, toh dobara collision ki probability ghat jaati hai.\nAnswer: (D)."
+ },
+ {
+  "num": 25,
+  "subj": "cn",
+  "topic": "Application layer (DNS, TCP, HTTP)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Identify the correct sequence in which the following packets are transmitted on the network by a host when a browser requests a webpage from a remote server, assuming that the host has just been restarted.",
+  "code": "",
+  "opts": [
+   "HTTP GET request, DNS query, TCP SYN",
+   "DNS query, HTTP GET request, TCP SYN",
+   "DNS query, TCP SYN, HTTP GET request",
+   "TCP SYN, DNS query, HTTP GET request"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Host abhi restart hua hai → DNS cache empty, toh pehle hostname resolve karna padega: DNS query.\nIP milne ke baad TCP connection banana: TCP SYN (3-way handshake).\nConnection ke baad HTTP GET request bheja jaata hai.\nSequence: DNS query → TCP SYN → HTTP GET → (C)."
+ },
+ {
+  "num": 26,
+  "subj": "dm",
+  "topic": "Relations (reflexive, transitive)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A binary relation R on ℕ × ℕ is defined as follows: (a, b)R(c, d) if a ≤ c or b ≤ d. Consider the following propositions:\nP: R is reflexive\nQ: R is transitive\nWhich one of the following statements is TRUE?",
+  "code": "",
+  "opts": [
+   "Both P and Q are true.",
+   "P is true and Q is false.",
+   "P is false and Q is true.",
+   "Both P and Q are false."
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Reflexive: (a,b)R(a,b) kyunki a ≤ a true. P true.\nTransitive check counter-example se:\n(1,5) R (2,0) kyunki 1 ≤ 2.\n(2,0) R (0,1) kyunki 0 ≤ 1.\nPar (1,5) R (0,1)? 1 ≤ 0 false, 5 ≤ 1 false → not related.\nIsliye Q false. Answer: (B).\nTrap: 'or' condition ki wajah se transitivity toot jaati hai; 'and' hota toh transitive hota."
+ },
+ {
+  "num": 27,
+  "subj": "dm",
+  "topic": "First order logic (validity)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which one of the following well-formed formulae in predicate calculus is NOT valid?",
+  "code": "",
+  "opts": [
+   "(∀x p(x) ⇒ ∀x q(x)) ⇒ (∃x ¬p(x) ∨ ∀x q(x))",
+   "(∃x p(x) ∨ ∃x q(x)) ⇒ ∃x (p(x) ∨ q(x))",
+   "∃x (p(x) ∧ q(x)) ⇒ (∃x p(x) ∧ ∃x q(x))",
+   "∀x (p(x) ∨ q(x)) ⇒ (∀x p(x) ∨ ∀x q(x))"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "(A): ∀x p(x) ⇒ ∀x q(x) ≡ ¬∀x p(x) ∨ ∀x q(x) ≡ ∃x ¬p(x) ∨ ∀x q(x). Dono side same → valid.\n(B): ∃ ∨ ke over distribute hota hai: ∃x p ∨ ∃x q ≡ ∃x(p ∨ q) → valid.\n(C): koi x jiske liye p ∧ q true, toh wahi x p ke liye aur q ke liye witness → valid.\n(D): Counter-example: domain = integers, p(x) = 'x even', q(x) = 'x odd'. ∀x(p ∨ q) true, par ∀x p false aur ∀x q false → implication false.\nNOT valid → (D)."
+ },
+ {
+  "num": 28,
+  "subj": "dm",
+  "topic": "Handshaking lemma",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider a set U of 23 different compounds in a Chemistry lab. There is a subset S of U of 9 compounds, each of which reacts with exactly 3 compounds of U. Consider the following statements:\nI. Each compound in U \\ S reacts with an odd number of compounds.\nII. At least one compound in U \\ S reacts with an odd number of compounds.\nIII. Each compound in U \\ S reacts with an even number of compounds.\nWhich one of the above statements is ALWAYS TRUE?",
+  "code": "",
+  "opts": [
+   "Only I",
+   "Only II",
+   "Only III",
+   "None"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Compounds = vertices, 'reacts with' = undirected edge. Handshaking lemma: sum of degrees even hota hai.\nS ke 9 vertices ka degree sum = 9 × 3 = 27 (odd).\nTotal even hona chahiye ⇒ U \\ S (14 vertices) ka degree sum odd hona chahiye.\nOdd sum ke liye kam se kam ek vertex ka degree odd hona zaroori → II always true.\nI zaroori nahi (sirf ek odd bhi chal jaata), III impossible (sab even ho toh sum even).\nAnswer: Only II → (B)."
+ },
+ {
+  "num": 29,
+  "subj": "dm",
+  "topic": "Modular arithmetic",
+  "type": "NAT",
+  "marks": 2,
+  "q": "The value of the expression 13⁹⁹ (mod 17), in the range 0 to 16, is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 4,
+   "max": 4
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "13 ≡ −4 (mod 17).\n13² ≡ 16 ≡ −1 (mod 17).\n13⁴ ≡ (−1)² = 1 (mod 17).\n99 = 4 × 24 + 3 ⇒ 13⁹⁹ ≡ 13³ = 13² × 13 ≡ (−1) × 13 = −13 ≡ 4 (mod 17).\nAnswer = 4."
+ },
+ {
+  "num": 30,
+  "subj": "coa",
+  "topic": "Pipelining / functional units scheduling",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Suppose the functions F and G can be computed in 5 and 3 nanoseconds by functional units U_F and U_G, respectively. Given two instances of U_F and two instances of U_G, it is required to implement the computation F(G(Xᵢ)) for 1 ≤ i ≤ 10. Ignoring all other delays, the minimum time required to complete this computation is ______ nanoseconds.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 28,
+   "max": 28
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Do U_G parallel: G results pairs mein ready at t = 3, 6, 9, 12, 15 (har time par 2).\nDo U_F parallel, har pair 5 ns leta hai; F slower hai, toh F bottleneck hai.\nPair 1: F start 3, end 8.\nPair 2: G ready 6, par U_F free 8 → 8 to 13.\nPair 3: 13 to 18, Pair 4: 18 to 23, Pair 5: 23 to 28.\nMinimum time = 28 ns.\nTrap: 10 × (5+3)/2 = 40 ya 5 × 5 = 25 galat hai; pehle G ka 3 ns wait bhi add hota hai."
+ },
+ {
+  "num": 31,
+  "subj": "coa",
+  "topic": "Instruction format",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider a processor with 64 registers and an instruction set of size twelve. Each instruction has five distinct fields, namely, opcode, two source register identifiers, one destination register identifier, and a twelve-bit immediate value. Each instruction must be stored in memory in a byte-aligned fashion. If a program has 100 instructions, the amount of memory (in bytes) consumed by the program text is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 500,
+   "max": 500
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Opcode: 12 instructions → ⌈log₂ 12⌉ = 4 bits.\nRegister ids: 64 registers → 6 bits each, 3 registers → 18 bits.\nImmediate = 12 bits.\nTotal = 4 + 18 + 12 = 34 bits.\nByte-aligned → ⌈34/8⌉ = 5 bytes per instruction.\n100 instructions × 5 = 500 bytes."
+ },
+ {
+  "num": 32,
+  "subj": "coa",
+  "topic": "Cache memory (tag bits)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "The width of the physical address on a machine is 40 bits. The width of the tag field in a 512 KB 8-way set associative cache is ______ bits.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 24,
+   "max": 24
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Set index + block offset bits = log₂(cache size / associativity).\nCache size / ways = 512 KB / 8 = 64 KB = 2¹⁶ bytes.\nYani index + offset = 16 bits (block size chahe kuch bhi ho).\nTag = 40 − 16 = 24 bits."
+ },
+ {
+  "num": 33,
+  "subj": "coa",
+  "topic": "Pipelining (clock frequency)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider a 3 GHz (gigahertz) processor with a three-stage pipeline and stage latencies τ₁, τ₂, and τ₃ such that τ₁ = 3τ₂/4 = 2τ₃. If the longest pipeline stage is split into two pipeline stages of equal latency, the new frequency is ______ GHz, ignoring delays in the pipeline registers.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 3.9,
+   "max": 4.1
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "τ₁ = 3τ₂/4 = 2τ₃ = 6k lo ⇒ τ₁ = 6k, τ₂ = 8k, τ₃ = 3k.\nLongest stage τ₂ = 8k = clock period = 1/3 GHz = 1/3 ns ⇒ k = 1/24 ns.\nτ₂ ko do stages 4k, 4k mein split karo. Ab stages: 6k, 4k, 4k, 3k.\nNew longest = τ₁ = 6k = 6/24 = 0.25 ns.\nNew frequency = 1/0.25 ns = 4 GHz."
+ },
+ {
+  "num": 34,
+  "subj": "pds",
+  "topic": "Heap (min-heap properties)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "A complete binary min-heap is made by including each integer in [1, 1023] exactly once. The depth of a node in the heap is the length of the path from the root of the heap to that node. Thus, the root is at depth 0. The maximum depth at which integer 9 can appear is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 8,
+   "max": 8
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Min-heap mein har node apne saare ancestors se bada hota hai.\n9 ke ancestors sirf 9 se chhote numbers ho sakte hain: 1..8 → maximum 8 ancestors.\nPath 1 → 2 → 3 → ... → 8 → 9 bana sakte hain (1 root depth 0, 9 depth 8).\n1023 nodes → tree ki height 9 (depth 0..9), toh depth 8 available hai; baaki nodes bade numbers se fill ho jaayenge.\nMaximum depth = 8."
+ },
+ {
+  "num": 35,
+  "subj": "algo",
+  "topic": "Loop invariant",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following function computes Xʸ for positive integers X and Y.\nWhich one of the following conditions is TRUE before every iteration of the loop?",
+  "code": "int exp(int X, int Y) {\n    int res = 1, a = X, b = Y;\n\n    while ( b != 0 ){\n        if ( b%2 == 0) { a = a*a; b = b/2; }\n        else           { res = res*a; b = b-1; }\n    }\n    return res;\n}",
+  "opts": [
+   "Xʸ = aᵇ",
+   "(res ∗ a)ʸ = (res ∗ X)ᵇ",
+   "Xʸ = res ∗ aᵇ",
+   "Xʸ = (res ∗ a)ᵇ"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Initially res = 1, a = X, b = Y ⇒ res·aᵇ = Xʸ ✓.\nEven case: a → a², b → b/2 ⇒ (a²)^(b/2) = aᵇ, res same → invariant maintain.\nOdd case: res → res·a, b → b−1 ⇒ res·a·aᵇ⁻¹ = res·aᵇ → maintain.\nEnd mein b = 0 ⇒ res = Xʸ.\nCheck (A): ek odd step ke baad res ≠ 1, fail. (D): initially (1·X)ʸ ok, par odd step ke baad fail.\nAnswer: Xʸ = res ∗ aᵇ → (C)."
+ },
+ {
+  "num": 36,
+  "subj": "pds",
+  "topic": "Tree traversal / expression tree",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following New-order strategy for traversing a binary tree:\n• Visit the root;\n• Visit the right subtree using New-order;\n• Visit the left subtree using New-order;\nThe New-order traversal of the expression tree corresponding to the reverse polish expression\n3 4 * 5 - 2 ^ 6 7 * 1 + -\nis given by:",
+  "code": "",
+  "opts": [
+   "+ - 1 6 7 * 2 ^ 5 - 3 4 *",
+   "- + 1 * 6 7 ^ 2 - 5 * 3 4",
+   "- + 1 * 7 6 ^ 2 - 5 * 4 3",
+   "1 7 6 * + 2 5 4 3 * - ^ -"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Postfix se expression: ((3*4) − 5) ^ 2 − ((6*7) + 1).\nTree: root '−'; left = '^'(left '−'('*'(3,4), 5), right 2); right = '+'('*'(6,7), 1).\nNew-order = Root, Right, Left (yani preorder ka mirror).\nRoot '−' → right subtree '+': '+', then its right 1, then left '*': '*', 7, 6 → + 1 * 7 6.\nLeft subtree '^': '^', right 2, left '−': '−', 5, '*', 4, 3 → ^ 2 − 5 * 4 3.\nTotal: − + 1 * 7 6 ^ 2 − 5 * 4 3 → (C).\nTrap: (B) mein '* 6 7' hai — right-before-left rule bhool gaye."
+ },
+ {
+  "num": 37,
+  "subj": "pds",
+  "topic": "Recursion (C program)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider the following program:\nNote: max(x,y) returns the maximum of x and y.\nThe value printed by this program is ______.",
+  "code": "int f(int *p, int n)\n{\n    if (n <= 1) return 0;\n    else return max(f(p+1,n-1),p[0]-p[1]);\n}\n\nint main()\n{\n    int a[] = {3,5,2,6,4};\n    printf(\"%d\", f(a,5));\n}",
+  "opts": [],
+  "ans": {
+   "min": 3,
+   "max": 3
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "f(p, n) = max over adjacent pairs of (p[i] − p[i+1]), aur base case 0 return karta hai.\nArray: 3, 5, 2, 6, 4.\nDifferences: 3−5 = −2, 5−2 = 3, 2−6 = −4, 6−4 = 2.\nf = max(0, −2, 3, −4, 2) = 3.\nPrinted value = 3."
+ },
+ {
+  "num": 38,
+  "subj": "algo",
+  "topic": "Matrix chain multiplication",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Let A₁, A₂, A₃, and A₄ be four matrices of dimensions 10 × 5, 5 × 20, 20 × 10, and 10 × 5, respectively. The minimum number of scalar multiplications required to find the product A₁A₂A₃A₄ using the basic matrix multiplication method is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 1500,
+   "max": 1500
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Dimensions p = [10, 5, 20, 10, 5].\nm[1,2] = 10·5·20 = 1000, m[2,3] = 5·20·10 = 1000, m[3,4] = 20·10·5 = 1000.\nm[1,3] = min(0 + 1000 + 10·5·10 = 1500, 1000 + 0 + 10·20·10 = 3000) = 1500.\nm[2,4] = min(0 + 1000 + 5·20·5 = 1500, 1000 + 0 + 5·10·5 = 1250) = 1250.\nm[1,4] = min(k=1: 0 + 1250 + 10·5·5 = 1500; k=2: 1000 + 1000 + 10·20·5 = 3000; k=3: 1500 + 0 + 10·10·5 = 2000) = 1500.\nOptimal: A₁((A₂A₃)A₄) → 1500."
+ },
+ {
+  "num": 39,
+  "subj": "algo",
+  "topic": "Recurrence relations (Master theorem)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "The given diagram shows the flowchart for a recursive function A(n). Assume that all statements, except for the recursive calls, have O(1) time complexity. If the worst case time complexity of this function is O(n^α), then the least possible value (accurate up to two decimal positions) of α is ______.\n\nFlowchart for Recursive Function A(n):\nStart → A(n/2) → Decision-1.\nDecision-1, branch 1: A(n/2) → Return.\nDecision-1, branch 2: A(n/2) → A(n/2) → Decision-2.\nDecision-2, branch 1: Return.\nDecision-2, branch 2: A(n/2) → Decision-3.\nDecision-3, branch 1: A(n/2) → Return.\nDecision-3, branch 2: Return.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 2.2,
+   "max": 2.4
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Worst case = sabse zyada recursive calls wala path.\nPath: Start → A(n/2) [1] → Decision-1 → A(n/2), A(n/2) [2, 3] → Decision-2 → A(n/2) [4] → Decision-3 → A(n/2) [5] → Return.\nToh worst case mein 5 calls of size n/2: T(n) = 5T(n/2) + O(1).\nMaster theorem: a = 5, b = 2, n^(log₂5) ≫ O(1) ⇒ T(n) = Θ(n^(log₂ 5)).\nα = log₂ 5 ≈ 2.32."
+ },
+ {
+  "num": 40,
+  "subj": "pds",
+  "topic": "Binary search tree (counting)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "The number of ways in which the numbers 1, 2, 3, 4, 5, 6, 7 can be inserted in an empty binary search tree, such that the resulting tree has height 6, is ______.\nNote: The height of a tree with a single node is 0.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 64,
+   "max": 64
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "7 nodes aur height 6 ⇒ tree ek skewed chain hai (har level par ek node).\nChain tabhi banegi jab har insertion baaki bache numbers ka ya toh minimum ho ya maximum.\nPehle 6 insertions ke liye 2 choices each (min ya max), last number fixed.\nWays = 2⁶ = 64."
+ },
+ {
+  "num": 41,
+  "subj": "algo",
+  "topic": "Graph representation (adjacency list)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In an adjacency list representation of an undirected simple graph G = (V, E), each edge (u, v) has two adjacency list entries: [v] in the adjacency list of u, and [u] in the adjacency list of v. These are called twins of each other. A twin pointer is a pointer from an adjacency list entry to its twin. If |E| = m and |V| = n, and the memory size is not a constraint, what is the time complexity of the most efficient algorithm to set the twin pointer in each entry in each adjacency list?",
+  "code": "",
+  "opts": [
+   "Θ(n²)",
+   "Θ(n + m)",
+   "Θ(m²)",
+   "Θ(n⁴)"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Memory constraint nahi hai, toh n × n array T[u][v] use karo (ya hashing) jo entry ka pointer store kare.\nPass 1: har list u ke har entry [v] ka address T[u][v] mein store → O(n + m).\nPass 2: har entry [v] in list u ka twin = T[v][u] → O(1) lookup, total O(n + m).\n(Array initialize karne ki cost lazy-initialization trick se avoid ho sakti hai.)\nHar entry ek baar dekhni hi padegi, toh lower bound bhi Ω(n + m).\nAnswer: Θ(n + m) → (B)."
+ },
+ {
+  "num": 42,
+  "subj": "toc",
+  "topic": "NFA / regular languages",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following two statements:\nI. If all states of an NFA are accepting states then the language accepted by the NFA is Σ*.\nII. There exists a regular language A such that for all languages B, A ∩ B is regular.\nWhich one of the following is CORRECT?",
+  "code": "",
+  "opts": [
+   "Only I is true",
+   "Only II is true",
+   "Both I and II are true",
+   "Both I and II are false"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "I: NFA mein kuch transitions missing ho sakti hain. E.g. Σ = {a, b}, single accepting state q0 with only 'a' self-loop → language a*, Σ* nahi. I false.\nII: A = ∅ lo (regular). Kisi bhi B ke liye A ∩ B = ∅ regular. II true.\nAnswer: Only II → (B).\nTrap: DFA (complete) ke liye I sach hota, NFA ke liye nahi."
+ },
+ {
+  "num": 43,
+  "subj": "toc",
+  "topic": "Context-free languages",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following languages:\nL₁ = {aⁿbᵐcⁿ⁺ᵐ : m, n ≥ 1}\nL₂ = {aⁿbⁿc²ⁿ : n ≥ 1}\nWhich one of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Both L₁ and L₂ are context-free.",
+   "L₁ is context-free while L₂ is not context-free.",
+   "L₂ is context-free while L₁ is not context-free.",
+   "Neither L₁ nor L₂ is context-free."
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "L₁: PDA har a aur b par push kare, har c par pop kare; stack empty at end → accept. CFG: S → aSc | aBc, B → bBc | bc. CFL.\nL₂: a aur b ki count equal chahiye AND c ki count 2n — do independent comparisons (a=b aur c=2a). Single stack se possible nahi; pumping lemma se non-CFL.\nAnswer: (B)."
+ },
+ {
+  "num": 44,
+  "subj": "toc",
+  "topic": "Decidability (Turing machines)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following languages.\nL₁ = {⟨M⟩ | M takes at least 2016 steps on some input},\nL₂ = {⟨M⟩ | M takes at least 2016 steps on all inputs} and\nL₃ = {⟨M⟩ | M accepts ε},\nwhere for each Turing machine M, ⟨M⟩ denotes a specific encoding of M. Which one of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "L₁ is recursive and L₂, L₃ are not recursive",
+   "L₂ is recursive and L₁, L₃ are not recursive",
+   "L₁, L₂ are recursive and L₃ is not recursive",
+   "L₁, L₂, L₃ are recursive"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "2016 steps mein M input ke sirf pehle 2016 symbols hi padh sakta hai.\nToh sirf length ≤ 2016 wale inputs (finite) par M ko 2016 steps tak simulate karna kaafi hai — lambe inputs ka behaviour kisi ≤2016 prefix jaisa hi hoga.\nL₁ (some input) aur L₂ (all inputs) dono finite simulation se decide ho jaate hain → recursive.\nL₃ = 'M accepts ε' non-trivial semantic property hai → Rice's theorem se undecidable.\nAnswer: (C)."
+ },
+ {
+  "num": 45,
+  "subj": "cd",
+  "topic": "Left recursion",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which one of the following grammars is free from left recursion?",
+  "code": "",
+  "opts": [
+   "S → AB\nA → Aa | b\nB → c",
+   "S → Ab | Bb | c\nA → Bd | ε\nB → e",
+   "S → Aa | B\nA → Bb | Sc | ε\nB → d",
+   "S → Aa | Bb | c\nA → Bd | ε\nB → Ae | ε"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "(A): A → Aa direct left recursion.\n(C): S → Aa → Sca ⇒ S ⇒⁺ S… indirect left recursion.\n(D): A → Bd → Aed ⇒ A ⇒⁺ A… indirect left recursion.\n(B): S → Ab | Bb | c, A → Bd | ε, B → e. B hamesha terminal 'e' se shuru, A → B d → e d; koi non-terminal khud par wapas nahi aata.\nAnswer: (B).\nTrap: ε-productions ke through bhi hidden left recursion aa sakta hai, isliye har chain check karo."
+ },
+ {
+  "num": 46,
+  "subj": "cd",
+  "topic": "Context-free grammars",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A student wrote two context-free grammars G1 and G2 for generating a single C-like array declaration. The dimension of the array is at least one. For example,\nint a[10][3];\nThe grammars use D as the start symbol, and use six terminal symbols int ; id [ ] num.\nWhich of the grammars correctly generate the declaration mentioned above?",
+  "code": "Grammar G1            Grammar G2\nD → int L;            D → int L;\nL → id [E             L → id E\nE → num]              E → E[num]\nE → num] [E           E → [num]",
+  "opts": [
+   "Both G1 and G2",
+   "Only G1",
+   "Only G2",
+   "Neither G1 nor G2"
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Target token string: int id [ num ] [ num ] ;\nG1: D → int L; → int id [E ; → int id [ num ] [E ; → int id [ num ] [ num ] ; ✓\n(E → num] [E dimension add karta hai, E → num] khatam karta hai.)\nG2: D → int L; → int id E ; → int id E[num] ; → int id [num][num] ; ✓\n(E → E[num] left-recursive tareeke se dimensions add karta hai.)\nDono sirf ≥ 1 dimension wale valid declarations banate hain → (A)."
+ },
+ {
+  "num": 47,
+  "subj": "os",
+  "topic": "CPU scheduling (SRTF)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider the following processes, with the arrival time and the length of the CPU burst given in milliseconds. The scheduling algorithm used is preemptive shortest remaining-time first.\nProcess | Arrival Time | Burst Time\nP1 | 0 | 10\nP2 | 3 | 6\nP3 | 7 | 1\nP4 | 8 | 3\nThe average turn around time of these processes is ______ milliseconds.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 8.2,
+   "max": 8.3
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Gantt chart (SRTF):\n0–3: P1 (rem 7). t=3 par P2 (6) < 7 → preempt.\n3–7: P2 (rem 2). t=7 par P3 (1) < 2 → preempt.\n7–8: P3 complete at 8. t=8: P2 rem 2, P4 3, P1 7 → P2.\n8–10: P2 complete. 10–13: P4 complete. 13–20: P1 complete.\nTAT: P1 = 20 − 0 = 20, P2 = 10 − 3 = 7, P3 = 8 − 7 = 1, P4 = 13 − 8 = 5.\nAverage = 33/4 = 8.25 ms."
+ },
+ {
+  "num": 48,
+  "subj": "os",
+  "topic": "Process synchronization (strict alternation)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following two-process synchronization solution.\nThe shared variable turn is initialized to zero. Which one of the following is TRUE?",
+  "code": "Process 0                       Process 1\n---------                       ---------\nEntry: loop while (turn == 1);  Entry: loop while (turn == 0);\n   (critical section)              (critical section)\nExit: turn = 1;                 Exit: turn = 0;",
+  "opts": [
+   "This is a correct two-process synchronization solution.",
+   "This solution violates mutual exclusion requirement.",
+   "This solution violates progress requirement.",
+   "This solution violates bounded wait requirement."
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Yeh strict alternation hai: turn = 0 par sirf P0, turn = 1 par sirf P1 CS mein jaa sakta hai.\nMutual exclusion: turn ek time par ek hi value → dono ek saath CS mein nahi. Satisfied.\nProgress: agar P0 CS se nikal kar turn = 1 kar de aur P1 CS mein jaana hi na chahe, toh P0 dobara CS mein nahi ja sakta — ek non-interested process doosre ko block kar raha hai. Progress violated.\nBounded wait: alternation se har process ko ek turn ke baad mauka milta hai → satisfied.\nAnswer: (C)."
+ },
+ {
+  "num": 49,
+  "subj": "os",
+  "topic": "Semaphores",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider a non-negative counting semaphore S. The operation P(S) decrements S, and V(S) increments S. During an execution, 20 P(S) operations and 12 V(S) operations are issued in some order. The largest initial value of S for which at least one P(S) operation will remain blocked is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 7,
+   "max": 7
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Initial value S₀. Saare operations ke baad effectively S₀ + 12 'permits' available hain aur 20 P operations maang rahe hain.\nKam se kam ek P blocked rahe ⇒ S₀ + 12 < 20 ⇒ S₀ < 8.\nLargest S₀ = 7.\nCheck: S₀ = 8 par 8 + 12 = 20 permits → sab 20 P complete ho sakte hain (kisi order mein), toh 8 nahi.\nAnswer = 7."
+ },
+ {
+  "num": 50,
+  "subj": "os",
+  "topic": "Cache / effective access time",
+  "type": "NAT",
+  "marks": 2,
+  "q": "A file system uses an in-memory cache to cache disk blocks. The miss rate of the cache is shown in the figure. The latency to read a block from the cache is 1 ms and to read a block from the disk is 10 ms. Assume that the cost of checking whether a block exists in the cache is negligible. Available cache sizes are in multiples of 10 MB.\nFigure (miss rate % vs cache size MB, points joined by straight lines):\n10 MB → 80%, 20 MB → 60%, 30 MB → 40%, 40 MB → 35%, 50 MB → 30%, 60 MB → 25%, 70 MB → 20%, 80 MB → 15%.\nThe smallest cache size required to ensure an average read latency of less than 6 ms is ______ MB.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 30,
+   "max": 30
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Average latency = h × 1 + m × 10 (m = miss rate, h = 1 − m).\nCondition: (1 − m) + 10m < 6 ⇒ 1 + 9m < 6 ⇒ m < 5/9 ≈ 55.6%.\n20 MB: m = 60% → 0.4 + 6 = 6.4 ms (> 6) ✗.\n30 MB: m = 40% → 0.6 + 4 = 4.6 ms (< 6) ✓.\nSmallest cache size = 30 MB.\n(Agar miss par 1 + 10 ms lo tab bhi: 20 MB → 7 ms, 30 MB → 5 ms, answer same 30.)"
+ },
+ {
+  "num": 51,
+  "subj": "db",
+  "topic": "Recoverability / cascading abort",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following database schedule with two transactions, T₁ and T₂.\nS = r₂(X); r₁(X); r₂(Y); w₁(X); r₁(Y); w₂(X); a₁; a₂\nwhere rᵢ(Z) denotes a read operation by transaction Tᵢ on a variable Z, wᵢ(Z) denotes a write operation by Tᵢ on a variable Z and aᵢ denotes an abort by transaction Tᵢ.\nWhich one of the following statements about the above schedule is TRUE?",
+  "code": "",
+  "opts": [
+   "S is non-recoverable",
+   "S is recoverable, but has a cascading abort",
+   "S does not have a cascading abort",
+   "S is strict"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Dirty reads check karo: r₂(X), r₁(X) dono original X padhte hain (pehle koi write nahi). r₂(Y), r₁(Y) — Y par koi write hi nahi.\nKoi transaction doosre ka uncommitted data nahi padhta ⇒ no dirty read ⇒ recoverable aur cascadeless.\nT₁ abort hone se T₂ ko abort karne ki zaroorat nahi → no cascading abort → (C) true.\nStrict? w₁(X) ke baad T₁ commit/abort hone se pehle w₂(X) same X likhta hai → strict nahi. (D) false.\n(B) false kyunki cascading abort nahi hai.\nAnswer: (C)."
+ },
+ {
+  "num": 52,
+  "subj": "db",
+  "topic": "SQL (aggregation, WITH clause)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider the following database table named water_schemes (given below). The number of tuples returned by the following SQL query is ______.",
+  "code": "water_schemes\nscheme_no | district_name | capacity\n1         | Ajmer         | 20\n1         | Bikaner       | 10\n2         | Bikaner       | 10\n3         | Bikaner       | 20\n1         | Churu         | 10\n2         | Churu         | 20\n1         | Dungargarh    | 10\n\nwith total(name, capacity) as\n    select district_name, sum(capacity)\n    from water_schemes\n    group by district_name\nwith total_avg(capacity) as\n    select avg(capacity)\n    from total\nselect name\n    from total, total_avg\n    where total.capacity ≥ total_avg.capacity",
+  "opts": [],
+  "ans": {
+   "min": 2,
+   "max": 2
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "total (per district sum): Ajmer 20, Bikaner 10+10+20 = 40, Churu 10+20 = 30, Dungargarh 10.\ntotal_avg = (20 + 40 + 30 + 10)/4 = 100/4 = 25.\ncapacity ≥ 25 wale districts: Bikaner (40), Churu (30).\nTuples returned = 2."
+ },
+ {
+  "num": 53,
+  "subj": "cn",
+  "topic": "CSMA/CD minimum frame size",
+  "type": "NAT",
+  "marks": 2,
+  "q": "A network has a data transmission bandwidth of 20 × 10⁶ bits per second. It uses CSMA/CD in the MAC layer. The maximum signal propagation time from one node to another node is 40 microseconds. The minimum size of a frame in the network is ______ bytes.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 200,
+   "max": 200
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "CSMA/CD condition: transmission time ≥ 2 × propagation delay.\nL / B ≥ 2 × Tp ⇒ L ≥ 2 × 40 × 10⁻⁶ × 20 × 10⁶ = 1600 bits.\n1600 / 8 = 200 bytes."
+ },
+ {
+  "num": 54,
+  "subj": "cn",
+  "topic": "IEEE 802.11 (Wi-Fi) MAC",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "For the IEEE 802.11 MAC protocol for wireless communication, which of the following statements is/are TRUE?\nI. At least three non-overlapping channels are available for transmissions.\nII. The RTS-CTS mechanism is used for collision detection.\nIII. Unicast frames are ACKed.",
+  "code": "",
+  "opts": [
+   "All I, II, and III",
+   "I and III only",
+   "II and III only",
+   "II only"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "I: 2.4 GHz band mein channels 1, 6, 11 non-overlapping hain → at least 3. True.\nII: 802.11 CSMA/CA use karta hai; RTS-CTS collision AVOIDANCE (hidden terminal) ke liye hai, detection ke liye nahi. False.\nIII: Wireless mein collision detect nahi ho sakta, isliye har unicast frame ka link-layer ACK aata hai. True.\nAnswer: I and III → (B)."
+ },
+ {
+  "num": 55,
+  "subj": "cn",
+  "topic": "Sliding window (Selective Repeat)",
+  "type": "NAT",
+  "marks": 2,
+  "q": "Consider a 128 × 10³ bits/second satellite communication link with one way propagation delay of 150 milliseconds. Selective retransmission (repeat) protocol is used on this link to send data with a frame size of 1 kilobyte. Neglect the transmission time of acknowledgement. The minimum number of bits required for the sequence number field to achieve 100% utilization is ______.",
+  "code": "",
+  "opts": [],
+  "ans": {
+   "min": 4,
+   "max": 4
+  },
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Tt = 1 KB / 128 × 10³ bps = 8192 / 128000 = 64 ms.\nCycle time = Tt + 2Tp = 64 + 300 = 364 ms.\n100% utilization ke liye window W ≥ 364/64 = 5.69 ⇒ W = 6 frames.\nSelective Repeat: sender window = receiver window = W, sequence numbers ≥ 2W = 12.\nBits = ⌈log₂ 12⌉ = 4.\nTrap: GBN jaisa sirf W+1 lena galat hai; SR mein 2W chahiye."
+ },
+ {
+  "num": 101,
+  "subj": "ga",
+  "topic": "Grammar (articles)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The man who is now Municipal Commissioner worked as ____________________.",
+  "code": "",
+  "opts": [
+   "the security guard at a university",
+   "a security guard at the university",
+   "a security guard at university",
+   "the security guard at the university"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Man pehle kai security guards mein se ek tha → indefinite article 'a security guard'.\nUniversity specific/known place hai (jahaan woh kaam karta tha) → 'the university'.\n'the security guard' tab hota jab university mein ek hi guard ho, jo context mein nahi hai.\nAnswer: a security guard at the university → (B)."
+ },
+ {
+  "num": 102,
+  "subj": "ga",
+  "topic": "Vocabulary (phrasal verbs)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Nobody knows how the Indian cricket team is going to cope with the difficult and seamer-friendly wickets in Australia.\nChoose the option which is closest in meaning to the underlined phrase (cope with) in the above sentence.",
+  "code": "",
+  "opts": [
+   "put up with",
+   "put in with",
+   "put down to",
+   "put up against"
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "'Cope with' = kisi mushkil situation ko handle/tolerate karna.\n'Put up with' = tolerate/endure karna → closest meaning.\n'Put down to' = attribute karna; 'put in with' aur 'put up against' fit nahi hote.\nAnswer: (A)."
+ },
+ {
+  "num": 103,
+  "subj": "ga",
+  "topic": "Odd one out (words)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Find the odd one in the following group of words.\nmock, deride, praise, jeer",
+  "code": "",
+  "opts": [
+   "mock",
+   "deride",
+   "praise",
+   "jeer"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Mock, deride, jeer — teeno ka matlab mazaak udaana / ridicule karna.\nPraise = taarif karna, opposite meaning.\nOdd one = praise → (C)."
+ },
+ {
+  "num": 104,
+  "subj": "ga",
+  "topic": "Letter series (odd one out)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Pick the odd one from the following options.",
+  "code": "",
+  "opts": [
+   "CADBE",
+   "JHKIL",
+   "XVYWZ",
+   "ONPMQ"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Letters ko positions mein likho aur differences dekho.\nCADBE: 3,1,4,2,5 → −2, +3, −2, +3.\nJHKIL: 10,8,11,9,12 → −2, +3, −2, +3.\nXVYWZ: 24,22,25,23,26 → −2, +3, −2, +3.\nONPMQ: 15,14,16,13,17 → −1, +2, −3, +4 → pattern alag.\nOdd one = ONPMQ → (D)."
+ },
+ {
+  "num": 105,
+  "subj": "ga",
+  "topic": "Algebra (roots of quadratic)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "In a quadratic function, the value of the product of the roots (α, β) is 4. Find the value of\n(αⁿ + βⁿ) / (α⁻ⁿ + β⁻ⁿ)",
+  "code": "",
+  "opts": [
+   "n⁴",
+   "4ⁿ",
+   "2²ⁿ⁻¹",
+   "4ⁿ⁻¹"
+  ],
+  "ans": "B",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "α⁻ⁿ + β⁻ⁿ = 1/αⁿ + 1/βⁿ = (αⁿ + βⁿ)/(αβ)ⁿ.\nToh ratio = (αⁿ + βⁿ) × (αβ)ⁿ / (αⁿ + βⁿ) = (αβ)ⁿ.\nαβ = 4 ⇒ answer = 4ⁿ → (B)."
+ },
+ {
+  "num": 106,
+  "subj": "ga",
+  "topic": "Sets / Venn diagram",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Among 150 faculty members in an institute, 55 are connected with each other through Facebook® and 85 are connected through WhatsApp®. 30 faculty members do not have Facebook® or WhatsApp® accounts. The number of faculty members connected only through Facebook® accounts is ______________.",
+  "code": "",
+  "opts": [
+   "35",
+   "45",
+   "65",
+   "90"
+  ],
+  "ans": "A",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Kam se kam ek account wale = 150 − 30 = 120.\n|F ∪ W| = 120, |W| = 85.\nOnly Facebook = |F ∪ W| − |W| = 120 − 85 = 35.\n(Check: |F ∩ W| = 55 + 85 − 120 = 20, only F = 55 − 20 = 35.)\nAnswer: (A)."
+ },
+ {
+  "num": 107,
+  "subj": "ga",
+  "topic": "Reading comprehension / inference",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Computers were invented for performing only high-end useful computations. However, it is no understatement that they have taken over our world today. The internet, for example, is ubiquitous. Many believe that the internet itself is an unintended consequence of the original invention. With the advent of mobile computing on our phones, a whole new dimension is now enabled. One is left wondering if all these developments are good or, more importantly, required.\nWhich of the statement(s) below is/are logically valid and can be inferred from the above paragraph?\n(i) The author believes that computers are not good for us.\n(ii) Mobile computers and the internet are both intended inventions",
+  "code": "",
+  "opts": [
+   "(i) only",
+   "(ii) only",
+   "both (i) and (ii)",
+   "neither (i) nor (ii)"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "(i): Author sirf 'wondering' kar raha hai ki developments good hain ya nahi — koi conclusion nahi diya ki computers bure hain. Infer nahi hota.\n(ii): Passage kehta hai internet ko 'unintended consequence' maana jaata hai — toh 'intended inventions' ulta hai. Infer nahi hota.\nAnswer: neither → (D)."
+ },
+ {
+  "num": 108,
+  "subj": "ga",
+  "topic": "Logical reasoning (syllogism)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "All hill-stations have a lake. Ooty has two lakes.\nWhich of the statement(s) below is/are logically valid and can be inferred from the above sentences?\n(i) Ooty is not a hill-station.\n(ii) No hill-station can have more than one lake.",
+  "code": "",
+  "opts": [
+   "(i) only",
+   "(ii) only",
+   "both (i) and (ii)",
+   "neither (i) nor (ii)"
+  ],
+  "ans": "D",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "'All hill-stations have a lake' = har hill-station mein kam se kam ek lake hai; exactly one nahi kaha.\nOoty ke do lakes hain — isse Ooty hill-station hai ya nahi, dono possible. (i) infer nahi hota.\n(ii) 'more than one lake nahi ho sakti' — premise mein aisa kuch nahi. Infer nahi hota.\nAnswer: (D).\nTrap: 'a lake' ko 'exactly one lake' samajhna."
+ },
+ {
+  "num": 109,
+  "subj": "ga",
+  "topic": "Counting rectangles",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In a 2 × 4 rectangle grid shown below, each cell is a rectangle. How many rectangles can be observed in the grid?\n(Grid: 2 rows × 4 columns of cells, i.e. 3 horizontal lines and 5 vertical lines.)",
+  "code": "",
+  "opts": [
+   "21",
+   "27",
+   "30",
+   "36"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Rectangle = 2 horizontal lines + 2 vertical lines choose karna.\nHorizontal lines = 2 + 1 = 3, vertical lines = 4 + 1 = 5.\nCount = C(3,2) × C(5,2) = 3 × 10 = 30.\nAnswer: (C)."
+ },
+ {
+  "num": 110,
+  "subj": "ga",
+  "topic": "Graphs of functions (modulus)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Choose the correct expression for f(x) given in the graph.\nGraph: a piecewise-linear 'Λ' shape — straight line from (−3, −2) rising with slope 1 through (−1, 0) and (0, 1) to the peak (1, 2), then falling with slope −1 to (3, 0).",
+  "code": "",
+  "opts": [
+   "f(x) = 1 − |x − 1|",
+   "f(x) = 1 + |x − 1|",
+   "f(x) = 2 − |x − 1|",
+   "f(x) = 2 + |x − 1|"
+  ],
+  "ans": "C",
+  "key": "official",
+  "fig": false,
+  "offsyl": false,
+  "exp": "Graph ka peak (1, 2) par hai aur shape inverted V (Λ) hai ⇒ f(x) = 2 − |x − 1| form.\nCheck: x = 0 → 2 − 1 = 1 ✓, x = 3 → 2 − 2 = 0 ✓, x = −3 → 2 − 4 = −2 ✓.\n(A) peak 1 deta, (B), (D) V-shape (upward) dete.\nAnswer: (C)."
+ }
+]

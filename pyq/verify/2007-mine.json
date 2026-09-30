@@ -1,0 +1,427 @@
+[
+ {
+  "num": 1,
+  "ans": "A",
+  "why": "|x| continuous everywhere, not differentiable at 0"
+ },
+ {
+  "num": 2,
+  "ans": "B",
+  "why": "largest = SxS n^2 pairs, smallest = identity n"
+ },
+ {
+  "num": 3,
+  "ans": "C",
+  "why": "2^(2^n) truth tables"
+ },
+ {
+  "num": 4,
+  "ans": "B",
+  "why": "K3,3 has 9 edges 6 vertices"
+ },
+ {
+  "num": 5,
+  "ans": "D",
+  "why": "3 before 1 violates 1->3"
+ },
+ {
+  "num": 6,
+  "ans": "B",
+  "why": "CFG ambiguity undecidable"
+ },
+ {
+  "num": 7,
+  "ans": "B",
+  "why": "finite sets are regular"
+ },
+ {
+  "num": 8,
+  "ans": "C",
+  "why": "8 output decoders + 1 selector decoder"
+ },
+ {
+  "num": 9,
+  "ans": "B",
+  "why": "f = x XOR z, independent of w,y"
+ },
+ {
+  "num": 10,
+  "ans": "D",
+  "why": "32 sets -> 5 set bits, 6 word bits, 9 tag"
+ },
+ {
+  "num": 11,
+  "ans": "A",
+  "why": "2^28 bytes=256MB, 4+7+8=19 bits"
+ },
+ {
+  "num": 12,
+  "ans": "C",
+  "why": "full binary tree 2^(h+1)-1"
+ },
+ {
+  "num": 13,
+  "ans": "B",
+  "why": "Catalan(3)=5"
+ },
+ {
+  "num": 14,
+  "ans": "A",
+  "why": "merge sort O(n log n)"
+ },
+ {
+  "num": 15,
+  "ans": "D",
+  "why": "loop body runs floor(log n)+1 times (exact comparisons floor(log n)+2, closest option D)"
+ },
+ {
+  "num": 16,
+  "ans": "A",
+  "why": "gang-thread, RMS-real-time, fair share-guaranteed"
+ },
+ {
+  "num": 17,
+  "ans": "D",
+  "why": "blocking a kernel thread does not block others"
+ },
+ {
+  "num": 18,
+  "ans": "A",
+  "why": "recursive descent is top-down"
+ },
+ {
+  "num": 19,
+  "ans": "A",
+  "why": "Manchester: 2 signal transitions per bit, bit rate = baud/2"
+ },
+ {
+  "num": 20,
+  "ans": "C",
+  "why": "DNS uses UDP"
+ },
+ {
+  "num": 21,
+  "ans": "A",
+  "why": "Z4 and Z2xZ2"
+ },
+ {
+  "num": 22,
+  "ans": "D",
+  "why": "says every graph is disconnected"
+ },
+ {
+  "num": 23,
+  "ans": "C",
+  "why": "complement of C25 is 22-regular and connected"
+ },
+ {
+  "num": 24,
+  "ans": "B",
+  "why": "2 is first among 10 evens with prob 1/10"
+ },
+ {
+  "num": 25,
+  "ans": "C",
+  "why": "eigenvalues lambda+-1 include 2"
+ },
+ {
+  "num": 26,
+  "ans": "C",
+  "why": "pi2,pi3 incomparable, diamond"
+ },
+ {
+  "num": 27,
+  "ans": "A",
+  "why": "both independent, dim X = 2"
+ },
+ {
+  "num": 28,
+  "ans": "A",
+  "why": "fixed point x^2=9/4 -> 1.5"
+ },
+ {
+  "num": 29,
+  "ans": "A",
+  "why": "3*5 product DFA, all distinct"
+ },
+ {
+  "num": 30,
+  "ans": "B",
+  "why": "DCFL hence recursive"
+ },
+ {
+  "num": 31,
+  "ans": "C",
+  "why": "strings of length>=3 beginning and ending with same symbol"
+ },
+ {
+  "num": 32,
+  "ans": "D",
+  "why": "only S not equivalent"
+ },
+ {
+  "num": 33,
+  "ans": "D",
+  "why": "XNOR associative/commutative, all valid"
+ },
+ {
+  "num": 34,
+  "ans": "C",
+  "why": "2^(n-1):1 mux with one variable/its complement on inputs"
+ },
+ {
+  "num": 35,
+  "ans": "B",
+  "why": "C1..C4 need 1+2+3+4=10 AND, 4 OR"
+ },
+ {
+  "num": 36,
+  "ans": "C",
+  "why": "async clear at 5 (A3=A1=1): 0..4"
+ },
+ {
+  "num": 37,
+  "ans": "B",
+  "why": "MUL EX 4-6, SUB EX 7, WB 8"
+ },
+ {
+  "num": 38,
+  "ans": "A",
+  "why": "after first *, stack has 1,6: top two 6,1"
+ },
+ {
+  "num": 39,
+  "ans": "A",
+  "why": "postorder d e b f g c a"
+ },
+ {
+  "num": 40,
+  "ans": "B",
+  "why": "1->0,3->6,8->0->1,10->6->0->1->2"
+ },
+ {
+  "num": 41,
+  "ans": "D",
+  "why": "BFS O(V+E)"
+ },
+ {
+  "num": 42,
+  "ans": "D",
+  "why": "f(5)=18 via static r=5"
+ },
+ {
+  "num": 43,
+  "ans": "C",
+  "why": "L=(n-1)I+1 -> n=5"
+ },
+ {
+  "num": 44,
+  "ans": "A",
+  "why": "Euclid is Θ(log n)"
+ },
+ {
+  "num": 45,
+  "ans": "D",
+  "why": "T(n)=T(sqrt n)+1 -> log log n"
+ },
+ {
+  "num": 46,
+  "ans": "C",
+  "why": "counts leaves"
+ },
+ {
+  "num": 47,
+  "ans": "B",
+  "why": "binary search on log n path: log log n comparisons"
+ },
+ {
+  "num": 48,
+  "ans": "A",
+  "why": "random/greedy assignment satisfies at least half clauses"
+ },
+ {
+  "num": 49,
+  "ans": "D",
+  "why": "e need not be in every MST if ties"
+ },
+ {
+  "num": 50,
+  "ans": "B",
+  "why": "1.5n-2 comparisons suffice"
+ },
+ {
+  "num": 51,
+  "ans": "B",
+  "why": "early exit for even n: Omega(1), O(sqrt n)"
+ },
+ {
+  "num": 52,
+  "ans": "C",
+  "why": "dangling-else, ambiguous"
+ },
+ {
+  "num": 53,
+  "ans": "C",
+  "why": "regular grammar need not be LL(1); every regular set has LR(1) grammar"
+ },
+ {
+  "num": 54,
+  "ans": "B",
+  "why": "MOV a,R1;ADD b,R1;MOV c,R2;ADD d,R2;SUB e,R2;SUB R1,R2;MOV R2,m -> 3 MOVs"
+ },
+ {
+  "num": 55,
+  "ans": "B",
+  "why": "P2 runs 20-30,40-55: waiting 15"
+ },
+ {
+  "num": 56,
+  "ans": "B",
+  "why": "Belady's anomaly not due to locality"
+ },
+ {
+  "num": 57,
+  "ans": "C",
+  "why": "avail (0,1,2): P1, P0, then P2 last"
+ },
+ {
+  "num": 58,
+  "ans": "D",
+  "why": "mutual exclusion but deadlock possible"
+ },
+ {
+  "num": 59,
+  "ans": "B",
+  "why": "courses with some female not enrolled (proper subset)"
+ },
+ {
+  "num": 60,
+  "ans": "C",
+  "why": "no immediate female subordinates"
+ },
+ {
+  "num": 61,
+  "ans": "A",
+  "why": "Q1 correct (Q2 uses ANY)"
+ },
+ {
+  "num": 62,
+  "ans": "D",
+  "why": "in BCNF no transitive dependency of any attribute on key"
+ },
+ {
+  "num": 63,
+  "ans": "A",
+  "why": "16n+6<=1024 -> n=63"
+ },
+ {
+  "num": 64,
+  "ans": "C",
+  "why": "S1 has cycle, S2 serializable (T2->T1)"
+ },
+ {
+  "num": 65,
+  "ans": "A",
+  "why": "binomial exactly one: np(1-p)^(n-1)"
+ },
+ {
+  "num": 66,
+  "ans": "C",
+  "why": "0.1 us * 200 m/us = 20 m"
+ },
+ {
+  "num": 67,
+  "ans": "C",
+  "why": "62 subnets (classic), 2^10-2=1022 hosts"
+ },
+ {
+  "num": 68,
+  "ans": "B",
+  "why": "remainder 011"
+ },
+ {
+  "num": 69,
+  "ans": "C",
+  "why": "window (K+2LtR)/K"
+ },
+ {
+  "num": 70,
+  "ans": "B",
+  "why": "SMTP app, BGP network, TCP transport, PPP data link"
+ },
+ {
+  "num": 71,
+  "ans": "D",
+  "why": "1 + 10*2 = 21 data references"
+ },
+ {
+  "num": 72,
+  "ans": "A",
+  "why": "loop updates 2000..2009 only"
+ },
+ {
+  "num": 73,
+  "ans": "C",
+  "why": "INC R3 at 1020, next instruction 1024"
+ },
+ {
+  "num": 74,
+  "ans": "C",
+  "why": "b*a(a+b)*"
+ },
+ {
+  "num": 75,
+  "ans": "B",
+  "why": "q3 unreachable, q1~q2 merged -> 2 states"
+ },
+ {
+  "num": 76,
+  "ans": "A",
+  "why": "standard Huffman lengths 1..5,5"
+ },
+ {
+  "num": 77,
+  "ans": "D",
+  "why": "1.9375"
+ },
+ {
+  "num": 78,
+  "ans": "C",
+  "why": "aabbab (equal a and b) derivable"
+ },
+ {
+  "num": 79,
+  "ans": "B",
+  "why": "two parse trees"
+ },
+ {
+  "num": 80,
+  "ans": "C",
+  "why": "40 + 8 + 8 = 56 misses"
+ },
+ {
+  "num": 81,
+  "ans": "A",
+  "why": "lines 4 to 11"
+ },
+ {
+  "num": 82,
+  "ans": "A",
+  "why": "optimal 7 faults"
+ },
+ {
+  "num": 83,
+  "ans": "C",
+  "why": "LRU 9 faults, 2 more"
+ },
+ {
+  "num": 84,
+  "ans": "A",
+  "why": "C(20,10)"
+ },
+ {
+  "num": 85,
+  "ans": "D",
+  "why": "total minus paths through (4,4)->(5,4)"
+ }
+]

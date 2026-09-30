@@ -1,0 +1,302 @@
+[
+ {
+  "num": 1,
+  "ans": "A",
+  "why": "groups need not be abelian"
+ },
+ {
+  "num": 2,
+  "ans": "A",
+  "why": "no odd cycle => bipartite, n>=2 connected => 2"
+ },
+ {
+  "num": 3,
+  "ans": "B",
+  "why": "degrees in 1..n-1, pigeonhole"
+ },
+ {
+  "num": 4,
+  "ans": "D",
+  "why": "(x,y) without (y,x); (x,z),(z,x)"
+ },
+ {
+  "num": 5,
+  "ans": "B",
+  "why": "1217_8=655=0x28F"
+ },
+ {
+  "num": 6,
+  "ans": "B",
+  "why": "(A+C)(B+C) with 3 NORs"
+ },
+ {
+  "num": 7,
+  "ans": "C",
+  "why": "2M bits/32K bits=64"
+ },
+ {
+  "num": 8,
+  "ans": "C",
+  "why": "after current instruction"
+ },
+ {
+  "num": 9,
+  "ans": "A",
+  "why": "FIFO"
+ },
+ {
+  "num": 10,
+  "ans": "B",
+  "why": "frame number"
+ },
+ {
+  "num": 11,
+  "ans": "A",
+  "why": "n-1 swaps"
+ },
+ {
+  "num": 12,
+  "ans": "B",
+  "why": "odd palindromes"
+ },
+ {
+  "num": 13,
+  "ans": "B",
+  "why": "detects reachable neg cycles only"
+ },
+ {
+  "num": 14,
+  "ans": "C",
+  "why": "NP and NP-hard => NPC"
+ },
+ {
+  "num": 15,
+  "ans": "C",
+  "why": "at least two 0s"
+ },
+ {
+  "num": 16,
+  "ans": "D",
+  "why": "NPDA != DPDA"
+ },
+ {
+  "num": 17,
+  "ans": "B",
+  "why": "P3 Q1 R4 S2"
+ },
+ {
+  "num": 18,
+  "ans": "B",
+  "why": "traced =8"
+ },
+ {
+  "num": 19,
+  "ans": "A",
+  "why": "content>common>control>stamp>data"
+ },
+ {
+  "num": 20,
+  "ans": "C",
+  "why": "cells per row 2,3,2; per column 2,3,2"
+ },
+ {
+  "num": 21,
+  "ans": "B",
+  "why": "P(>3)=(2/5.7)/0.75=0.468"
+ },
+ {
+  "num": 22,
+  "ans": "C",
+  "why": "c^2=b,c^3=d,c^4=a"
+ },
+ {
+  "num": 23,
+  "ans": "D",
+  "why": "G or S -> P"
+ },
+ {
+  "num": 24,
+  "ans": "B",
+  "why": "P box Q = P or not Q"
+ },
+ {
+  "num": 25,
+  "ans": "D",
+  "why": "int tan(pi/4-x)=1/2 ln2"
+ },
+ {
+  "num": 26,
+  "ans": "B",
+  "why": "not forall = exists not"
+ },
+ {
+  "num": 27,
+  "ans": "A",
+  "why": "input 101 simulated"
+ },
+ {
+  "num": 28,
+  "ans": "B",
+  "why": "simulated 23 cycles"
+ },
+ {
+  "num": 29,
+  "ans": "D",
+  "why": "216 evicted from set 0"
+ },
+ {
+  "num": 30,
+  "ans": "A",
+  "why": "simulation: all finish"
+ },
+ {
+  "num": 31,
+  "ans": "B",
+  "why": "16+14+1+4+5+3+1+2+2+71=119"
+ },
+ {
+  "num": 32,
+  "ans": "C",
+  "why": "E possible while running; C means preemptive"
+ },
+ {
+  "num": 33,
+  "ans": "A",
+  "why": "TAS deadlock free, not starvation free"
+ },
+ {
+  "num": 34,
+  "ans": "B",
+  "why": "reduces page table size"
+ },
+ {
+  "num": 35,
+  "ans": "A",
+  "why": "geometric => Theta(n)"
+ },
+ {
+  "num": 36,
+  "ans": "C",
+  "why": "linear probing"
+ },
+ {
+  "num": 37,
+  "ans": "B",
+  "why": "N(3)=7"
+ },
+ {
+  "num": 38,
+  "ans": "D",
+  "why": "(b,c)=4 before (a,c)=3 impossible"
+ },
+ {
+  "num": 39,
+  "ans": "B",
+  "why": "T(n)=T(n/4)+T(3n/4)+n"
+ },
+ {
+  "num": 40,
+  "ans": "C",
+  "why": "a^m b^m c"
+ },
+ {
+  "num": 41,
+  "ans": "C",
+  "why": "ends with 00"
+ },
+ {
+  "num": 42,
+  "ans": "B",
+  "why": "I and IV"
+ },
+ {
+  "num": 43,
+  "ans": "B",
+  "why": "S2: T2->T1 only; S3: T1->T2 only"
+ },
+ {
+  "num": 44,
+  "ans": "C",
+  "why": "leaf splits (textbook trace 4; flexible splitting could give 5)"
+ },
+ {
+  "num": 45,
+  "ans": "A",
+  "why": "I and II are division"
+ },
+ {
+  "num": 46,
+  "ans": "B",
+  "why": "I and III"
+ },
+ {
+  "num": 47,
+  "ans": "A",
+  "why": "2^32 ms wrap vs 64s"
+ },
+ {
+  "num": 48,
+  "ans": "C",
+  "why": "(1+x) factor"
+ },
+ {
+  "num": 49,
+  "ans": "C",
+  "why": "I and III"
+ },
+ {
+  "num": 50,
+  "ans": "D",
+  "why": "all three standard statements"
+ },
+ {
+  "num": 51,
+  "ans": "C",
+  "why": "(400*20+16)*63+29=505037"
+ },
+ {
+  "num": 52,
+  "ans": "C",
+  "why": "1039=16*63+31"
+ },
+ {
+  "num": 53,
+  "ans": "C",
+  "why": "max of two"
+ },
+ {
+  "num": 54,
+  "ans": "B",
+  "why": "row or column major"
+ },
+ {
+  "num": 55,
+  "ans": "A",
+  "why": "closest: GO key; query gives suppliers with no blue part"
+ },
+ {
+  "num": 56,
+  "ans": "A",
+  "why": "only key FDs => BCNF"
+ },
+ {
+  "num": 57,
+  "ans": "D",
+  "why": "25 frames in link => 5 bits"
+ },
+ {
+  "num": 58,
+  "ans": "C",
+  "why": "ack at 52ms, 32 frames sent by 32ms => 20ms"
+ },
+ {
+  "num": 59,
+  "ans": "C",
+  "why": "heap property"
+ },
+ {
+  "num": 60,
+  "ans": "D",
+  "why": "after two deletes"
+ }
+]

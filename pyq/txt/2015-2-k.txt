@@ -1,0 +1,220 @@
+                      Graduate Aptitude Test in Engineering
+
+Notations :
+
+Question Paper Name:  CS: COMPUTER SCIENCE AND INFORMATION TECHNOLOGY 7th Feb Shift2
+Number of Questions:  65
+Total Marks:          100.0
+
+Wrong answer for MCQ will result in negative marks, (-1/3) for 1 mark Questions and (-2/3) for 2 marks Questions.
+
+Number of Questions:                     10
+
+Section Marks:                           15.0
+
+Q.1 to Q.5 carry 1 mark each & Q.6 to Q.10 carry 2 marks each.
+
+Question Number : 1 Question Type : MCQ
+
+Options :
+Question Number : 2 Question Type : MCQ
+Options :
+Question Number : 3 Question Type : MCQ
+Options :
+Question Number : 4 Question Type : MCQ
+
+Options :
+Question Number : 5 Question Type : MCQ
+Options :
+
+Question Number : 6 Question Type : MCQ
+Options :
+Question Number : 7 Question Type : MCQ
+
+Options :
+Question Number : 8 Question Type : NAT
+
+Correct Answer :
+8
+Question Number : 9 Question Type : MCQ
+Options :
+Question Number : 10 Question Type : MCQ
+Options :
+
+Number of Questions:                      55
+
+Section Marks:                            85.0
+
+Q.11 to Q.35 carry 1 mark each & Q.36 to Q.65 carry 2 marks each.
+
+Question Number : 11 Question Type : MCQ
+Options :
+
+Question Number : 12 Question Type : NAT
+
+Correct Answer:
+2048
+Question Number : 13 Question Type : MCQ
+
+Options :
+
+Question Number : 14 Question Type : NAT
+
+Correct Answer :
+36
+Question Number : 15 Question Type : NAT
+Correct Answer :
+6
+Question Number : 16 Question Type : MCQ
+
+Options :
+
+Question Number : 17 Question Type : NAT
+
+Correct Answer:
+3
+Question Number : 18 Question Type : NAT
+
+Correct Answer :
+14
+Question Number : 19 Question Type : NAT
+
+Correct Answer:
+22
+Question Number : 20 Question Type : MCQ
+
+Options :
+Question Number : 21 Question Type : MCQ
+
+Options :
+Question Number : 22 Question Type : MCQ
+Options :
+Question Number : 23 Question Type : NAT
+
+Correct Answer :
+19
+Question Number : 24 Question Type : NAT
+
+Correct Answer :
+51
+Question Number : 25 Question Type : MCQ
+
+Options :
+Question Number : 26 Question Type : MCQ
+Options :
+Question Number : 27 Question Type : MCQ
+
+Options :
+Question Number : 28 Question Type : MCQ
+Options :
+Question Number : 29 Question Type : MCQ
+
+Options :
+Question Number : 30 Question Type : MCQ
+Options :
+Question Number : 31 Question Type : MCQ
+
+Options :
+Question Number : 32 Question Type : NAT
+Correct Answer :
+5
+Question Number : 33 Question Type : MCQ
+
+Options :
+
+Question Number : 34 Question Type : NAT
+
+Correct Answer :
+12
+Question Number : 35 Question Type : MCQ
+Options :
+Question Number : 36 Question Type : MCQ
+
+Options :
+Question Number : 37 Question Type : MCQ
+Options :
+Question Number : 38 Question Type : MCQ
+Options :
+Question Number : 39 Question Type : MCQ
+
+Options :
+Question Number : 40 Question Type : MCQ
+
+Options :
+Question Number : 41 Question Type : MCQ
+
+Options :
+Question Number : 42 Question Type : NAT
+
+Correct Answer :
+6.1 to 6.2
+Question Number : 43 Question Type : NAT
+Correct Answer :
+36
+Question Number : 44 Question Type : MCQ
+
+Options :
+Question Number : 45 Question Type : NAT
+
+Correct Answer :
+3
+Question Number : 46 Question Type : MCQ
+Options :
+Question Number : 47 Question Type : MCQ
+
+Options :
+Question Number : 48 Question Type : NAT
+Correct Answer :
+5
+
+Question Number : 49 Question Type : MCQ
+Options :
+Question Number : 50 Question Type : MCQ
+Options :
+Question Number : 51 Question Type : MCQ
+
+Options :
+Question Number : 52 Question Type : NAT
+Correct Answer :
+15
+
+Question Number : 53 Question Type : NAT
+Correct Answer :
+13
+Question Number : 54 Question Type : MCQ
+
+Options :
+Question Number : 55 Question Type : NAT
+Correct Answer :
+1
+Question Number : 56 Question Type : MCQ
+
+Options :
+
+Question Number : 57 Question Type : NAT
+
+Correct Answer :
+0
+Question Number : 58 Question Type : NAT
+Correct Answer :
+36
+Question Number : 59 Question Type : NAT
+
+Correct Answer :
+0.95
+Question Number : 60 Question Type : MCQ
+
+Options :
+Question Number : 61 Question Type : MCQ
+
+Options :
+Question Number : 62 Question Type : MCQ
+Options :
+Question Number : 63 Question Type : MCQ
+Options :
+Question Number : 64 Question Type : MCQ
+Options :
+Question Number : 65 Question Type : NAT
+Correct Answer:
+19.2
+

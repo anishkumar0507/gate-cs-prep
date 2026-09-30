@@ -1,0 +1,1277 @@
+[
+ {
+  "num": 1,
+  "subj": "em",
+  "topic": "Continuity & differentiability",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the following two statements about the function f(x) = |x|:\nP. f(x) is continuous for all real values of x\nQ. f(x) is differentiable for all real values of x\nWhich of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "P is true and Q is false.",
+   "P is false and Q is true.",
+   "Both P and Q are true.",
+   "Both P and Q are false."
+  ]
+ },
+ {
+  "num": 2,
+  "subj": "dm",
+  "topic": "Equivalence relations",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Let S be a set of n elements. The number of ordered pairs in the largest and the smallest equivalence relations on S are",
+  "code": "",
+  "opts": [
+   "n and n",
+   "n² and n",
+   "n² and 0",
+   "n and 1"
+  ]
+ },
+ {
+  "num": 3,
+  "subj": "dl",
+  "topic": "Boolean functions count",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "What is the maximum number of different Boolean functions involving n Boolean variables?",
+  "code": "",
+  "opts": [
+   "n²",
+   "2ⁿ",
+   "2^(2ⁿ)",
+   "2^(n²)"
+  ]
+ },
+ {
+  "num": 4,
+  "subj": "dm",
+  "topic": "Planar graphs",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Let G be the non-planar graph with the minimum possible number of edges. Then G has",
+  "code": "",
+  "opts": [
+   "9 edges and 5 vertices",
+   "9 edges and 6 vertices",
+   "10 edges and 5 vertices",
+   "10 edges and 6 vertices"
+  ]
+ },
+ {
+  "num": 5,
+  "subj": "algo",
+  "topic": "Topological sort",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the DAG with V = {1,2,3,4,5,6}, shown below.\nEdges (directed): 1→2, 1→3, 2→4, 2→5, 3→4, 3→6, 4→5, 4→6\nWhich of the following is NOT a topological ordering?",
+  "code": "",
+  "opts": [
+   "1 2 3 4 5 6",
+   "1 3 2 4 5 6",
+   "1 3 2 4 6 5",
+   "3 2 4 1 6 5"
+  ]
+ },
+ {
+  "num": 6,
+  "subj": "toc",
+  "topic": "Decidability",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following problems is undecidable?",
+  "code": "",
+  "opts": [
+   "Membership problem for CFGs.",
+   "Ambiguity problem for CFGs.",
+   "Finiteness problem for FSAs.",
+   "Equivalence problem for FSAs."
+  ]
+ },
+ {
+  "num": 7,
+  "subj": "toc",
+  "topic": "Regular languages / closure",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Every subset of a regular set is regular.",
+   "Every finite subset of a non-regular set is regular.",
+   "The union of two non-regular sets is not regular.",
+   "Infinite union of finite sets is regular."
+  ]
+ },
+ {
+  "num": 8,
+  "subj": "dl",
+  "topic": "Decoders",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "How many 3-to-8 line decoders with an enable input are needed to construct a 6-to-64 line decoder without using any other logic gates?",
+  "code": "",
+  "opts": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ]
+ },
+ {
+  "num": 9,
+  "subj": "dl",
+  "topic": "K-map minimization",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the following Boolean function of four variables:\nf(w, x, y, z) = ∑(1, 3, 4, 6, 9, 11, 12, 14)\nThe function is",
+  "code": "",
+  "opts": [
+   "independent of one variable.",
+   "independent of two variables.",
+   "independent of three variables.",
+   "dependent on all the variables."
+  ]
+ },
+ {
+  "num": 10,
+  "subj": "coa",
+  "topic": "Cache memory",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider a 4-way set associative cache consisting of 128 lines with a line size of 64 words. The CPU generates a 20-bit address of a word in main memory. The number of bits in the TAG, LINE and WORD fields are respectively:",
+  "code": "",
+  "opts": [
+   "9, 6, 5",
+   "7, 7, 6",
+   "7, 5, 8",
+   "9, 5, 6"
+  ]
+ },
+ {
+  "num": 11,
+  "subj": "coa",
+  "topic": "Disk structure",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider a disk pack with 16 surfaces, 128 tracks per surface and 256 sectors per track. 512 bytes of data are stored in a bit serial manner in a sector. The capacity of the disk pack and the number of bits required to specify a particular sector in the disk are respectively:",
+  "code": "",
+  "opts": [
+   "256 Mbyte, 19 bits",
+   "256 Mbyte, 28 bits",
+   "512 Mbyte, 20 bits",
+   "64 Gbyte, 28 bits"
+  ]
+ },
+ {
+  "num": 12,
+  "subj": "pds",
+  "topic": "Binary tree properties",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The height of a binary tree is the maximum number of edges in any root to leaf path. The maximum number of nodes in a binary tree of height h is:",
+  "code": "",
+  "opts": [
+   "2ʰ − 1",
+   "2^(h−1) − 1",
+   "2^(h+1) − 1",
+   "2^(h+1)"
+  ]
+ },
+ {
+  "num": 13,
+  "subj": "pds",
+  "topic": "Counting binary trees",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "The maximum number of binary trees that can be formed with three unlabeled nodes is:",
+  "code": "",
+  "opts": [
+   "1",
+   "5",
+   "4",
+   "3"
+  ]
+ },
+ {
+  "num": 14,
+  "subj": "algo",
+  "topic": "Sorting complexity",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which of the following sorting algorithms has the lowest worst-case complexity?",
+  "code": "",
+  "opts": [
+   "Merge sort",
+   "Bubble sort",
+   "Quick sort",
+   "Selection sort"
+  ]
+ },
+ {
+  "num": 15,
+  "subj": "algo",
+  "topic": "Loop analysis",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the following segment of C-code:\n(see code)\nThe number of comparisons made in the execution of the loop for any n > 0 is:",
+  "code": "int j, n;\nj = 1;\nwhile (j <= n)\n        j = j*2;",
+  "opts": [
+   "⌈log₂ n⌉ + 1",
+   "n",
+   "⌈log₂ n⌉",
+   "⌊log₂ n⌋ + 1"
+  ]
+ },
+ {
+  "num": 16,
+  "subj": "os",
+  "topic": "CPU scheduling",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Group 1 contains some CPU scheduling algorithms and Group 2 contains some applications. Match entries in Group 1 to entries in Group 2.\nGroup 1:\nP. Gang Scheduling\nQ. Rate Monotonic Scheduling\nR. Fair Share Scheduling\nGroup 2:\n1. Guaranteed Scheduling\n2. Real-time Scheduling\n3. Thread Scheduling",
+  "code": "",
+  "opts": [
+   "P-3; Q-2; R-1",
+   "P-1; Q-2; R-3",
+   "P-2; Q-3; R-1",
+   "P-1; Q-3; R-2"
+  ]
+ },
+ {
+  "num": 17,
+  "subj": "os",
+  "topic": "Threads (user vs kernel)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Consider the following statements about user level threads and kernel level threads. Which one of the following statements is FALSE?",
+  "code": "",
+  "opts": [
+   "Context switch time is longer for kernel level threads than for user level threads.",
+   "User level threads do not need any hardware support.",
+   "Related kernel level threads can be scheduled on different processors in a multi-processor system.",
+   "Blocking one kernel level thread blocks all related threads."
+  ]
+ },
+ {
+  "num": 18,
+  "subj": "cd",
+  "topic": "Parsing (top-down vs bottom-up)",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which one of the following is a top-down parser?",
+  "code": "",
+  "opts": [
+   "Recursive descent parser.",
+   "Operator precedence parser.",
+   "An LR(k) parser.",
+   "An LALR(k) parser."
+  ]
+ },
+ {
+  "num": 19,
+  "subj": "cn",
+  "topic": "Manchester encoding",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "In Ethernet when Manchester encoding is used, the bit rate is:",
+  "code": "",
+  "opts": [
+   "Half the baud rate.",
+   "Twice the baud rate.",
+   "Same as the baud rate.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 20,
+  "subj": "cn",
+  "topic": "Application layer protocols",
+  "type": "MCQ",
+  "marks": 1,
+  "q": "Which one of the following uses UDP as the transport protocol?",
+  "code": "",
+  "opts": [
+   "HTTP",
+   "Telnet",
+   "DNS",
+   "SMTP"
+  ]
+ },
+ {
+  "num": 21,
+  "subj": "dm",
+  "topic": "Groups",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "How many different non-isomorphic Abelian groups of order 4 are there?",
+  "code": "",
+  "opts": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ]
+ },
+ {
+  "num": 22,
+  "subj": "dm",
+  "topic": "First order logic",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let Graph(x) be a predicate which denotes that x is a graph. Let Connected(x) be a predicate which denotes that x is connected. Which of the following first order logic sentences DOES NOT represent the statement: \"Not every graph is connected\"?",
+  "code": "",
+  "opts": [
+   "¬∀x (Graph(x) ⇒ Connected(x))",
+   "∃x (Graph(x) ∧ ¬Connected(x))",
+   "¬∀x (¬Graph(x) ∨ Connected(x))",
+   "∀x (Graph(x) ⇒ ¬Connected(x))"
+  ]
+ },
+ {
+  "num": 23,
+  "subj": "dm",
+  "topic": "Euler circuits",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which of the following graphs has an Eulerian circuit?",
+  "code": "",
+  "opts": [
+   "Any k-regular graph where k is an even number.",
+   "A complete graph on 90 vertices.",
+   "The complement of a cycle on 25 vertices.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 24,
+  "subj": "em",
+  "topic": "Probability",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Suppose we uniformly and randomly select a permutation from the 20! permutations of 1, 2, 3, ..., 20. What is the probability that 2 appears at an earlier position than any other even number in the selected permutation?",
+  "code": "",
+  "opts": [
+   "1/2",
+   "1/10",
+   "9!/20!",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 25,
+  "subj": "em",
+  "topic": "Eigenvalues",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let A be a 4×4 matrix with eigenvalues −5, −2, 1, 4. Which of the following is an eigenvalue of the block matrix\n[[A, I], [I, A]]\nwhere I is the 4×4 identity matrix?",
+  "code": "",
+  "opts": [
+   "−5",
+   "−7",
+   "2",
+   "1"
+  ]
+ },
+ {
+  "num": 26,
+  "subj": "dm",
+  "topic": "Posets & Hasse diagram",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the set S = {a, b, c, d}. Consider the following 4 partitions π₁, π₂, π₃, π₄ on S: π₁ = {abcd}, π₂ = {ab, cd}, π₃ = {abc, d}, π₄ = {a, b, c, d}. Let ≺ be the partial order on the set of partitions S' = {π₁, π₂, π₃, π₄} defined as follows: πᵢ ≺ πⱼ if and only if πᵢ refines πⱼ. The poset diagram for (S', ≺) is",
+  "code": "",
+  "opts": [
+   "A chain: π₁ on top, then π₂, then π₃, then π₄ at the bottom",
+   "π₁ on top; π₂ below π₁; π₃ below π₂; π₄ connected directly below π₁ (π₄ incomparable with π₂, π₃)",
+   "A diamond: π₁ on top, π₂ and π₃ in the middle (incomparable), π₄ at the bottom",
+   "π₁, π₂, π₃ at the top all incomparable, each directly above π₄ at the bottom"
+  ]
+ },
+ {
+  "num": 27,
+  "subj": "em",
+  "topic": "Vector spaces / basis",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the set of (column) vectors defined by X = {x ∈ R³ | x₁ + x₂ + x₃ = 0, where xᵀ = [x₁, x₂, x₃]ᵀ}. Which of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "{[1, −1, 0]ᵀ, [1, 0, −1]ᵀ} is a basis for the subspace X.",
+   "{[1, −1, 0]ᵀ, [1, 0, −1]ᵀ} is a linearly independent set, but it does not span X and therefore is not a basis of X.",
+   "X is not a subspace of R³.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 28,
+  "subj": "em",
+  "topic": "Newton-Raphson method",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the series xₙ₊₁ = xₙ/2 + 9/(8xₙ), x₀ = 0.5 obtained from the Newton-Raphson method. The series converges to",
+  "code": "",
+  "opts": [
+   "1.5",
+   "√2",
+   "1.6",
+   "1.4"
+  ]
+ },
+ {
+  "num": 29,
+  "subj": "toc",
+  "topic": "DFA minimization",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A minimum state deterministic finite automaton accepting the language L = {w | w ∈ {0,1}*, number of 0s and 1s in w are divisible by 3 and 5, respectively} has",
+  "code": "",
+  "opts": [
+   "15 states",
+   "11 states",
+   "10 states",
+   "9 states"
+  ]
+ },
+ {
+  "num": 30,
+  "subj": "toc",
+  "topic": "Language classification",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The language L = {0ⁱ21ⁱ | i ≥ 0} over the alphabet {0, 1, 2} is",
+  "code": "",
+  "opts": [
+   "not recursive.",
+   "is recursive and is a deterministic CFL.",
+   "is a regular language.",
+   "is not a deterministic CFL but a CFL."
+  ]
+ },
+ {
+  "num": 31,
+  "subj": "toc",
+  "topic": "Regular languages",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which of the following languages is regular?",
+  "code": "",
+  "opts": [
+   "{wwᴿ | w ∈ {0,1}⁺}",
+   "{wwᴿx | x, w ∈ {0,1}⁺}",
+   "{wxwᴿ | x, w ∈ {0,1}⁺}",
+   "{xwwᴿ | x, w ∈ {0,1}⁺}"
+  ]
+ },
+ {
+  "num": 32,
+  "subj": "dl",
+  "topic": "K-map minimization",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let f(w, x, y, z) = ∑(0, 4, 5, 7, 8, 9, 13, 15). Which of the following expressions are NOT equivalent to f?\n(P) x'y'z' + w'xy' + wy'z + xz\n(Q) w'y'z' + wx'y' + xz\n(R) w'y'z' + wx'y' + xyz + xy'z\n(S) x'y'z' + wx'y' + w'y",
+  "code": "",
+  "opts": [
+   "P only",
+   "Q and S",
+   "R and S",
+   "S only"
+  ]
+ },
+ {
+  "num": 33,
+  "subj": "dl",
+  "topic": "Boolean algebra (XNOR)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Define the connective * for the Boolean variables X and Y as: X * Y = XY + X'Y'. Let Z = X * Y. Consider the following expressions P, Q and R.\nP: X = Y * Z\nQ: Y = X * Z\nR: X * Y * Z = 1\nWhich of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Only P and Q are valid.",
+   "Only Q and R are valid.",
+   "Only P and R are valid.",
+   "All P, Q, R are valid."
+  ]
+ },
+ {
+  "num": 34,
+  "subj": "dl",
+  "topic": "Multiplexers",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Suppose only one multiplexer and one inverter are allowed to be used to implement any Boolean function of n variables. What is the minimum size of the multiplexer needed?",
+  "code": "",
+  "opts": [
+   "2ⁿ line to 1 line",
+   "2^(n+1) line to 1 line",
+   "2^(n−1) line to 1 line",
+   "2^(n−2) line to 1 line"
+  ]
+ },
+ {
+  "num": 35,
+  "subj": "dl",
+  "topic": "Carry look-ahead adder",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In a look-ahead carry generator, the carry generate function Gᵢ and the carry propagate function Pᵢ for inputs Aᵢ and Bᵢ are given by:\nPᵢ = Aᵢ ⊕ Bᵢ and Gᵢ = AᵢBᵢ\nThe expressions for the sum bit Sᵢ and the carry bit Cᵢ₊₁ of the look-ahead carry adder are given by:\nSᵢ = Pᵢ ⊕ Cᵢ and Cᵢ₊₁ = Gᵢ + PᵢCᵢ, where C₀ is the input carry.\nConsider a two-level logic implementation of the look-ahead carry generator. Assume that all Pᵢ and Gᵢ are available for the carry generator circuit and that the AND and OR gates can have any number of inputs. The number of AND gates and OR gates needed to implement the look-ahead carry generator for a 4-bit adder with S₃, S₂, S₁, S₀ and C₄ as its outputs are respectively:",
+  "code": "",
+  "opts": [
+   "6, 3",
+   "10, 4",
+   "6, 4",
+   "10, 5"
+  ]
+ },
+ {
+  "num": 36,
+  "subj": "dl",
+  "topic": "Counters",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The control signal functions of a 4-bit binary counter are given below (where X is \"don't care\"):\nClear | Clock | Load | Count | Function\n1 | X | X | X | Clear to 0\n0 | X | 0 | 0 | No change\n0 | ↑ | 1 | X | Load input\n0 | ↑ | 0 | 1 | Count next\nThe counter is connected as follows: outputs A4 A3 A2 A1 (A1 = LSB). A 2-input AND gate takes A3 and A1 as inputs, and its output drives Clear. Count = 1, Load = 0, Clock applied. Data inputs (A4..A1) = 0 0 1 1.\nAssume that the counter and gate delays are negligible. If the counter starts at 0, then it cycles through the following sequence:",
+  "code": "",
+  "opts": [
+   "0, 3, 4",
+   "0, 3, 4, 5",
+   "0, 1, 2, 3, 4",
+   "0, 1, 2, 3, 4, 5"
+  ]
+ },
+ {
+  "num": 37,
+  "subj": "coa",
+  "topic": "Pipelining",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider a pipelined processor with the following four stages:\nIF: Instruction Fetch\nID: Instruction Decode and Operand Fetch\nEX: Execute\nWB: Write Back\nThe IF, ID and WB stages take one clock cycle each to complete the operation. The number of clock cycles for the EX stage depends on the instruction. The ADD and SUB instructions need 1 clock cycle and the MUL instruction needs 3 clock cycles in the EX stage. Operand forwarding is used in the pipelined processor. What is the number of clock cycles taken to complete the following sequence of instructions?",
+  "code": "ADD  R2, R1, R0     R2 ← R1 + R0\nMUL  R4, R3, R2     R4 ← R3 * R2\nSUB  R6, R5, R4     R6 ← R5 − R4",
+  "opts": [
+   "7",
+   "8",
+   "10",
+   "14"
+  ]
+ },
+ {
+  "num": 38,
+  "subj": "pds",
+  "topic": "Stack (postfix evaluation)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The following postfix expression with single digit operands is evaluated using a stack:\n8 2 3 ^ / 2 3 * + 5 1 * −\nNote that ^ is the exponentiation operator. The top two elements of the stack after the first * is evaluated are:",
+  "code": "",
+  "opts": [
+   "6, 1",
+   "5, 7",
+   "3, 2",
+   "1, 5"
+  ]
+ },
+ {
+  "num": 39,
+  "subj": "pds",
+  "topic": "Tree traversals",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The inorder and preorder traversal of a binary tree are\nd b e a f c g and a b d e c f g, respectively.\nThe postorder traversal of the binary tree is",
+  "code": "",
+  "opts": [
+   "d e b f g c a",
+   "e d b g f c a",
+   "e d b f g c a",
+   "d e f g b c a"
+  ]
+ },
+ {
+  "num": 40,
+  "subj": "pds",
+  "topic": "Hashing (linear probing)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider a hash table of size seven, with starting index zero, and a hash function (3x + 4) mod 7. Assuming the hash table is initially empty, which of the following is the contents of the table when the sequence 1, 3, 8, 10 is inserted into the table using closed hashing? Note that − denotes an empty location in the table.",
+  "code": "",
+  "opts": [
+   "8, −, −, −, −, −, 10",
+   "1, 8, 10, −, −, −, 3",
+   "1, −, −, −, −, −, 3",
+   "1, 10, 8, −, −, −, 3"
+  ]
+ },
+ {
+  "num": 41,
+  "subj": "algo",
+  "topic": "BFS / shortest path",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In an unweighted, undirected connected graph, the shortest path from a node S to every other node is computed most efficiently, in terms of time complexity, by",
+  "code": "",
+  "opts": [
+   "Dijkstra's algorithm starting from S.",
+   "Warshall's algorithm.",
+   "performing a DFS starting from S.",
+   "performing a BFS starting from S."
+  ]
+ },
+ {
+  "num": 42,
+  "subj": "pds",
+  "topic": "Recursion & static variables",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following C function:\n(see code)\nWhat is the value of f(5)?",
+  "code": "int f(int n)\n{static int r=0;\n  if (n <= 0) return 1;\n  if (n > 3)\n    {r = n;\n     return f(n-2)+2;\n    }\n  return f(n-1)+r;\n}",
+  "opts": [
+   "5",
+   "7",
+   "9",
+   "18"
+  ]
+ },
+ {
+  "num": 43,
+  "subj": "pds",
+  "topic": "n-ary trees",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A complete n-ary tree is a tree in which each node has n children or no children. Let I be the number of internal nodes and L be the number of leaves in a complete n-ary tree. If L = 41, and I = 10, what is the value of n?",
+  "code": "",
+  "opts": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ]
+ },
+ {
+  "num": 44,
+  "subj": "algo",
+  "topic": "Euclid's GCD complexity",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In the following C function, let n ≥ m.\n(see code)\nHow many recursive calls are made by this function?",
+  "code": "int gcd(n,m)\n{\n   if(n%m == 0) return m;\n   n = n%m;\n   return gcd(m,n);\n}",
+  "opts": [
+   "Θ(log₂ n)",
+   "Ω(n)",
+   "Θ(log₂ log₂ n)",
+   "Θ(√n)"
+  ]
+ },
+ {
+  "num": 45,
+  "subj": "algo",
+  "topic": "Recurrence relations",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "What is the time complexity of the following recursive function:",
+  "code": "int DoSomething (int n){\n  if (n <= 2)\n     return 1;\n  else\n     return(DoSomething(floor(sqrt(n))) + n);\n}",
+  "opts": [
+   "Θ(n²)",
+   "Θ(n log₂ n)",
+   "Θ(log₂ n)",
+   "Θ(log₂ log₂ n)"
+  ]
+ },
+ {
+  "num": 46,
+  "subj": "pds",
+  "topic": "Binary tree recursion",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following C program segment where CellNode represents a node in a binary tree:\n(see code)\nThe value returned by GetValue when a pointer to the root of a binary tree is passed as its argument is:",
+  "code": "struct CellNode {\n  struct CellNode *leftChild;\n   int element;\n  struct CellNode *rightChild;\n};\nint GetValue(struct CellNode *ptr) {\n int value = 0;\n if (ptr != NULL) {\n   if ((ptr->leftChild == NULL) &&\n        (ptr->rightChild == NULL))\n      value = 1;\n   else\n      value = value + GetValue(ptr->leftChild)\n                    + GetValue(ptr->rightChild);\n }\n return(value);\n}",
+  "opts": [
+   "the number of nodes in the tree.",
+   "the number of internal nodes in the tree.",
+   "the number of leaf nodes in the tree.",
+   "the height of the tree."
+  ]
+ },
+ {
+  "num": 47,
+  "subj": "pds",
+  "topic": "Heaps",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the process of inserting an element into a Max Heap, where the Max Heap is represented by an array. Suppose we perform a binary search on the path from the new leaf to the root to find the position for the newly inserted element, the number of comparisons performed is:",
+  "code": "",
+  "opts": [
+   "Θ(log₂ n)",
+   "Θ(log₂ log₂ n)",
+   "Θ(n)",
+   "Θ(n log₂ n)"
+  ]
+ },
+ {
+  "num": 48,
+  "subj": "dm",
+  "topic": "Propositional logic (CNF)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which of the following is TRUE about formulae in Conjunctive Normal Form?",
+  "code": "",
+  "opts": [
+   "For any formula, there is a truth assignment for which at least half the clauses evaluate to true.",
+   "For any formula, there is a truth assignment for which all the clauses evaluate to true.",
+   "There is a formula such that for each truth assignment, at most one-fourth of the clauses evaluate to true.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 49,
+  "subj": "algo",
+  "topic": "Minimum spanning tree",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Let w be the minimum weight among all edge weights in an undirected connected graph. Let e be a specific edge of weight w. Which of the following is FALSE?",
+  "code": "",
+  "opts": [
+   "There is a minimum spanning tree containing e.",
+   "If e is not in a minimum spanning tree T, then in the cycle formed by adding e to T, all edges have the same weight.",
+   "Every minimum spanning tree has an edge of weight w.",
+   "e is present in every minimum spanning tree."
+  ]
+ },
+ {
+  "num": 50,
+  "subj": "algo",
+  "topic": "Min-max finding",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "An array of n numbers is given, where n is an even number. The maximum as well as the minimum of these n numbers needs to be determined. Which of the following is TRUE about the number of comparisons needed?",
+  "code": "",
+  "opts": [
+   "At least 2n − c comparisons, for some constant c, are needed.",
+   "At most 1.5n − 2 comparisons are needed.",
+   "At least n log₂ n comparisons are needed.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 51,
+  "subj": "algo",
+  "topic": "Asymptotic analysis",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following C code segment:\n(see code)\nLet T(n) denote the number of times the for loop is executed by the program on input n. Which of the following is TRUE?",
+  "code": "int IsPrime(n)\n{\n   int i,n;\n   for(i=2;i <= sqrt(n);i++)\n      if(n%i == 0)\n        {printf(\"Not Prime\\n\"); return 0;}\n   return 1;\n}",
+  "opts": [
+   "T(n) = O(√n) and T(n) = Ω(√n)",
+   "T(n) = O(√n) and T(n) = Ω(1)",
+   "T(n) = O(n) and T(n) = Ω(√n)",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 52,
+  "subj": "cd",
+  "topic": "LL(1) parsing",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the grammar with non-terminals N = {S, C, S₁}, terminals T = {a, b, i, t, e}, with S as the start symbol, and the following set of rules:\n(see productions)\nThe grammar is NOT LL(1) because:",
+  "code": "S  → iCtSS₁ | a\nS₁ → eS | ε\nC  → b",
+  "opts": [
+   "it is left recursive.",
+   "it is right recursive.",
+   "it is ambiguous.",
+   "it is not context-free."
+  ]
+ },
+ {
+  "num": 53,
+  "subj": "cd",
+  "topic": "LL(1) / LR(1) grammars",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following two statements:\nP: Every regular grammar is LL(1)\nQ: Every regular set has a LR(1) grammar\nWhich of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Both P and Q are true.",
+   "P is true and Q is false.",
+   "P is false and Q is true.",
+   "Both P and Q are false."
+  ]
+ },
+ {
+  "num": 54,
+  "subj": "cd",
+  "topic": "Code generation / register allocation",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In a simplified computer the instructions are:\nOP Rj, Ri − Performs Rj OP Ri and stores the result in register Ri.\nOP m, Ri − Performs val OP Ri and stores the result in Ri. val denotes the content of memory location m.\nMOV m, Ri − Moves the content of memory location m to register Ri.\nMOV Ri, m − Moves the content of register Ri to memory location m.\nThe computer has only two registers, and OP is either ADD or SUB. Consider the following basic block:\nt1 = a + b\nt2 = c + d\nt3 = e − t2\nt4 = t1 − t3\nAssume that all operands are initially in memory. The final value of the computation should be in memory. What is the minimum number of MOV instructions in the code generated for this basic block?",
+  "code": "",
+  "opts": [
+   "2",
+   "3",
+   "5",
+   "6"
+  ]
+ },
+ {
+  "num": 55,
+  "subj": "os",
+  "topic": "CPU scheduling (SRTF)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "An operating system uses Shortest Remaining Time first (SRT) process scheduling algorithm. Consider the arrival times and execution times for the following processes:\nProcess | Execution time | Arrival time\nP1 | 20 | 0\nP2 | 25 | 15\nP3 | 10 | 30\nP4 | 15 | 45\nWhat is the total waiting time for process P2?",
+  "code": "",
+  "opts": [
+   "5",
+   "15",
+   "40",
+   "55"
+  ]
+ },
+ {
+  "num": 56,
+  "subj": "os",
+  "topic": "Page replacement (FIFO / Belady)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A virtual memory system uses First In First Out (FIFO) page replacement policy and allocates a fixed number of frames to a process. Consider the following statements:\nP: Increasing the number of page frames allocated to a process sometimes increases the page fault rate.\nQ: Some programs do not exhibit locality of reference.\nWhich one of the following is TRUE?",
+  "code": "",
+  "opts": [
+   "Both P and Q are true, and Q is the reason for P.",
+   "Both P and Q are true, but Q is not the reason for P.",
+   "P is false, but Q is true.",
+   "Both P and Q are false."
+  ]
+ },
+ {
+  "num": 57,
+  "subj": "os",
+  "topic": "Deadlock & Banker's",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "A single processor system has three resource types X, Y, and Z, which are shared by three processes. There are 5 units of each resource type. Consider the following scenario, where the column alloc denotes the number of units of each resource type allocated to each process, and the column request denotes the number of units of each resource type requested by a process in order to complete execution. Which of these processes will finish LAST?\n      alloc (X Y Z)   request (X Y Z)\nP0    1 2 1           1 0 3\nP1    2 0 1           0 1 2\nP2    2 2 1           1 2 0",
+  "code": "",
+  "opts": [
+   "P0",
+   "P1",
+   "P2",
+   "None of the above, since the system is in a deadlock."
+  ]
+ },
+ {
+  "num": 58,
+  "subj": "os",
+  "topic": "Process synchronization",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Two processes, P1 and P2, need to access a critical section of code. Consider the following synchronization construct used by the processes:\n(see code)\nHere, wants1 and wants2 are shared variables, which are initialized to false. Which one of the following statements is TRUE about the above construct?",
+  "code": "/* P1 */\nwhile (true) {\n   wants1 = true;\n   while (wants2==true);\n   /* Critical\n      Section */\n   wants1=false;\n}\n/* Remainder section */\n\n/* P2 */\nwhile (true) {\n   wants2 = true;\n   while (wants1==true);\n   /* Critical\n      Section */\n   wants2=false;\n}\n/* Remainder section */",
+  "opts": [
+   "It does not ensure mutual exclusion.",
+   "It does not ensure bounded waiting.",
+   "It requires that processes enter the critical section in strict alternation.",
+   "It does not prevent deadlocks, but ensures mutual exclusion."
+  ]
+ },
+ {
+  "num": 59,
+  "subj": "db",
+  "topic": "Relational algebra",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Information about a collection of students is given by the relation studInfo(studId, name, sex). The relation enroll(studId, courseId) gives which student has enrolled for (or taken) what course(s). Assume that every course is taken by at least one male and at least one female student. What does the following relational algebra expression represent?\nΠ_courseId ((Π_studId(σ_sex=\"female\"(studInfo)) × Π_courseId(enroll)) − enroll)",
+  "code": "",
+  "opts": [
+   "Courses in which all the female students are enrolled.",
+   "Courses in which a proper subset of female students are enrolled.",
+   "Courses in which only male students are enrolled.",
+   "None of the above."
+  ]
+ },
+ {
+  "num": 60,
+  "subj": "db",
+  "topic": "Tuple relational calculus",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the relation employee(name, sex, supervisorName) with name as the key. supervisorName gives the name of the supervisor of the employee under consideration. What does the following Tuple Relational Calculus query produce?\n{e.name | employee(e) ∧ (∀x)[¬employee(x) ∨ x.supervisorName ≠ e.name ∨ x.sex = \"male\"]}",
+  "code": "",
+  "opts": [
+   "Names of employees with a male supervisor.",
+   "Names of employees with no immediate male subordinates.",
+   "Names of employees with no immediate female subordinates.",
+   "Names of employees with a female supervisor."
+  ]
+ },
+ {
+  "num": 61,
+  "subj": "db",
+  "topic": "SQL (nested queries, ANY/ALL)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the table employee(empId, name, department, salary) and the two queries Q₁, Q₂ below. Assuming that department 5 has more than one employee, and we want to find the employees who get higher salary than anyone in the department 5, which one of the statements is TRUE for any arbitrary employee table?\n(see queries)",
+  "code": "Q1: Select e.empId\n    From employee e\n    Where not exists\n       (Select * From employee s Where s.department = \"5\" and s.salary >= e.salary)\n\nQ2: Select e.empId\n    From employee e\n    Where e.salary > Any\n       (Select distinct salary From employee s Where s.department = \"5\")",
+  "opts": [
+   "Q₁ is the correct query.",
+   "Q₂ is the correct query.",
+   "Both Q₁ and Q₂ produce the same answer.",
+   "Neither Q₁ nor Q₂ is the correct query."
+  ]
+ },
+ {
+  "num": 62,
+  "subj": "db",
+  "topic": "Normal forms",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Which one of the following statements is FALSE?",
+  "code": "",
+  "opts": [
+   "Any relation with two attributes is in BCNF.",
+   "A relation in which every key has only one attribute is in 2NF.",
+   "A prime attribute can be transitively dependent on a key in a 3NF relation.",
+   "A prime attribute can be transitively dependent on a key in a BCNF relation."
+  ]
+ },
+ {
+  "num": 63,
+  "subj": "db",
+  "topic": "B+ tree order",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The order of a leaf node in a B⁺-tree is the maximum number of (value, data record pointer) pairs it can hold. Given that the block size is 1K bytes, data record pointer is 7 bytes long, the value field is 9 bytes long and a block pointer is 6 bytes long, what is the order of the leaf node?",
+  "code": "",
+  "opts": [
+   "63",
+   "64",
+   "67",
+   "68"
+  ]
+ },
+ {
+  "num": 64,
+  "subj": "db",
+  "topic": "Conflict serializability",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Consider the following schedules involving two transactions. Which one of the following statements is TRUE?\nS₁: r₁(X); r₁(Y); r₂(X); r₂(Y); w₂(Y); w₁(X)\nS₂: r₁(X); r₂(X); r₂(Y); w₂(Y); r₁(Y); w₁(X)",
+  "code": "",
+  "opts": [
+   "Both S₁ and S₂ are conflict serializable.",
+   "S₁ is conflict serializable and S₂ is not conflict serializable.",
+   "S₁ is not conflict serializable and S₂ is conflict serializable.",
+   "Both S₁ and S₂ are not conflict serializable."
+  ]
+ },
+ {
+  "num": 65,
+  "subj": "cn",
+  "topic": "Slotted ALOHA / MAC",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. What is the probability that ONLY one station transmits in a given time slot?",
+  "code": "",
+  "opts": [
+   "np(1 − p)^(n−1)",
+   "(1 − p)^(n−1)",
+   "p(1 − p)^(n−1)",
+   "1 − (1 − p)^(n−1)"
+  ]
+ },
+ {
+  "num": 66,
+  "subj": "cn",
+  "topic": "Token ring / bit delay",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "In a token ring network the transmission speed is 10⁷ bps and the propagation speed is 200 metres/μs. The 1-bit delay in this network is equivalent to:",
+  "code": "",
+  "opts": [
+   "500 metres of cable.",
+   "200 metres of cable.",
+   "20 metres of cable.",
+   "50 metres of cable."
+  ]
+ },
+ {
+  "num": 67,
+  "subj": "cn",
+  "topic": "Subnetting / CIDR",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The address of a class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?",
+  "code": "",
+  "opts": [
+   "62 subnets and 262142 hosts.",
+   "64 subnets and 262142 hosts.",
+   "62 subnets and 1022 hosts.",
+   "64 subnets and 1024 hosts."
+  ]
+ },
+ {
+  "num": 68,
+  "subj": "cn",
+  "topic": "CRC",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The message 11001001 is to be transmitted using the CRC polynomial x³ + 1 to protect it from errors. The message that should be transmitted is:",
+  "code": "",
+  "opts": [
+   "11001001000",
+   "11001001011",
+   "11001010",
+   "110010010011"
+  ]
+ },
+ {
+  "num": 69,
+  "subj": "cn",
+  "topic": "Sliding window protocol",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "The distance between two stations M and N is L kilometres. All frames are K bits long. The propagation delay per kilometre is t seconds. Let R bits/second be the channel capacity. Assuming that processing delay is negligible, the minimum number of bits for the sequence number field in a frame for maximum utilization, when the sliding window protocol is used, is:",
+  "code": "",
+  "opts": [
+   "⌈log₂ ((2LtR + 2K) / K)⌉",
+   "⌈log₂ (2LtR / K)⌉",
+   "⌈log₂ ((2LtR + K) / K)⌉",
+   "⌈log₂ ((2LtR + K) / (2K))⌉"
+  ]
+ },
+ {
+  "num": 70,
+  "subj": "cn",
+  "topic": "Protocol layers",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Match the following:\nP. SMTP\nQ. BGP\nR. TCP\nS. PPP\n1. Application layer\n2. Transport layer\n3. Data link layer\n4. Network layer\n5. Physical layer",
+  "code": "",
+  "opts": [
+   "P-2, Q-1, R-3, S-5",
+   "P-1, Q-4, R-2, S-3",
+   "P-1, Q-4, R-2, S-5",
+   "P-2, Q-4, R-1, S-3"
+  ]
+ },
+ {
+  "num": 71,
+  "subj": "coa",
+  "topic": "Memory references / program execution",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.71–73: Consider the following program segment. Here R1, R2 and R3 are the general purpose registers.\n(see program)\nAssume that the content of memory location 3000 is 10 and the content of the register R3 is 2000. The content of each of the memory locations from 2000 to 2010 is 100. The program is loaded from the memory location 1000. All the numbers are in decimal.\nQ.71: Assume that the memory is word addressable. The number of memory references for accessing the data in executing the program completely is",
+  "code": "Instruction         Operation             Instruction size (no. of words)\n      MOV R1, (3000)  R1 ← M[3000]          2\nLOOP: MOV R2, (R3)    R2 ← M[R3]            1\n      ADD R2, R1      R2 ← R1 + R2          1\n      MOV (R3), R2    M[R3] ← R2            1\n      INC R3          R3 ← R3 + 1           1\n      DEC R1          R1 ← R1 − 1           1\n      BNZ LOOP        Branch on not zero    2\n      HALT            Stop                  1",
+  "opts": [
+   "10",
+   "11",
+   "20",
+   "21"
+  ]
+ },
+ {
+  "num": 72,
+  "subj": "coa",
+  "topic": "Memory references / program execution",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.71–73: Consider the following program segment. Here R1, R2 and R3 are the general purpose registers.\n(see program)\nAssume that the content of memory location 3000 is 10 and the content of the register R3 is 2000. The content of each of the memory locations from 2000 to 2010 is 100. The program is loaded from the memory location 1000. All the numbers are in decimal.\nQ.72: Assume that the memory is word addressable. After the execution of this program, the content of memory location 2010 is",
+  "code": "Instruction         Operation             Instruction size (no. of words)\n      MOV R1, (3000)  R1 ← M[3000]          2\nLOOP: MOV R2, (R3)    R2 ← M[R3]            1\n      ADD R2, R1      R2 ← R1 + R2          1\n      MOV (R3), R2    M[R3] ← R2            1\n      INC R3          R3 ← R3 + 1           1\n      DEC R1          R1 ← R1 − 1           1\n      BNZ LOOP        Branch on not zero    2\n      HALT            Stop                  1",
+  "opts": [
+   "100",
+   "101",
+   "102",
+   "110"
+  ]
+ },
+ {
+  "num": 73,
+  "subj": "coa",
+  "topic": "Interrupts / return address",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.71–73: Consider the following program segment. Here R1, R2 and R3 are the general purpose registers.\n(see program)\nAssume that the content of memory location 3000 is 10 and the content of the register R3 is 2000. The content of each of the memory locations from 2000 to 2010 is 100. The program is loaded from the memory location 1000. All the numbers are in decimal.\nQ.73: Assume that the memory is byte addressable and the word size is 32 bits. If an interrupt occurs during the execution of the instruction \"INC R3\", what return address will be pushed on to the stack?",
+  "code": "Instruction         Operation             Instruction size (no. of words)\n      MOV R1, (3000)  R1 ← M[3000]          2\nLOOP: MOV R2, (R3)    R2 ← M[R3]            1\n      ADD R2, R1      R2 ← R1 + R2          1\n      MOV (R3), R2    M[R3] ← R2            1\n      INC R3          R3 ← R3 + 1           1\n      DEC R1          R1 ← R1 − 1           1\n      BNZ LOOP        Branch on not zero    2\n      HALT            Stop                  1",
+  "opts": [
+   "1005",
+   "1020",
+   "1024",
+   "1040"
+  ]
+ },
+ {
+  "num": 74,
+  "subj": "toc",
+  "topic": "Finite automata → regular expression",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.74–75: Consider the following Finite State Automaton:\nStates q0 (start), q1 (final), q2 (final), q3.\nTransitions: q0 –b→ q0, q0 –a→ q1; q1 –b→ q1, q1 –a→ q2; q2 –a→ q1, q2 –b→ q2; q3 –a→ q1, q3 –b→ q2.\nQ.74: The language accepted by this automaton is given by the regular expression",
+  "code": "",
+  "opts": [
+   "b*ab*ab*ab*",
+   "(a + b)*",
+   "b*a(a + b)*",
+   "b*ab*ab*"
+  ]
+ },
+ {
+  "num": 75,
+  "subj": "toc",
+  "topic": "DFA minimization",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Common data for Q.74–75: Consider the following Finite State Automaton:\nStates q0 (start), q1 (final), q2 (final), q3.\nTransitions: q0 –b→ q0, q0 –a→ q1; q1 –b→ q1, q1 –a→ q2; q2 –a→ q1, q2 –b→ q2; q3 –a→ q1, q3 –b→ q2.\nQ.75: The minimum state automaton equivalent to the above FSA has the following number of states",
+  "code": "",
+  "opts": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ]
+ },
+ {
+  "num": 76,
+  "subj": "algo",
+  "topic": "Huffman coding",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 76 & 77: Suppose the letters a, b, c, d, e, f have probabilities 1/2, 1/4, 1/8, 1/16, 1/32, 1/32, respectively.\nQ.76: Which of the following is the Huffman code for the letters a, b, c, d, e, f?",
+  "code": "",
+  "opts": [
+   "0, 10, 110, 1110, 11110, 11111",
+   "11, 10, 011, 010, 001, 000",
+   "11, 10, 01, 001, 0001, 0000",
+   "110, 100, 010, 000, 001, 111"
+  ]
+ },
+ {
+  "num": 77,
+  "subj": "algo",
+  "topic": "Huffman coding",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 76 & 77: Suppose the letters a, b, c, d, e, f have probabilities 1/2, 1/4, 1/8, 1/16, 1/32, 1/32, respectively.\nQ.77: What is the average length of the correct answer to Q.76?",
+  "code": "",
+  "opts": [
+   "3",
+   "2.1875",
+   "2.25",
+   "1.9375"
+  ]
+ },
+ {
+  "num": 78,
+  "subj": "toc",
+  "topic": "Context-free grammars",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 78 & 79: Consider the CFG with {S, A, B} as the non-terminal alphabet, {a, b} as the terminal alphabet, S as the start symbol and the following set of production rules:\n(see productions)\nQ.78: Which of the following strings is generated by the grammar?",
+  "code": "S → aB      S → bA\nB → b       A → a\nB → bS      A → aS\nB → aBB     A → bAA",
+  "opts": [
+   "aaaabb",
+   "aabbbb",
+   "aabbab",
+   "abbbba"
+  ]
+ },
+ {
+  "num": 79,
+  "subj": "toc",
+  "topic": "Ambiguity / derivation trees",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 78 & 79: Consider the CFG with {S, A, B} as the non-terminal alphabet, {a, b} as the terminal alphabet, S as the start symbol and the following set of production rules:\n(see productions)\nQ.79: For the correct answer string to Q.78, how many derivation trees are there?",
+  "code": "S → aB      S → bA\nB → b       A → a\nB → bS      A → aS\nB → aBB     A → bAA",
+  "opts": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ]
+ },
+ {
+  "num": 80,
+  "subj": "coa",
+  "topic": "Cache memory (direct mapped)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 80 & 81: Consider a machine with a byte addressable main memory of 2¹⁶ bytes. Assume that a direct mapped data cache consisting of 32 lines of 64 bytes each is used in the system. A 50 × 50 two-dimensional array of bytes is stored in the main memory starting from memory location 1100H. Assume that the data cache is initially empty. The complete array is accessed twice. Assume that the contents of the data cache do not change in between the two accesses.\nQ.80: How many data cache misses will occur in total?",
+  "code": "",
+  "opts": [
+   "48",
+   "50",
+   "56",
+   "59"
+  ]
+ },
+ {
+  "num": 81,
+  "subj": "coa",
+  "topic": "Cache memory (direct mapped)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 80 & 81: Consider a machine with a byte addressable main memory of 2¹⁶ bytes. Assume that a direct mapped data cache consisting of 32 lines of 64 bytes each is used in the system. A 50 × 50 two-dimensional array of bytes is stored in the main memory starting from memory location 1100H. Assume that the data cache is initially empty. The complete array is accessed twice. Assume that the contents of the data cache do not change in between the two accesses.\nQ.81: Which of the following lines of the data cache will be replaced by new blocks in accessing the array for the second time?",
+  "code": "",
+  "opts": [
+   "line 4 to line 11",
+   "line 4 to line 12",
+   "line 0 to line 7",
+   "line 0 to line 8"
+  ]
+ },
+ {
+  "num": 82,
+  "subj": "os",
+  "topic": "Page replacement (Optimal)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 82 & 83: A process has been allocated 3 page frames. Assume that none of the pages of the process are available in the memory initially. The process makes the following sequence of page references (reference string): 1, 2, 1, 3, 7, 4, 5, 6, 3, 1\nQ.82: If optimal page replacement policy is used, how many page faults occur for the above reference string?",
+  "code": "",
+  "opts": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ]
+ },
+ {
+  "num": 83,
+  "subj": "os",
+  "topic": "Page replacement (LRU)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 82 & 83: A process has been allocated 3 page frames. Assume that none of the pages of the process are available in the memory initially. The process makes the following sequence of page references (reference string): 1, 2, 1, 3, 7, 4, 5, 6, 3, 1\nQ.83: Least Recently Used (LRU) page replacement policy is a practical approximation to optimal page replacement. For the above reference string, how many more page faults occur with LRU than with the optimal page replacement policy?",
+  "code": "",
+  "opts": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ]
+ },
+ {
+  "num": 84,
+  "subj": "dm",
+  "topic": "Combinatorics (lattice paths)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 84 & 85: Suppose that a robot is placed on the Cartesian plane. At each step it is allowed to move either one unit up or one unit right, i.e., if it is at (i, j) then it can move to either (i+1, j) or (i, j+1).\nQ.84: How many distinct paths are there for the robot to reach the point (10,10) starting from the initial position (0,0)?",
+  "code": "",
+  "opts": [
+   "C(20, 10)",
+   "2²⁰",
+   "2¹⁰",
+   "None of the above"
+  ]
+ },
+ {
+  "num": 85,
+  "subj": "dm",
+  "topic": "Combinatorics (lattice paths)",
+  "type": "MCQ",
+  "marks": 2,
+  "q": "Statement for Linked Answer Questions 84 & 85: Suppose that a robot is placed on the Cartesian plane. At each step it is allowed to move either one unit up or one unit right, i.e., if it is at (i, j) then it can move to either (i+1, j) or (i, j+1).\nQ.85: Suppose that the robot is not allowed to traverse the line segment from (4,4) to (5,4). With this constraint, how many distinct paths are there for the robot to reach (10,10) starting from (0,0)?",
+  "code": "",
+  "opts": [
+   "2⁹",
+   "2¹⁹",
+   "C(8, 4) × C(11, 5)",
+   "C(20, 10) − C(8, 4) × C(11, 5)"
+  ]
+ }
+]
